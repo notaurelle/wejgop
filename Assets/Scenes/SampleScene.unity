@@ -2482,6 +2482,7 @@ GameObject:
   - component: {fileID: 464204230}
   - component: {fileID: 464204229}
   - component: {fileID: 464204228}
+  - component: {fileID: 464204231}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2503,6 +2504,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
+  playerID: 0
+  waitingGrp: {fileID: 0}
+  inputGrp: {fileID: 0}
+  northButton: {fileID: 0}
+  southButton: {fileID: 0}
+  westButton: {fileID: 0}
+  eastButton: {fileID: 0}
+  analogStick: {fileID: 0}
+  analogInput: {x: 0, y: 0}
 --- !u!212 &464204229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2570,6 +2580,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464204231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464204227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf42d561afaa504aa4b01e5bf2e154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: 1
+  frames: []
+  playerID: 0
+  waitingGrp: {fileID: 0}
+  inputGrp: {fileID: 0}
+  northButton: {fileID: 0}
+  southButton: {fileID: 0}
+  westButton: {fileID: 0}
+  eastButton: {fileID: 0}
+  analogStick: {fileID: 0}
+  analogInput: {x: 0, y: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +2737,7 @@ GameObject:
   - component: {fileID: 1424166998}
   - component: {fileID: 1424166997}
   - component: {fileID: 1424166996}
+  - component: {fileID: 1424166999}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -2725,6 +2759,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
+  playerID: 0
+  waitingGrp: {fileID: 0}
+  inputGrp: {fileID: 0}
+  northButton: {fileID: 0}
+  southButton: {fileID: 0}
+  westButton: {fileID: 0}
+  eastButton: {fileID: 0}
+  analogStick: {fileID: 0}
+  analogInput: {x: 0, y: 0}
 --- !u!212 &1424166997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2792,6 +2835,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424166999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424166995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf42d561afaa504aa4b01e5bf2e154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: 1
+  frames: []
+  playerID: 0
+  waitingGrp: {fileID: 0}
+  inputGrp: {fileID: 0}
+  northButton: {fileID: 0}
+  southButton: {fileID: 0}
+  westButton: {fileID: 0}
+  eastButton: {fileID: 0}
+  analogStick: {fileID: 0}
+  analogInput: {x: 0, y: 0}
 --- !u!1 &1660412854
 GameObject:
   m_ObjectHideFlags: 0
