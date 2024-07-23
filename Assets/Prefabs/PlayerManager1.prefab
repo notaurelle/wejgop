@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8852510863675363144}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: PlayerManager1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
