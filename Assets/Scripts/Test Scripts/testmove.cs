@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class testmove : MonoBehaviour
-{
+{   /*
     [SerializeField]
     private float _speed = 5f;
     public GameObject player;
@@ -19,4 +19,5 @@ public class testmove : MonoBehaviour
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }
+    */
 }
