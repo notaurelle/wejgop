@@ -29,7 +29,7 @@ public class PlayerDPS : PlayerParent
  
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) //IS currently space just for testing
+        if (Input.GetKeyUp(KeyCode.Q)) //IS currently space just for testing
         {
             Attack();
         }
