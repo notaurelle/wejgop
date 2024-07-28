@@ -10,9 +10,58 @@ public class AIChase : MonoBehaviour
 
     private GameObject closestPlayer;
 
-    // Start is called before the first frame update
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask playerLayers;
+
+    public int maxHealth = 100;
+    private int currentHealth;
+
+
+    public int attackDamage = 5;
+
     void Start()
     {
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("MOB DMG Player");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
+    }
+
+
+
+    private void FixedUpdate()
+    {
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
+
+        //Damage them
+        foreach (Collider2D player in hitPlayers)
+        {
+            Debug.Log("Mob hit " + player.name);
+            player.GetComponent<AIChase>().TakeDamage(attackDamage);
+            //value can be set in brackets TD(20) or can add public int
+        }
+    }
+
+
+
+    void Die()
+    {
+        Debug.Log("Enemy died!");
+
+        //Disable enemy script as they have 'died'
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
 
     }
 
@@ -34,6 +83,7 @@ public class AIChase : MonoBehaviour
                 transform.rotation = Quaternion.Euler(Vector3.forward * angle);
             }
         }
+
     }
 
     GameObject GetClosestPlayer()
