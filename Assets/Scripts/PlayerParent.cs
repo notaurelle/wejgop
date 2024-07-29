@@ -8,16 +8,51 @@ public class PlayerParent : MonoBehaviour
     public bool move; // this doesnt make layer move it only sets this active
     public Sprite[] frames;
     private Vector2 moveInputValue;
+    AIChase aiChase;
     //Movement here.
    
 
-    private void Update()
+    public virtual void TakeDamage(int Damage)
+    {
+
+    }
+
+
+
+
+    /*
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the other GameObject has the tag "Enemy"
+        if (other.CompareTag("Enemy"))
+        {
+            aiChase.enabled = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        // Optional: Unfreeze the Rigidbody2D when the enemy exits the trigger
+        if (other.CompareTag("Enemy"))
+        {
+            aiChase.enabled = true;
+        }
+    }
+    */
+
+
+
+
+
+
+
+private void Update()
     {
 
         if (move)
         {
             PerformAbility();
-            Animate();
+            //Animate();
             //change animation.
         }
 

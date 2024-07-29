@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealer : PlayerParent
+public class PlayerSupport : PlayerParent
 {
-    //ADDED FROM PlayerDPS Script
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
 
-    public int maxHealth = 2000;
+    public int maxHealth = 1000;
     private int currentHealth;
 
-    public int attackDamage = 15;
+    public int attackDamage = 40;
+    public int attackSkill = 100;
     void Start()
     {
         currentHealth = maxHealth;
@@ -22,12 +22,19 @@ public class PlayerHealer : PlayerParent
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Healer has taken DMG");
+        Debug.Log("Support has taken DMG");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
     }
+
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.M)) //IS currently space just for testing
+        if (Input.GetKeyUp(KeyCode.Q)) //IS currently space just for testing
         {
             Attack();
         }
@@ -43,7 +50,7 @@ public class PlayerHealer : PlayerParent
         //Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Healer hit" + enemy.name);
+            Debug.Log("Support hit" + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
             //value can be set in brackets TD(20) or can add public int
         }
@@ -64,7 +71,7 @@ public class PlayerHealer : PlayerParent
 
     void Die()
     {
-        Debug.Log("Player Healer died!");
+        Debug.Log("Player Support died!");
 
         //Disable enemy script as they have 'died'
         GetComponent<Collider2D>().enabled = false;
@@ -75,24 +82,17 @@ public class PlayerHealer : PlayerParent
 
 
     /*
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            Heal();
-        }
-    }
-
-    void Heal()
-    {
-
-    }
-
-    */
     public override void PerformAbility()
     {
         base.PerformAbility();
-        Debug.Log("Healing!");
-        //Specific ability related to character
+
+        //if (Input.GetKeyUp(KeyCode.E)) //IS currently space just for testing
+        {
+            //SkillAttack();
+            Debug.Log("Support used skill!");
+        }
+
+
     }
+    */
 }

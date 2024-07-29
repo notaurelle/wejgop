@@ -16,17 +16,37 @@ public class PlayerDPS : PlayerParent
     private int currentHealth;
 
     public int attackDamage = 40;
+    public int attackSkill = 100;
+
+
+    /*
+    private void LateUpdate()
+    {
+        // Lock rotation to ensure the player remains upright
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+    */
+
+
+
     void Start()
     {
         currentHealth = maxHealth;
     }
-    
-    public void TakeDamage(int damage)
+
+    public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("DPS has taken DMG"); 
-    } 
- 
+        Debug.Log("DPS has taken DMG");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
+    }
+
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Q)) //IS currently space just for testing
@@ -63,12 +83,37 @@ public class PlayerDPS : PlayerParent
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 ;   }
 
+    void Die()
+    {
+        Debug.Log("Player DPS died!");
+
+        //Disable enemy script as they have 'died'
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
+    }
+    //??? dafuq
+
+
+
+
     public override void PerformAbility()
     {
         base.PerformAbility();
 
-        Debug.Log("DPS!");
+        //if (Input.GetKeyUp(KeyCode.E)) //IS currently space just for testing
+        {
+            //SkillAttack();
+            Debug.Log("DPS used skill!");
+        }
+
+        
     }
 
-
+    /*
+    void SkillAttack(int damage)
+    {
+        
+    }
+    */
 }

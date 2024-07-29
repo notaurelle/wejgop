@@ -21,6 +21,10 @@ public class AIChase : MonoBehaviour
 
     public int attackDamage = 5;
 
+    //timer
+    public float Timer;
+    public float attackTimer = 3;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -42,17 +46,28 @@ public class AIChase : MonoBehaviour
 
     private void FixedUpdate()
     {
+            Timer += Time.deltaTime;
+            if(Timer >= attackTimer)
+            {
+                attackPlayer();
+                Timer = 0;
+            }
+
+    }
+
+
+    void attackPlayer()
+    {
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
 
         //Damage them
         foreach (Collider2D player in hitPlayers)
         {
             Debug.Log("Mob hit " + player.name);
-            player.GetComponent<AIChase>().TakeDamage(attackDamage);
+            player.GetComponent<PlayerParent>().TakeDamage(attackDamage);
             //value can be set in brackets TD(20) or can add public int
         }
     }
-
 
 
     void Die()
@@ -80,7 +95,7 @@ public class AIChase : MonoBehaviour
             if (distance < distanceBetween)
             {
                 transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
-                transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+                //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
             }
         }
 
