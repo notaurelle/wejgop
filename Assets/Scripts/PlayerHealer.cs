@@ -33,6 +33,13 @@ public class PlayerHealer : PlayerParent
         }
     }
 
+    /*
+    public void TakeDamage(float damageAmount)
+    {
+        Health
+    }
+    */
+
     void Attack()
     {
         //Play Animation
@@ -48,6 +55,7 @@ public class PlayerHealer : PlayerParent
             //value can be set in brackets TD(20) or can add public int
         }
     }
+
 
     //To see attack.
 
