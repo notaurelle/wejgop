@@ -17,6 +17,11 @@ public class PlayerDPS : PlayerParent
 
     public int attackDamage = 40;
     public int attackSkill = 100;
+    public int chargedAttackDamage = 100;
+
+    private int totalDamageDealt = 0;
+    private int damageThreshold = 100;
+    private bool canUseChargedAbility = false;
 
 
     /*
@@ -53,6 +58,11 @@ public class PlayerDPS : PlayerParent
         {
             Attack();
         }
+
+        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.E))
+        {
+            ChargedAttack(); 
+        }
     }
 
     void Attack()
@@ -68,7 +78,32 @@ public class PlayerDPS : PlayerParent
             Debug.Log("DPS hit" + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
             //value can be set in brackets TD(20) or can add public int
+
+            if (totalDamageDealt >= damageThreshold)
+            {
+                canUseChargedAbility = true;
+                Debug.Log("Charged ability is now available!");
+            }
         }
+    }
+
+    void ChargedAttack()
+    {
+        // Play Charged Attack Animation 
+
+        //Detect enemies in range of Charged attack 
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        //Damage them 
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("DPS Charged attack hit" + enemy.name);
+            enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
+        }
+
+        // Reset ability 
+        canUseChargedAbility = false;
+        totalDamageDealt = 0;
     }
 
     //To see attack.
@@ -105,6 +140,7 @@ public class PlayerDPS : PlayerParent
         {
             //SkillAttack();
             Debug.Log("DPS used skill!");
+            Debug.Log("Charged ATK has been used!");
         }
 
         
