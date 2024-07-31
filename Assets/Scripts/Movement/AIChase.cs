@@ -46,12 +46,12 @@ public class AIChase : MonoBehaviour
 
     private void FixedUpdate()
     {
-            Timer += Time.deltaTime;
-            if(Timer >= attackTimer)
-            {
-                attackPlayer();
-                Timer = 0;
-            }
+        Timer += Time.deltaTime;
+        if (Timer >= attackTimer)
+        {
+            attackPlayer();
+            Timer = 0;
+        }
 
     }
 
@@ -77,6 +77,7 @@ public class AIChase : MonoBehaviour
         //Disable enemy script as they have 'died'
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        gameObject.SetActive(false);
 
     }
 

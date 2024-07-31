@@ -12,16 +12,20 @@ public class PlayerSupport : PlayerParent
     public int maxHealth = 1000;
     private int currentHealth;
 
+    public HealthBar healthBar;
+
     public int attackDamage = 40;
     public int attackSkill = 100;
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         Debug.Log("Support has taken DMG");
 
         if (currentHealth <= 0)

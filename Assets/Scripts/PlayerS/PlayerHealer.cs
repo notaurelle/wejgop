@@ -13,15 +13,19 @@ public class PlayerHealer : PlayerParent
     public int maxHealth = 2000;
     private int currentHealth;
 
+    public HealthBar healthBar;
+
     public int attackDamage = 15;
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         Debug.Log("Healer has taken DMG");
     }
 
