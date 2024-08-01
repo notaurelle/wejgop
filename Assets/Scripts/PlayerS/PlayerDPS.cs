@@ -19,7 +19,7 @@ public class PlayerDPS : PlayerParent
     public HealthBar healthBar;
 
     public int attackDamage = 40;
-    public int attackSkill = 100;
+    public int attackSkill = 100; // DMG for charged ATK
     //public int chargedAttackDamage = 100;
 
 
@@ -90,7 +90,7 @@ public class PlayerDPS : PlayerParent
             if (totalDamageDealt >= damageThreshold)
             {
                 canUseChargedAbility = true;
-                Debug.Log("Charged ability is now available!");
+                Debug.Log("DPS Charged ability is now available!");
             }
         }
     }

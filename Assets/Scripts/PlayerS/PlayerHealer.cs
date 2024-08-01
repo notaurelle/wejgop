@@ -16,6 +16,14 @@ public class PlayerHealer : PlayerParent
     public HealthBar healthBar;
 
     public int attackDamage = 15;
+    public int attackSkill  = 30; //DMG for charged ATK 
+ 
+
+    private int totalDamageDealt = 0;
+    private int damageThreshold = 120;  //Set Value
+    private bool canUseChargedAbility = false;
+    
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -27,13 +35,23 @@ public class PlayerHealer : PlayerParent
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         Debug.Log("Healer has taken DMG");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.M)) //IS currently space just for testing
+        if (Input.GetKeyUp(KeyCode.KeypadPeriod)) //IS currently space just for testing
         {
             Attack();
+        }
+
+        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.KeypadEnter))
+        {
+            PerformAbility();
         }
     }
 
@@ -57,9 +75,16 @@ public class PlayerHealer : PlayerParent
             Debug.Log("Healer hit" + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
             //value can be set in brackets TD(20) or can add public int
+
+            totalDamageDealt += 15;
+
+            if (totalDamageDealt >= damageThreshold)
+            {
+                canUseChargedAbility = true;
+                Debug.Log("Healer Charged ability is now available!");
+            }
         }
     }
-
 
     //To see attack.
 
@@ -71,7 +96,6 @@ public class PlayerHealer : PlayerParent
 
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        ;
     }
 
     void Die()
@@ -81,6 +105,7 @@ public class PlayerHealer : PlayerParent
         //Disable enemy script as they have 'died'
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        this.gameObject.SetActive(false);
 
     }
 
@@ -104,7 +129,24 @@ public class PlayerHealer : PlayerParent
     public override void PerformAbility()
     {
         base.PerformAbility();
-        Debug.Log("Healing!");
-        //Specific ability related to character
+        {
+            //Play charged ATK animation
+
+            //Detect enemies in range of Charged attack 
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            //Damage them 
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("Healer Charged attack hit" + enemy.name);
+                enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
+                // Reset ability 
+                canUseChargedAbility = false;
+                totalDamageDealt = 0;
+
+            }
+        }
+      
+        
     }
 }
