@@ -8,12 +8,16 @@ public class PlayerHealer : PlayerParent
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public LayerMask playerLayers;
 
+
+    public PlayerDPS DPS;
 
     public int maxHealth = 2000;
     private int currentHealth;
 
     public HealthBar healthBar;
+
 
     public int attackDamage = 15;
     public int attackSkill  = 30; //DMG for charged ATK 
@@ -22,12 +26,20 @@ public class PlayerHealer : PlayerParent
     private int totalDamageDealt = 0;
     private int damageThreshold = 120;  //Set Value
     private bool canUseChargedAbility = false;
+
+    public float healingRadius = 3f; // Radius for passive healing 
+    public int healingAmount = +3; //Amount of health to heal per interval
+    public float healingInterval = 1f; // How often to heal (in seconds) 
     
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+
+        //Start healing coroutine
+        //StartCoroutine(PassiveHealing()); 
     }
 
     public override void TakeDamage(int damage)
@@ -52,6 +64,12 @@ public class PlayerHealer : PlayerParent
         if (canUseChargedAbility && Input.GetKeyUp(KeyCode.KeypadEnter))
         {
             PerformAbility();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            HealAlliesInRange();
+            //HealPlayer();
         }
     }
 
@@ -149,4 +167,85 @@ public class PlayerHealer : PlayerParent
       
         
     }
+
+    /*
+    private IEnumerator PassiveHealing()
+    {
+        while (true)
+        {
+            // heal allies within radius
+            HealAlliesInRange();
+
+            //Wait for next healing interval 
+            yield return new WaitForSeconds(healingInterval);
+        }
+    }
+    */
+
+    
+    private void HealAlliesInRange()
+    {
+        //Find all allies within healing radius 
+        Collider2D[] Allies = Physics2D.OverlapCircleAll(transform.position, healingRadius); //changed tag to player layers
+        {
+            foreach (Collider2D ally in Allies)
+            {
+                DPS.currentHealth += 3;
+                Debug.Log("Healed " + DPS.name);
+
+            }
+        }
+        
+    }
+    
+
+    //AURELIA
+    /*
+    public void HealPlayer(int heal)
+    {
+        currentHealth += healingAmount;
+        healthBar.SetHealth(currentHealth);
+        Debug.Log("DPS been healed");
+
+        
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        
+    }
+    */
+
+
+    //NADINE
+    /*
+    private void HealAlliesInRange()
+    {
+        //Find all allies within healing radius 
+        Collider2D[] Allies = Physics2D.OverlapCircleAll(transform.position, healingRadius, playerLayers); //changed tag to player layers
+
+        foreach (Collider2D ally in Allies)
+        {
+            if (ally.CompareTag("Ally") && ally.GetComponent<HealthBar>() != null)
+            {
+                HealthBar allyHealthBar = ally.GetComponent<HealthBar>();
+                if(allyHealthBar != null)
+                {
+                    //Heal ally
+                    currentHealth += 3;
+                    Debug.Log("Healed " + ally.name);
+                }
+            }
+        }
+    }
+    */
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green; 
+        Gizmos.DrawWireSphere(transform.position, healingRadius);
+    }
+    
 }

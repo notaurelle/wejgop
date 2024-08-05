@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MoveWASD : MonoBehaviour
 {
-    public float Speed;
+    // public float Speed; 
     Rigidbody2D Rb;
+    public float speed = 5f; // Default speed value
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,11 @@ public class MoveWASD : MonoBehaviour
         }
 
         Vector2 movement = new Vector2(MovementX, MovementY).normalized;
-        Rb.velocity = movement * Speed;
+        Rb.velocity = movement * speed;
+
+        
+
+     
     }
 }
 

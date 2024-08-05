@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AIChase : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class AIChase : MonoBehaviour
     public float distanceBetween;
 
     private GameObject closestPlayer;
+
+
+    [SerializeField] private Slider slider;
+    public Gradient gradient;
+    public Image fill;
 
 
     public Transform attackPoint;
@@ -25,14 +31,32 @@ public class AIChase : MonoBehaviour
     public float Timer;
     public float attackTimer = 3;
 
+    //stun properties 
+    public bool stunned = false;
+    public float stunDuration = 2f; 
+
+
+    public HealthBar healthBar;
+
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
+    public void UpdateHealthBar(float currentValue, float maxValue)
+    {
+        slider.value = currentValue / maxValue; //checking
+        slider.maxValue = maxHealth;
+        slider.value = currentHealth;
+
+        fill.color = gradient.Evaluate(1f);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         Debug.Log("MOB DMG Player");
 
         if (currentHealth <= 0)
@@ -42,19 +66,18 @@ public class AIChase : MonoBehaviour
 
     }
 
-
-
     private void FixedUpdate()
     {
-        Timer += Time.deltaTime;
-        if (Timer >= attackTimer)
+        if (!stunned)
         {
-            attackPlayer();
-            Timer = 0;
+            Timer += Time.deltaTime;
+            if (Timer >= attackTimer)
+            {
+                attackPlayer();
+                Timer = 0;
+            }
         }
-
     }
-
 
     void attackPlayer()
     {
@@ -69,6 +92,22 @@ public class AIChase : MonoBehaviour
         }
     }
 
+    public void ApplyStun()
+    {
+        if (!stunned)
+        {
+            stunned = true;
+            StartCoroutine(StunCoroutine());
+        }
+    }
+
+    private IEnumerator StunCoroutine()
+    {
+        //Add visual and audio
+        yield return new WaitForSeconds(stunDuration);
+
+        stunned = false;
+    }
 
     void Die()
     {
@@ -99,6 +138,7 @@ public class AIChase : MonoBehaviour
                 //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
             }
         }
+
 
     }
 

@@ -17,6 +17,11 @@ public class PlayerParent : MonoBehaviour
 
     }
 
+    public virtual void HealPlayer(int Heal)
+    {
+
+    }
+
 
 
 
@@ -46,7 +51,7 @@ public class PlayerParent : MonoBehaviour
 
 
 
-private void Update()
+    private void Update()
     {
 
         if (move)

@@ -14,7 +14,7 @@ public class PlayerDPS : PlayerParent
 
 
     public int maxHealth = 1000;
-    private int currentHealth;
+    public int currentHealth;
 
     public HealthBar healthBar;
 
@@ -26,6 +26,8 @@ public class PlayerDPS : PlayerParent
     private int totalDamageDealt = 0; //Changing Value
     private int damageThreshold = 120;  //Set Value
     private bool canUseChargedAbility = false;
+
+   
 
 
     /*
@@ -42,6 +44,7 @@ public class PlayerDPS : PlayerParent
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
     }
 
     public override void TakeDamage(int damage)
@@ -69,6 +72,9 @@ public class PlayerDPS : PlayerParent
         {
             PerformAbility();
         }
+
+        //Call function
+     
     }
 
     void Attack()
@@ -171,6 +177,7 @@ public class PlayerDPS : PlayerParent
             */
         }
 
+       
 
         /*
         //if (Input.GetKeyUp(KeyCode.E)) //IS currently space just for testing
