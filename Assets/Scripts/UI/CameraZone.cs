@@ -18,6 +18,7 @@ public class CameraZone : MonoBehaviour
     public Vector3 newCameraPosition;
 
     public Vector3 newPlayerPosition;
+    //public Vector3 newPosition;
 
     // List to keep track of players within the trigger zone
     private HashSet<Collider2D> playersInZone = new HashSet<Collider2D>();
@@ -27,6 +28,7 @@ public class CameraZone : MonoBehaviour
 
     // Boolean flag to track whether the camera has been switched
     private bool isCameraSwitched = false;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,8 +42,16 @@ public class CameraZone : MonoBehaviour
             // Check if the required number of players are in the zone
             if (playersInZone.Count >= requiredPlayerCount)
             {
+
+                cameraTransform.position = newCameraPosition;
+                Debug.Log("Camera position updated to: " + newCameraPosition);
+                isCameraSwitched = true;
+                RelocatePlayers();
+
+                /*
                 if (!isCameraSwitched)
                 {
+                    
                     // Switch the camera's position
                     if (cameraTransform != null)
                     {
@@ -54,9 +64,12 @@ public class CameraZone : MonoBehaviour
                         Debug.LogWarning("CameraTransform is not assigned.");
                     }
 
+                    
                     // Optionally relocate players
                     RelocatePlayers();
-                }
+                    }
+                */
+                
             }
         }
     }
@@ -81,14 +94,14 @@ public class CameraZone : MonoBehaviour
 
     private void RelocatePlayers()
     {
-        // Implement player relocation logic here if needed
-        // For example:
         Debug.Log("Relocating players to the next area...");
-        Harry.transform.position = newPlayerPosition;
-        Wylla.transform.position = newPlayerPosition;  
-        Cerwyn.transform.position = newPlayerPosition;
 
 
+
+        foreach (Collider2D playerCollider in playersInZone)
+        {
+            playerCollider.transform.position = newPlayerPosition;
+        }
     }
 
     private void ResetCameraPosition()
@@ -96,6 +109,8 @@ public class CameraZone : MonoBehaviour
         // Implement logic to reset the camera to its original position
         // You might need to store the original position somewhere
         Debug.Log("Resetting camera position to the original settings...");
+
+        //not used yet will try later
     }
 }
 
