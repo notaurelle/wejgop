@@ -1,45 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerHealer : PlayerParent
 {
-    //ADDED FROM PlayerDPS Script
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-    public LayerMask playerLayers;
+    public LayerMask enemyLayers; // LayerMask for enemies (not used in healing)
 
-
-    public PlayerDPS DPS;
+    public HealthBar healthBar; // Reference to the HealthBar script
 
     public int maxHealth = 2000;
     private int currentHealth;
 
-    public HealthBar healthBar;
-
-
     public int attackDamage = 15;
-    public int attackSkill  = 30; //DMG for charged ATK 
- 
+    public int attackSkill = 30; // DMG for charged ATK 
 
     private int totalDamageDealt = 0;
-    private int damageThreshold = 120;  //Set Value
+    private int damageThreshold = 120; // Set Value
     private bool canUseChargedAbility = false;
 
-    public float healingRadius = 3f; // Radius for passive healing 
-    public int healingAmount = +3; //Amount of health to heal per interval
+    public float healingRadius = 3f; // Radius for healing
+    public int healingAmount = 20; // Amount of health to heal per interval
     public float healingInterval = 1f; // How often to heal (in seconds) 
-    
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-
-        //Start healing coroutine
-        //StartCoroutine(PassiveHealing()); 
+        // Start healing coroutine
+        StartCoroutine(PassiveHealing());
     }
 
     public override void TakeDamage(int damage)
@@ -56,45 +46,29 @@ public class PlayerHealer : PlayerParent
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.KeypadPeriod)) //IS currently space just for testing
+        if (Input.GetKeyUp(KeyCode.Quote)) // Change KeyCode as needed
         {
             Attack();
         }
 
-        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.KeypadEnter))
+        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.Return))
         {
             PerformAbility();
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            HealAlliesInRange();
-            //HealPlayer();
-        }
     }
-
-    /*
-    public void TakeDamage(float damageAmount)
-    {
-        Health
-    }
-    */
 
     void Attack()
     {
-        //Play Animation
-
-        //Detect enemies in range of attack
+        // Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        //Damage them
+        // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Healer hit" + enemy.name);
+            Debug.Log("Healer hit " + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
-            //value can be set in brackets TD(20) or can add public int
 
-            totalDamageDealt += 15;
+            totalDamageDealt += attackDamage;
 
             if (totalDamageDealt >= damageThreshold)
             {
@@ -104,148 +78,69 @@ public class PlayerHealer : PlayerParent
         }
     }
 
-    //To see attack.
-
-    void OnDrawGizmosSelected()
-    {
-
-        if (attackPoint == null)
-            return;
-
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
-
-    void Die()
-    {
-        Debug.Log("Player Healer died!");
-
-        //Disable enemy script as they have 'died'
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        this.gameObject.SetActive(false);
-
-    }
-
-
-
-    /*
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            Heal();
-        }
-    }
-
-    void Heal()
-    {
-
-    }
-
-    */
     public override void PerformAbility()
     {
         base.PerformAbility();
+        // Play charged ATK animation
+
+        // Detect enemies in range of Charged attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Damage them
+        foreach (Collider2D enemy in hitEnemies)
         {
-            //Play charged ATK animation
+            Debug.Log("Healer Charged attack hit " + enemy.name);
+            enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
 
-            //Detect enemies in range of Charged attack 
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            //Damage them 
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                Debug.Log("Healer Charged attack hit" + enemy.name);
-                enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
-                // Reset ability 
-                canUseChargedAbility = false;
-                totalDamageDealt = 0;
-
-            }
-        }
-      
-        
-    }
-
-    /*
-    private IEnumerator PassiveHealing()
-    {
-        while (true)
-        {
-            // heal allies within radius
-            HealAlliesInRange();
-
-            //Wait for next healing interval 
-            yield return new WaitForSeconds(healingInterval);
+            // Reset ability
+            canUseChargedAbility = false;
+            totalDamageDealt = 0;
         }
     }
-    */
 
-    
     private void HealAlliesInRange()
     {
-        //Find all allies within healing radius 
-        Collider2D[] Allies = Physics2D.OverlapCircleAll(transform.position, healingRadius); //changed tag to player layers
+        // Find all GameObjects within the healing radius
+        Collider2D[] allies = Physics2D.OverlapCircleAll(transform.position, healingRadius);
+
+        foreach (Collider2D ally in allies)
         {
-            foreach (Collider2D ally in Allies)
-            {
-                DPS.currentHealth += 3;
-                Debug.Log("Healed " + DPS.name);
-
-            }
-        }
-        
-    }
-    
-
-    //AURELIA
-    /*
-    public void HealPlayer(int heal)
-    {
-        currentHealth += healingAmount;
-        healthBar.SetHealth(currentHealth);
-        Debug.Log("DPS been healed");
-
-        
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        
-    }
-    */
-
-
-    //NADINE
-    /*
-    private void HealAlliesInRange()
-    {
-        //Find all allies within healing radius 
-        Collider2D[] Allies = Physics2D.OverlapCircleAll(transform.position, healingRadius, playerLayers); //changed tag to player layers
-
-        foreach (Collider2D ally in Allies)
-        {
-            if (ally.CompareTag("Ally") && ally.GetComponent<HealthBar>() != null)
+            if (ally.CompareTag("Ally")) // Check if the ally has the "Ally" tag
             {
                 HealthBar allyHealthBar = ally.GetComponent<HealthBar>();
-                if(allyHealthBar != null)
+                if (allyHealthBar != null)
                 {
-                    //Heal ally
-                    currentHealth += 3;
+                    // Increase ally's health, but do not exceed max health
+                    int newHealth = Mathf.Min((int)allyHealthBar.slider.maxValue, (int)allyHealthBar.slider.value + healingAmount);
+                    allyHealthBar.SetHealth(newHealth);
                     Debug.Log("Healed " + ally.name);
                 }
             }
         }
     }
-    */
 
+    private IEnumerator PassiveHealing()
+    {
+        while (true)
+        {
+            HealAlliesInRange();
+            yield return new WaitForSeconds(healingInterval);
+        }
+    }
 
+    private void Die()
+    {
+        Debug.Log("Player Healer died!");
+
+        // Disable the script and collider
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+        this.gameObject.SetActive(false);
+    }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green; 
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, healingRadius);
     }
-    
 }

@@ -8,7 +8,6 @@ public class PlayerSupport : PlayerParent
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
-
     public int maxHealth = 1000;
     private int currentHealth;
 
@@ -17,10 +16,9 @@ public class PlayerSupport : PlayerParent
     public int attackDamage = 40;
     public int attackSkill = 100;
 
-    private int totalDamageDealt = 0; //Changing Value
-    private int damageThreshold = 120;  //Set Value
+    private int totalDamageDealt = 0; // Tracks total damage dealt
+    private int damageThreshold = 120;  // Damage needed to activate charged ability
     private bool canUseChargedAbility = false;
-
 
     void Start()
     {
@@ -38,19 +36,17 @@ public class PlayerSupport : PlayerParent
         {
             Die();
         }
-
     }
-
 
     private void Update()
     {
-        // Check if the Cross button (✕) is pressed for attack
+        // Check if the Fire1 button is pressed for attack
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
         }
 
-        // Check if the Triangle button (△) is pressed for the charged ability
+        // Check if the Fire3 button is pressed for the charged ability
         if (canUseChargedAbility && Input.GetButtonDown("Fire3"))
         {
             PerformAbility();
@@ -59,9 +55,10 @@ public class PlayerSupport : PlayerParent
 
     void Attack()
     {
-        //animation
+        // Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
+        // Damage enemies and track total damage dealt
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Support hit " + enemy.name);
@@ -70,18 +67,22 @@ public class PlayerSupport : PlayerParent
             {
                 aiChase.TakeDamage(attackDamage);
                 aiChase.ApplyStun();
+                totalDamageDealt += attackDamage; // Track the total damage dealt
+
+                // Check if the threshold is reached
+                if (totalDamageDealt >= damageThreshold)
+                {
+                    canUseChargedAbility = true;
+                    Debug.Log("Charged ability is now available!");
+                }
             }
         }
     }
 
-    //To see attack.
-
     void OnDrawGizmosSelected()
     {
-
         if (attackPoint == null)
             return;
-
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
@@ -90,31 +91,35 @@ public class PlayerSupport : PlayerParent
     {
         Debug.Log("Player Support died!");
 
-        //Disable enemy script as they have 'died'
+        // Disable the script and collider
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        this.gameObject.SetActive(false);
+    }
 
+    public override void PerformAbility()
+    {
+        Debug.Log("Support used charged ability!");
+
+        // Detect enemies in range of charged attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            AIChase aiChase = enemy.GetComponent<AIChase>();
+            if (aiChase != null)
+            {
+                aiChase.TakeDamage(attackSkill); // Deal charged attack damage
+                aiChase.ApplyStun();
+            }
+        }
+
+        // Reset damage tracking and charged ability flag
+        totalDamageDealt = 0;
+        canUseChargedAbility = false;
     }
 
     void PassiveAbility()
     {
-
+        // Implement passive ability logic here if needed
     }
-
-
-
-    /*
-    public override void PerformAbility()
-    {
-        base.PerformAbility();
-
-        //if (Input.GetKeyUp(KeyCode.E)) //IS currently space just for testing
-        {
-            //SkillAttack();
-            Debug.Log("Support used skill!");
-        }
-
-
-    }
-    */
 }
