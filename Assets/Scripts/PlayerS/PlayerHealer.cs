@@ -9,6 +9,8 @@ public class PlayerHealer : PlayerParent
 
     public HealthBar healthBar; // Reference to the HealthBar script
 
+    public GameObject skillImage;
+
     public int maxHealth = 2000;
     private int currentHealth;
 
@@ -73,6 +75,7 @@ public class PlayerHealer : PlayerParent
             if (totalDamageDealt >= damageThreshold)
             {
                 canUseChargedAbility = true;
+                skillImage.SetActive(true);
                 Debug.Log("Healer Charged ability is now available!");
             }
         }
@@ -94,7 +97,9 @@ public class PlayerHealer : PlayerParent
 
             // Reset ability
             canUseChargedAbility = false;
+            skillImage.SetActive(false);
             totalDamageDealt = 0;
+
         }
     }
 

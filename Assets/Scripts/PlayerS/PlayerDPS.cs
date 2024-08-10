@@ -16,6 +16,8 @@ public class PlayerDPS : PlayerParent
     public int maxHealth = 1000;
     public int currentHealth;
 
+    public GameObject skillImage;
+
     public HealthBar healthBar;
 
     public int attackDamage = 40;
@@ -52,6 +54,7 @@ public class PlayerDPS : PlayerParent
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         Debug.Log("DPS has taken DMG");
+        //color
 
         if (currentHealth <= 0)
         {
@@ -96,6 +99,7 @@ public class PlayerDPS : PlayerParent
             if (totalDamageDealt >= damageThreshold)
             {
                 canUseChargedAbility = true;
+                skillImage.SetActive(true);
                 Debug.Log("DPS Charged ability is now available!");
             }
         }
@@ -166,6 +170,7 @@ public class PlayerDPS : PlayerParent
                 enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
                 // Reset ability 
                 canUseChargedAbility = false;
+                skillImage.SetActive(false);
                 totalDamageDealt = 0;
 
             }

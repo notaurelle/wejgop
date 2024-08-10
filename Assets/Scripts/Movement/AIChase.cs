@@ -21,6 +21,8 @@ public class AIChase : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask playerLayers;
 
+    public GameObject mobHP;
+
     public int maxHealth = 100;
     private int currentHealth;
 
@@ -117,6 +119,7 @@ public class AIChase : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         gameObject.SetActive(false);
+        mobHP.SetActive(false);
 
     }
 
@@ -131,11 +134,14 @@ public class AIChase : MonoBehaviour
             Vector2 direction = closestPlayer.transform.position - transform.position;
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            
+
 
             if (distance < distanceBetween)
             {
                 transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
                 //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+                mobHP.SetActive(true);
             }
         }
 
@@ -149,6 +155,7 @@ public class AIChase : MonoBehaviour
 
         foreach (GameObject player in players)
         {
+            //mobHP.SetActive(true);
             float distance = Vector2.Distance(transform.position, player.transform.position);
             if (distance < minDistance)
             {
