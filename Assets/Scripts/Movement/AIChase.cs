@@ -35,10 +35,13 @@ public class AIChase : MonoBehaviour
 
     //stun properties 
     public bool stunned = false;
-    public float stunDuration = 2f; 
-
+    public float stunDuration = 2f;
 
     public HealthBar healthBar;
+
+    // quest tingz
+    public QuestGoal questGoal;
+    // public Quest quest; //reference to quest 
 
     void Start()
     {
@@ -113,57 +116,78 @@ public class AIChase : MonoBehaviour
 
     void Die()
     {
+        /* Debug.Log("Enemy died!");
+
+         // Notify the quest system that the mob has been killed 
+         if(questGoal != null)
+         {
+             questGoal.EnemyKilled(gameObject);
+         }
+
+         //Disable enemy script as they have 'died'
+         GetComponent<Collider2D>().enabled = false;
+         this.enabled = false;
+         gameObject.SetActive(false);
+         mobHP.SetActive(false); */
+
         Debug.Log("Enemy died!");
 
-        //Disable enemy script as they have 'died'
+        // Notify the quest system that the mob has been killed
+        if (questGoal != null)
+        {
+            questGoal.EnemyKilled(gameObject.tag); // Pass the tag of the GameObject
+        }
+
+        // Disable enemy script and object
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         gameObject.SetActive(false);
         mobHP.SetActive(false);
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        closestPlayer = GetClosestPlayer();
 
-        if (closestPlayer != null)
+        // Update is called once per frame
+        void Update()
         {
-            float distance = Vector2.Distance(transform.position, closestPlayer.transform.position);
-            Vector2 direction = closestPlayer.transform.position - transform.position;
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            
+            closestPlayer = GetClosestPlayer();
 
-
-            if (distance < distanceBetween)
+            if (closestPlayer != null)
             {
-                transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
-                //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-                mobHP.SetActive(true);
+                float distance = Vector2.Distance(transform.position, closestPlayer.transform.position);
+                Vector2 direction = closestPlayer.transform.position - transform.position;
+                direction.Normalize();
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+
+
+                if (distance < distanceBetween)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
+                    //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+                    mobHP.SetActive(true);
+                }
             }
+
+
         }
 
-
-    }
-
-    GameObject GetClosestPlayer()
-    {
-        GameObject closest = null;
-        float minDistance = float.MaxValue;
-
-        foreach (GameObject player in players)
+        GameObject GetClosestPlayer()
         {
-            //mobHP.SetActive(true);
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closest = player;
-            }
-        }
+            GameObject closest = null;
+            float minDistance = float.MaxValue;
 
-        return closest;
+            foreach (GameObject player in players)
+            {
+                //mobHP.SetActive(true);
+                float distance = Vector2.Distance(transform.position, player.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closest = player;
+                }
+            }
+
+            return closest;
+        }
     }
-}
+

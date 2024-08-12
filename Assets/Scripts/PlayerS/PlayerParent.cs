@@ -8,9 +8,14 @@ public class PlayerParent : MonoBehaviour
     public bool move; // this doesnt make layer move it only sets this active
     public Sprite[] frames;
     private Vector2 moveInputValue;
-    AIChase aiChase;
+    public AIChase aiChase;
+    public int candy;
+
+    //Quests
+    //public Quest quest;
+
     //Movement here.
-   
+
 
     public virtual void TakeDamage(int Damage)
     {
@@ -22,34 +27,20 @@ public class PlayerParent : MonoBehaviour
 
     }
 
-
-
-
     /*
-    private void OnTriggerEnter2D(Collider2D other)
+    public void GoBattle()
     {
-        // Check if the other GameObject has the tag "Enemy"
-        if (other.CompareTag("Enemy"))
+        if (quest.isActive)
         {
-            aiChase.enabled = false;
+            quest.Goal.EnemyKilled();
+            if (quest.Goal.IsReached())
+            {
+                candy += quest.candyReward;
+            }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        // Optional: Unfreeze the Rigidbody2D when the enemy exits the trigger
-        if (other.CompareTag("Enemy"))
-        {
-            aiChase.enabled = true;
-        }
+        
     }
     */
-
-
-
-
-
-
 
     private void Update()
     {
@@ -67,7 +58,7 @@ public class PlayerParent : MonoBehaviour
     private void OnMove(InputValue value)
     {
         Debug.Log("plz work");
-        moveInputValue = value.Get<Vector2>(); 
+        moveInputValue = value.Get<Vector2>();
     }
 
     private void MoveLogic()
@@ -86,4 +77,5 @@ public class PlayerParent : MonoBehaviour
         Debug.Log("animate me daddy");
     }
 
+    
 }

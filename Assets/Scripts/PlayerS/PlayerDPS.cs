@@ -17,6 +17,7 @@ public class PlayerDPS : PlayerParent
     public int currentHealth;
 
     public GameObject skillImage;
+    public Color newColor = Color.red;
 
     public HealthBar healthBar;
 
@@ -29,16 +30,9 @@ public class PlayerDPS : PlayerParent
     private int damageThreshold = 120;  //Set Value
     private bool canUseChargedAbility = false;
 
-   
 
-
-    /*
-    private void LateUpdate()
-    {
-        // Lock rotation to ensure the player remains upright
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-    }
-    */
+    //Quests
+    public Quest quest;
 
 
 
@@ -54,7 +48,7 @@ public class PlayerDPS : PlayerParent
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         Debug.Log("DPS has taken DMG");
-        //color
+        //spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (currentHealth <= 0)
         {
@@ -105,28 +99,27 @@ public class PlayerDPS : PlayerParent
         }
     }
 
-    /*
-    void ChargedAttack()
+    public void GoBattle()
     {
-        // Play Charged Attack Animation 
-
-        //Detect enemies in range of Charged attack 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        //Damage them 
-        foreach(Collider2D enemy in hitEnemies)
+        if (quest != null && quest.isActive)
         {
-            Debug.Log("DPS Charged attack hit" + enemy.name);
-            enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
+            // Pass the tag of the enemy to the QuestGoal
+            if (quest.Goal != null)
+            {
+                quest.Goal.EnemyKilled(gameObject.tag); // Pass the tag instead of the gameObject
+
+                if (quest.Goal.IsReached())
+                {
+                    // Reward the player
+                    candy += quest.candyReward; // Ensure 'candy' is defined in the context
+
+                    // Complete the quest
+                    quest.Complete();
+                }
+            }
         }
-
-        // Reset ability 
-        canUseChargedAbility = false;
-        totalDamageDealt = 0;
     }
-    */
-
-    //To see attack.
+    
 
     void OnDrawGizmosSelected()
     {
@@ -175,30 +168,8 @@ public class PlayerDPS : PlayerParent
 
             }
 
-            /*
-            // Reset ability 
-            canUseChargedAbility = false;
-            totalDamageDealt = 0;
-            */
         }
-
-       
-
-        /*
-        //if (Input.GetKeyUp(KeyCode.E)) //IS currently space just for testing
-        {
-            //SkillAttack();
-            Debug.Log("DPS used skill!");
-            Debug.Log("Charged ATK has been used!");
-        }
-        */
 
     }
 
-    /*
-    void SkillAttack(int damage)
-    {
-        
-    }
-    */
 }

@@ -25,6 +25,9 @@ public class PlayerHealer : PlayerParent
     public int healingAmount = 20; // Amount of health to heal per interval
     public float healingInterval = 1f; // How often to heal (in seconds) 
 
+    //quest
+    public Quest quest;
+
     void Start()
     {
         currentHealth = maxHealth;

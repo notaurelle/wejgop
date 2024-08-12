@@ -20,6 +20,9 @@ public class PlayerSupport : PlayerParent
     private int damageThreshold = 120;  // Damage needed to activate charged ability
     private bool canUseChargedAbility = false;
 
+    //quest
+    public Quest quest;
+
     void Start()
     {
         currentHealth = maxHealth;
