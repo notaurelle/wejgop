@@ -96,6 +96,8 @@ public class PlayerDPS : PlayerParent
                 skillImage.SetActive(true);
                 Debug.Log("DPS Charged ability is now available!");
             }
+            // notifies quest system
+            GoBattle();
         }
     }
 
@@ -106,7 +108,7 @@ public class PlayerDPS : PlayerParent
             // Pass the tag of the enemy to the QuestGoal
             if (quest.Goal != null)
             {
-                quest.Goal.EnemyKilled(gameObject.tag); // Pass the tag instead of the gameObject
+                quest.Goal.EnemyKilled(gameObject); // Pass the tag instead of the gameObject
 
                 if (quest.Goal.IsReached())
                 {

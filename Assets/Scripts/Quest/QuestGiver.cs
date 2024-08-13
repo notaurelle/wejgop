@@ -6,18 +6,7 @@ using UnityEngine.UI;
 public class QuestGiver : MonoBehaviour
 {
     public Quest quest;
-    //Player Reference
-    public PlayerDPS Harry; //this script is using Harry.
-    public PlayerHealer Wylla;
-    public PlayerSupport Cerwyn;
-    public PlayerParent Player; 
-    
-
     public AIChase Mob;
-
-    
-
-
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
@@ -27,13 +16,13 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(true);
         titleText.text = quest.title;
-        descriptionText.text = quest.description;   
+        descriptionText.text = quest.description;
         Mob.gameObject.SetActive(false);
     }
 
     public void CloseQuestWindow()
     {
-        questWindow.SetActive (false);
+        questWindow.SetActive(false);
         Mob.gameObject.SetActive(true);
     }
 
@@ -41,23 +30,20 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
-        Mob.gameObject.SetActive(true);
-
-        // Assign the quest to each referenced player
-        if (Harry != null)
+        if (Mob != null)
         {
-            Harry.quest = quest;
+            Mob.gameObject.SetActive(true); //Ensure mob is active
         }
+    }
 
-        if (Wylla != null)
+    //Method to handle enemy kill from mob
+    public void HandleEnemyKill(GameObject killedEnemy)
+    {
+        if(quest != null && quest.Goal != null)
         {
-            Wylla.quest = quest;
-        }
-
-        if (Cerwyn != null)
-        {
-            Cerwyn.quest = quest;
+            quest.Goal.EnemyKilled(killedEnemy);
         }
     }
 }
+
 

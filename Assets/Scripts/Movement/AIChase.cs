@@ -130,12 +130,12 @@ public class AIChase : MonoBehaviour
          gameObject.SetActive(false);
          mobHP.SetActive(false); */
 
-        Debug.Log("Enemy died!");
+        Debug.Log("Enemy died with layer: " + LayerMask.LayerToName(gameObject.layer));
 
         // Notify the quest system that the mob has been killed
         if (questGoal != null)
         {
-            questGoal.EnemyKilled(gameObject.tag); // Pass the tag of the GameObject
+            questGoal.EnemyKilled(gameObject); // Pass the tag of the GameObject
         }
 
         // Disable enemy script and object
