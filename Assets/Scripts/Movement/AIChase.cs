@@ -67,6 +67,7 @@ public class AIChase : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            //questGoal.currentAmount += 1;
         }
 
     }
@@ -135,7 +136,7 @@ public class AIChase : MonoBehaviour
         // Notify the quest system that the mob has been killed
         if (questGoal != null)
         {
-            questGoal.EnemyKilled(gameObject); // Pass the tag of the GameObject
+            questGoal.EnemyKilled(); // Pass the tag of the GameObject (gameObject)
         }
 
         // Disable enemy script and object

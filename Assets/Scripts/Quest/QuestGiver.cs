@@ -17,7 +17,8 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
-        Mob.gameObject.SetActive(false);
+        //Mob.gameObject.SetActive(false);
+        Mob.enabled = false;
     }
 
     public void CloseQuestWindow()
@@ -36,6 +37,7 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    /*
     //Method to handle enemy kill from mob
     public void HandleEnemyKill(GameObject killedEnemy)
     {
@@ -44,6 +46,7 @@ public class QuestGiver : MonoBehaviour
             quest.Goal.EnemyKilled(killedEnemy);
         }
     }
+    */
 }
 
 

@@ -36,6 +36,13 @@ public class PlayerDPS : PlayerParent
 
 
 
+    //public int candy;
+    public AIChase mob;
+
+
+
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -97,10 +104,26 @@ public class PlayerDPS : PlayerParent
                 Debug.Log("DPS Charged ability is now available!");
             }
             // notifies quest system
-            GoBattle();
+            //GoBattle();
         }
     }
 
+    // Add the below function to AIChase script?
+    public void GoBattle()
+    {
+        if (quest.isActive)
+        {
+            quest.Goal.EnemyKilled();
+            if (quest.Goal.IsReached())
+            {
+                candy += quest.candyReward;
+
+                quest.Complete();
+            }
+        }
+    }
+
+    /*
     public void GoBattle()
     {
         if (quest != null && quest.isActive)
@@ -121,6 +144,7 @@ public class PlayerDPS : PlayerParent
             }
         }
     }
+    */
     
 
     void OnDrawGizmosSelected()
