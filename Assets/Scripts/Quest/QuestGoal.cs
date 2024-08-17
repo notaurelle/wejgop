@@ -12,13 +12,16 @@ public class QuestGoal: MonoBehaviour
     public int currentAmount; // Current progress
     //public LayerMask enemyLayer; // layer to identify the type of enemy
 
+    public int ID {  get;  set; }
+    public AIChase mob;
+
     public int enemyLayer;  // The specific layer number you want to check
     
 
     public void EnemyKilled()
     {
         // Check if the killed enemy is on the correct layer
-        if (goalType == GoalType.Kill)
+        if (ID == 0)
         {
             currentAmount++;
 

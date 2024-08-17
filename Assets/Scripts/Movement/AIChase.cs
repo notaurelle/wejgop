@@ -41,12 +41,14 @@ public class AIChase : MonoBehaviour
 
     // quest tingz
     public QuestGoal questGoal;
+    public int ID { get; set; }
     // public Quest quest; //reference to quest 
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        ID = 0;
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)

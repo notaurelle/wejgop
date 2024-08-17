@@ -17,8 +17,8 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
-        //Mob.gameObject.SetActive(false);
-        Mob.enabled = false;
+        Mob.gameObject.SetActive(false);
+        //Mob.enabled = false;
     }
 
 
