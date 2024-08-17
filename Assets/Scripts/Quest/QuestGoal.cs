@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [System.Serializable]
-public class QuestGoal
+public class QuestGoal: MonoBehaviour
 {
     public GoalType goalType; // Type of quest goal (e.g., Kill)
     public int requiredAmount = 1; // Number of kills required
@@ -13,50 +13,7 @@ public class QuestGoal
     //public LayerMask enemyLayer; // layer to identify the type of enemy
 
     public int enemyLayer;  // The specific layer number you want to check
-
-
-    // Call this method when an enemy is killed
-
-    /*
-    public void EnemyKilled(GameObject killedEnemy)
-    {
-        // Check if the killed enemy is on the correct layer
-        if ((enemyLayer & (1 << killedEnemy.layer)) != 0)
-        {
-            currentAmount++;
-            Debug.Log("EnemyKilled called. Killed enemy with layer: " + LayerMask.LayerToName(killedEnemy.layer));
-            Debug.Log("Current amount updated: " + currentAmount);
-            if (IsReached())
-            {
-                Debug.Log("Goal Reached!");
-                // Handle quest completion
-            }
-            else
-            {
-                Debug.LogWarning("EnemyKilled called but enemy layer does not match.");
-            }
-        }
-    }
-    */
-
-    /*
-    public void EnemyKilled(GameObject Mob)
-    {
-        // Check if the killed enemy is on the correct layer
-        if (Mob.layer == enemyLayer)
-        {
-            currentAmount++;
-
-
-            if (IsReached())
-            {
-                Debug.Log("Goal Reached!");
-                // Handle quest completion
-            }
-
-        }
-    }
-    */
+    
 
     public void EnemyKilled()
     {

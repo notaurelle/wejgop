@@ -21,6 +21,7 @@ public class QuestGiver : MonoBehaviour
         Mob.enabled = false;
     }
 
+
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
