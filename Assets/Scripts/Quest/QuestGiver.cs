@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +11,28 @@ public class QuestGiver : MonoBehaviour
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
+    public GameObject questButton;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ally"))
+        {
+            questButton.SetActive(true);
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Ally"))
+        {
+            questButton.SetActive(false);
+        }
+    }
 
 
     public void OpenQuestWindow()
-    {
+    { 
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;

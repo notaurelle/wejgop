@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        Debug.Log("Health updated: " + health);
+        //Debug.Log("Health updated: " + health);
     }
 
     // Get the current health value from the slider

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security;
+using System.Threading;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -12,24 +13,45 @@ public class QuestGoal: MonoBehaviour
     public int currentAmount; // Current progress
     //public LayerMask enemyLayer; // layer to identify the type of enemy
 
-    public int ID {  get;  set; }
-    public AIChase mob;
+    //public int ID {  get;  set; }
+    public GameObject sign;
+    public Quest quest;
+    public Teleport teleport;
 
-    public int enemyLayer;  // The specific layer number you want to check
-    
+    //timer
+    public float Timer;
+    public float MaxTimer = 5;
+
+
 
     public void EnemyKilled()
     {
         // Check if the killed enemy is on the correct layer
-        if (ID == 0)
-        {
+        //if (ID == 0)
+        //{
             currentAmount++;
 
+        if (IsReached())
+        {
+            Debug.Log("Goal Reached!");
+            // Handle quest completion
+            teleport.gameObject.SetActive(true);
+            Debug.Log("Teleport is now active!");
+            quest.Complete();
+        }
 
-            if (IsReached())
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (IsReached())
+        {
+            sign.gameObject.SetActive(true);
+            Timer += Time.deltaTime;
+            if (Timer >= MaxTimer)
             {
-                Debug.Log("Goal Reached!");
-                // Handle quest completion
+                sign.gameObject.SetActive(false);
             }
 
         }

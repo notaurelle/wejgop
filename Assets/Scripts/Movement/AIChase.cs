@@ -140,6 +140,8 @@ public class AIChase : MonoBehaviour
         {
             questGoal.EnemyKilled(); // Pass the tag of the GameObject (gameObject)
         }
+        else
+            Debug.Log("There is no quest goal set.");
 
         // Disable enemy script and object
         GetComponent<Collider2D>().enabled = false;

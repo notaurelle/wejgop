@@ -12,13 +12,14 @@ public class Quest
     public string description;
     public int candyReward;
 
-    public QuestGoal Goal;
-    public GameObject sign;
+   public QuestGoal Goal;
+
 
     public void Complete()
     {
         isActive = false;
-        Debug.Log(title + " was complete!");
-        sign.gameObject.SetActive(true);
+        Debug.Log(title + "This quest was completed");
+        candyReward++;
+
     }
 }

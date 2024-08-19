@@ -41,7 +41,7 @@ public class PlayerHealer : PlayerParent
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        Debug.Log("Healer has taken DMG");
+        //Debug.Log("Healer has taken DMG");
 
         if (currentHealth <= 0)
         {
@@ -70,7 +70,7 @@ public class PlayerHealer : PlayerParent
         // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Healer hit " + enemy.name);
+            //Debug.Log("Healer hit " + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
 
             totalDamageDealt += attackDamage;
@@ -79,7 +79,7 @@ public class PlayerHealer : PlayerParent
             {
                 canUseChargedAbility = true;
                 skillImage.SetActive(true);
-                Debug.Log("Healer Charged ability is now available!");
+                // Debug.Log("Healer Charged ability is now available!");
             }
         }
     }
@@ -95,7 +95,7 @@ public class PlayerHealer : PlayerParent
         // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Healer Charged attack hit " + enemy.name);
+            //Debug.Log("Healer Charged attack hit " + enemy.name);
             enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
 
             // Reset ability
@@ -121,7 +121,7 @@ public class PlayerHealer : PlayerParent
                     // Increase ally's health, but do not exceed max health
                     int newHealth = Mathf.Min((int)allyHealthBar.slider.maxValue, (int)allyHealthBar.slider.value + healingAmount);
                     allyHealthBar.SetHealth(newHealth);
-                    Debug.Log("Healed " + ally.name);
+                    //Debug.Log("Healed " + ally.name);
                 }
             }
         }
