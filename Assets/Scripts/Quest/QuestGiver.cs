@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class QuestGiver : MonoBehaviour
 {
     public Quest quest;
+    public QuestGoal goal;
     public AIChase Mob;
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
     public GameObject questButton;
+
+
+    //trying something out - aurelia
+    public GameObject progressTracker;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -51,9 +56,11 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
+        //progressTracker.gameObject.SetActive(true); - trying something out - aurelia
         if (Mob != null)
         {
             Mob.gameObject.SetActive(true); //Ensure mob is active
+            
         }
     }
 

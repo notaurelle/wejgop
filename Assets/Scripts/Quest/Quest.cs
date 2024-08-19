@@ -10,9 +10,14 @@ public class Quest
 
     public string title;
     public string description;
+    public string requiredAmount;
+    public string currentAmount;
     public int candyReward;
 
-   public QuestGoal Goal;
+    public GameObject progressTracker;
+
+    public QuestGoal Goal;
+
 
 
     public void Complete()
@@ -20,6 +25,7 @@ public class Quest
         isActive = false;
         Debug.Log(title + "This quest was completed");
         candyReward++;
+
 
     }
 }

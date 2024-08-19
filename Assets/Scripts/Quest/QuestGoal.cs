@@ -4,6 +4,7 @@ using System.Security;
 using System.Threading;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class QuestGoal: MonoBehaviour
@@ -11,7 +12,13 @@ public class QuestGoal: MonoBehaviour
     public GoalType goalType; // Type of quest goal (e.g., Kill)
     public int requiredAmount = 1; // Number of kills required
     public int currentAmount; // Current progress
-    //public LayerMask enemyLayer; // layer to identify the type of enemy
+
+    /*
+    //progress tracker - trying out something Aurelia
+    public Text requiredAmountText;
+    public Text currentAmountText;
+    public GameObject progressTracker;
+    */
 
     //public int ID {  get;  set; }
     public GameObject sign;
@@ -42,6 +49,17 @@ public class QuestGoal: MonoBehaviour
 
         
     }
+
+    /* - trying something out Aurelia
+    public void Progress()
+    {
+        //progressTracker.SetActive(true);
+        requiredAmountText.text = quest.requiredAmount.ToString();
+        currentAmountText.text = quest.currentAmount.ToString();
+
+    }
+    */
+
 
     private void FixedUpdate()
     {
