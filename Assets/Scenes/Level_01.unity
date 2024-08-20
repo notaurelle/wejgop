@@ -10188,7 +10188,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 1281
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: c80f098bc64d02f41bd53a3c7467150d, type: 2}
   m_TargetDisplay: 0
@@ -15399,7 +15399,7 @@ GameObject:
   - component: {fileID: 2035612731}
   - component: {fileID: 2035612732}
   - component: {fileID: 2035612733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: healingzoneforwylla1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16305,7 +16305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 85675d0350c4e684d969041187c2ee77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe0a49fa0f8dc0f4dbfac193fca1048b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16796,7 +16796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3e60dbfb786a9b4689ae5616a68c156, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63e6a9f1071b7174baf1614ae292b6fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16904,15 +16904,15 @@ RectTransform:
   m_GameObject: {fileID: 1745936151757014260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9449626, y: 1.9449626, z: 1.9449626}
+  m_LocalScale: {x: 2.3059478, y: 2.3059478, z: 2.3059478}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5892218305485265888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302, y: 16.751701}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -293, y: 0.0000095367}
+  m_SizeDelta: {x: 122.763, y: 122.763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &2184252369373902749
 BoxCollider2D:
@@ -17067,7 +17067,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 255
+    m_Bits: 1279
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -17276,9 +17276,10 @@ GameObject:
   - component: {fileID: 240630296650075375}
   - component: {fileID: 2184252369373902749}
   - component: {fileID: 7283805500687372984}
+  - component: {fileID: 8079019943694539005}
   m_Layer: 6
   m_Name: Player1 (Healer)/Wylla
-  m_TagString: Ally
+  m_TagString: Wylla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19388,8 +19389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: 16.751984}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -308, y: 0}
+  m_SizeDelta: {x: 153.695, y: 152.255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &6774708189006588969
 Transform:
@@ -19588,7 +19589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 208ab1fd8ecd8e9478aac501d8725f01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08e5feb578e46ae4d9acd72d44fe74d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20465,15 +20466,15 @@ RectTransform:
   m_GameObject: {fileID: 4656744835809133395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9449626, y: 1.9449626, z: 1.9449626}
+  m_LocalScale: {x: 2.2372906, y: 2.2372906, z: 2.2372906}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1087342299820691596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: 16.751518}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -294, y: 7}
+  m_SizeDelta: {x: 122.164, y: 122.164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &7793077292228070215
 BoxCollider2D:
@@ -20618,6 +20619,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+--- !u!114 &8079019943694539005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2819427482490819126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17cbcc9a3ec424b438d12d638b306e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 8476120753466567954}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.6431373, g: 0, b: 0, a: 1}
+    key1: {r: 0.8862746, g: 0.7568628, b: 0.08627451, a: 1}
+    key2: {r: 0.17254902, g: 0.7176471, b: 0.003921569, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1198330704546628501}
 --- !u!1 &8102875572297641090
 GameObject:
   m_ObjectHideFlags: 0
