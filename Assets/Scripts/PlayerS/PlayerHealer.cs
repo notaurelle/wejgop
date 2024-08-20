@@ -12,7 +12,7 @@ public class PlayerHealer : PlayerParent
     public GameObject skillImage;
 
     public int maxHealth = 2000;
-    private int currentHealth;
+    public int currentHealth;
 
     public int attackDamage = 15;
     public int attackSkill = 30; // DMG for charged ATK 
