@@ -20,7 +20,7 @@ public class QuestGiver : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ally"))
+        if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             questButton.SetActive(true);
         }
@@ -29,7 +29,7 @@ public class QuestGiver : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Ally"))
+        if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             questButton.SetActive(false);
         }

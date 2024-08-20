@@ -14,7 +14,7 @@ public class Teleport : MonoBehaviour
     {
         print("Trigger Entered");
 
-        if(other.tag == "Ally")
+        if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             //player has entered so move level
             print("Switching Scene to" + sceneBuildIndex);
