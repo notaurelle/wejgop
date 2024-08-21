@@ -636,7 +636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3752261007095518378, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3000
+      value: 3137.2026
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752261007095518378, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 573.11224
       objectReference: {fileID: 0}
     - target: {fileID: 3752261007095518378, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_LocalScale.x
@@ -652,11 +656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3752261007095518378, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.012
+      value: -0.0010211
       objectReference: {fileID: 0}
     - target: {fileID: 3752261007095518378, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.328
+      value: 0.073525
       objectReference: {fileID: 0}
     - target: {fileID: 3880644487947584185, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_UiScaleMode
@@ -669,6 +673,428 @@ PrefabInstance:
     - target: {fileID: 3880644487947584185, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: opening sentence??
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: 'Godrick
+
+        Tres spiritus, unite ut unus. Sancti et excelsi voco
+        potentiam tuam.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: 'Godrick
+
+        Ut supra, sic infra, coniunge; Nos duce noectem aeternam!
+        All rise for the honouravble Father Godrick!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "As the priest utters the final word, the ground shakes and three spirits
+        appear. They are CRUMBLING CERWYN, a decomposing but mostly still intact
+        corpse, HEADLESS HARRY, a fiery spectre inhabiting a black suit of headless
+        armour and WANDERING WYLLA, a wispy and serene ghost who hovers above the
+        ground.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: 'Godrick
+
+        Greetings unhallowed ones!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: 'Harry
+
+        Have at thee! Wait, where be I?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: 'Wylla
+
+        This feels strange...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[7]
+      value: 'Cerwyn
+
+        Why am I sooo... old?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[8]
+      value: 'Godrick
+
+        A moment friends, all will be explained in due haste.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[9]
+      value: 'Harry
+
+        Where is that fiend! I''ll have his head I will... wait,
+        MY HEAD!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[10]
+      value: "Harry starts running around in a panic while Godrick tries unsuccessfully
+        to calm him down. Cerwyn and Wylla start panicking as well when they notice
+        their own decomposed forms.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[11]
+      value: "Godrick\nQuiet down now please! \r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[12]
+      value: 'Godrick
+
+        Quiet Down!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[13]
+      value: 'Godrick
+
+        SINE ACTIO!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[14]
+      value: All three spirits are frozen in place immediately as Father Godrick
+        huffs impatiently.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[15]
+      value: 'Godrick
+
+        I am Father Godrick, the priest of this local town,
+        Ryvenbruk.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[16]
+      value: 'Harry
+
+        Ryvenbruk. Be ye meaning yon shire of Raefndre?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[17]
+      value: 'Godrick
+
+        Just so, good sir. But much has changed these last
+        years, for you chief among the others. My fellows this is the year 1751 of
+        our lord, and you are all dead, well undead as of now.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[18]
+      value: 'Wylla
+
+        How? I remember burning.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[19]
+      value: 'Godrick
+
+        Yes, sweet ghost. Burned at the stake for witchcraft,
+        such a crime.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[20]
+      value: 'Wylla
+
+        I was a herbalist, not a witch!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[21]
+      value: 'Cerwyn
+
+        Is there a difference?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[22]
+      value: 'Godrick
+
+        My friends, what you were no longer matters, for I
+        have recalled you for a greater purpose. Each year the boundaries between
+        worlds stretch at the threads and the ghouls of the otherworld spill through
+        to terrorise the living.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[23]
+      value: 'Wylla
+
+        And that is how we came to be?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[24]
+      value: 'Godrick
+
+        Just so, and you three exist in limbo, for the lack
+        of virtue and sin committed within your life, you belong to neither one realm
+        nor the other, but that means you are far easier to recall from beyond.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[25]
+      value: 'Cerwyn
+
+        You want us to do something for you, is that the way
+        of it?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[26]
+      value: 'Godrick
+
+        Indeed master bargeman. Do my bidding and your souls
+        shall be hollowed-'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[27]
+      value: 'Harry
+
+        I already appear to be hollow, there art holes where
+        mine flesh should be.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[28]
+      value: 'Wylla
+
+        Hollowed you dolt, not hollow. He means consecrated,
+        holy.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[29]
+      value: 'Harry
+
+        Then you be a servant of god o''father?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[30]
+      value: 'Godrick
+
+        Why of course, and just as I am God''s servant, you
+        are mine.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[31]
+      value: 'Cerwyn
+
+        I spent my life in service to others, why should I
+        spend my death doing the same?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[32]
+      value: 'Godrick
+
+        How does eternal torment sound instead?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[33]
+      value: All three spirits grumble but begrudgingly accept.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[34]
+      value: 'Harry
+
+        What services would you have of us, father?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[35]
+      value: 'Godrick
+
+        Hallows eve grows near and the protective barrier
+        between worlds grows thin.  I intend to seal it forever so the world of mortals
+        may live in peace, but I need the help of the dead to accomplish it.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[36]
+      value: "Godrick\nAll three of you perished within the leagues surrounding this
+        town, your souls are bound to it\u2019s soil, air and water. Retrace your
+        deaths, reclaim your souls, and journey beyond to claim three artefacts of
+        great power. \r "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[37]
+      value: "Godrick\nWith these I shall mend the rift and grant you a blissful
+        afterlife.\r "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[38]
+      value: 'Cerwyn
+
+        And that is all?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[39]
+      value: 'Godrick
+
+        That is all. First follow the road to the village
+        of Ryvenbruk, luck be with you sweet ghouls, do not fail me!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[40]
+      value: All three characters follow the forest path into a clearing where they
+        briefly encounter a group of monsters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[41]
+      value: 'Harry
+
+        By the lord, yon heathens never stood a groats chance
+        against out might, valorour work fellows.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[42]
+      value: 'Wylla
+
+        Yes, but do you two perchance recall where you died?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[43]
+      value: 'Cerwyn
+
+        I remember a river...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[44]
+      value: 'Wylla
+
+        And I the fire, mayhaps a stake if the priest spoke
+        true.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[45]
+      value: 'Cerwyn
+
+        What of you sir, where did you die?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[46]
+      value: 'Harry
+
+        I can not remember, noble corpse. Twas an age ago to
+        be certain. These woods at a guess, but they art thick and vast.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[47]
+      value: 'Wylla
+
+        We should keep moving then, mayhaps we''ll find it by
+        chance.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[48]
+      value: The trio resume walking down the path. Before long, they come to a second
+        clearing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[49]
+      value: 'Harry
+
+        Strange, yon old oaks seem familiar. Mayhaps you were
+        right sweet Wylla, luck may be on our side.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[50]
+      value: 'Cerwyn
+
+        Let''s carry on then, not all of us are wholly intact...
+        in the legs at least.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[51]
+      value: The trio resume walking up the path. Before long they come to a third,
+        smaller clearing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[52]
+      value: 'Harry
+
+        Wait!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[53]
+      value: 'Wylla
+
+        What is it?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[54]
+      value: 'Harry
+
+        It be if the winds have shifted. This be it I think
+        for certain friends, where I met my end on the sword of Argamore the Arrogant!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[55]
+      value: 'Cerwyn
+
+        What do we do then?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[56]
+      value: 'Wylla
+
+        Father Godrick said something about returning beyond
+        to fetch something for him.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[57]
+      value: "Just then, a warping noise plays and the setting darkens, the trio
+        now find themselves in a dark realm, with strange pale trees.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[58]
+      value: 'Harry
+
+        By the heavens, this must be Limbo!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[59]
+      value: "The trio quickly find themselves swarmed by pale mobs, fighting them
+        off as quickly as they come. As they defeat the last mob, a golden chalice
+        drops onto the ground, and is granted to Cerwyn. The black land disappears
+        with another warp and they are returned to the grove.\r\r\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[60]
+      value: 'Harry
+
+        That chalice, what be it for?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[61]
+      value: 'Cerwyn
+
+        Drinking, is it not?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[62]
+      value: 'Wylla
+
+        Dolts, if I had hands I would slap you both. That must
+        be an artefact.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[63]
+      value: 'Harry
+
+        Why of course! Twas simply testing thee. A fine and
+        noble cup it be.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.sentences.Array.data[64]
+      value: 'Wylla
+
+        That makes one then. This is the path to the village
+        is it not, let us continue.'
       objectReference: {fileID: 0}
     - target: {fileID: 4916375501697633931, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -1800,7 +2226,7 @@ Transform:
   m_GameObject: {fileID: 1669870340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 462, y: 250, z: -428}
+  m_LocalPosition: {x: 497, y: 250, z: -428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
