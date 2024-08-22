@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,12 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    CandyCounter candyCounterScript;
+
+    private void Start()
+    {
+       candyCounterScript = GameObject.Find("KCO").GetComponent<CandyCounter>();
+    }
 
     // Set the maximum health and initialize the health bar
     public void SetMaxHealth(int health)
@@ -36,4 +43,10 @@ public class HealthBar : MonoBehaviour
     {
         return (int)slider.maxValue;
     }
+    //else if (Collision.collider.tag == "Mob")
+    // {
+    //    Collision.gameObject);
+    //    candyCounterScript.AddKill();
+    // }
 }
+
