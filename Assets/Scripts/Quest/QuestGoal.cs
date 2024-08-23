@@ -12,6 +12,7 @@ public class QuestGoal: MonoBehaviour
     public GoalType goalType; // Type of quest goal (e.g., Kill)
     public int requiredAmount = 1; // Number of kills required
     public int currentAmount; // Current progress
+    public int candyReward = 13;
 
     /*
     //progress tracker - trying out something Aurelia
@@ -29,6 +30,8 @@ public class QuestGoal: MonoBehaviour
     public float Timer;
     public float MaxTimer = 5;
 
+    private GameManager manager; // also this - nadine 
+
 
 
     public void EnemyKilled()
@@ -45,6 +48,8 @@ public class QuestGoal: MonoBehaviour
             teleport.gameObject.SetActive(true);
             Debug.Log("Teleport is now active!");
             quest.Complete();
+
+            GameManager.Instance.UpdateCandyScore(this); // nadine added this thats it
         }
 
         

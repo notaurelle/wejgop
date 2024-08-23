@@ -9,11 +9,11 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
-    CandyCounter candyCounterScript;
+    // CandyCounter candyCounterScript;
 
     private void Start()
     {
-       candyCounterScript = GameObject.Find("KCO").GetComponent<CandyCounter>();
+       // candyCounterScript = GameObject.Find("KCO").GetComponent<CandyCounter>();
     }
 
     // Set the maximum health and initialize the health bar
