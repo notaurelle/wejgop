@@ -13,6 +13,8 @@ public class PlayerSupport : PlayerParent
 
     public HealthBar healthBar;
 
+    public GameObject skillImage;
+
     public int attackDamage = 40;
     public int attackSkill = 100;
 
@@ -76,6 +78,7 @@ public class PlayerSupport : PlayerParent
                 if (totalDamageDealt >= damageThreshold)
                 {
                     canUseChargedAbility = true;
+                    skillImage.SetActive(true);
                     Debug.Log("Charged ability is now available!");
                 }
             }
@@ -113,6 +116,7 @@ public class PlayerSupport : PlayerParent
             {
                 aiChase.TakeDamage(attackSkill); // Deal charged attack damage
                 aiChase.ApplyStun();
+                skillImage.SetActive(false);
             }
         }
 

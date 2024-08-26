@@ -14,15 +14,34 @@ public class QuestGiver : MonoBehaviour
     public Text descriptionText;
     public GameObject questButton;
 
+    private bool isPlayerInRange = false;
+
 
     //trying something out - aurelia
     public GameObject progressTracker;
+
+    private void Update()
+    {
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
+        {
+            if (questWindow.activeSelf)
+            {
+                CloseQuestWindow();
+            }
+            else
+            {
+                OpenQuestWindow();
+            }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             questButton.SetActive(true);
+            isPlayerInRange = true;
+
         }
         
     }
@@ -32,12 +51,13 @@ public class QuestGiver : MonoBehaviour
         if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             questButton.SetActive(false);
+            isPlayerInRange = false;
         }
     }
 
 
     public void OpenQuestWindow()
-    { 
+    {
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
