@@ -25,6 +25,7 @@ public class AIChase : MonoBehaviour
 
     public int maxHealth = 100;
     private int currentHealth;
+    private bool hasDied = false; // this is new 
 
 
     public int attackDamage = 5;
@@ -119,35 +120,38 @@ public class AIChase : MonoBehaviour
 
     void Die()
     {
-        /* Debug.Log("Enemy died!");
-
-         // Notify the quest system that the mob has been killed 
-         if(questGoal != null)
-         {
-             questGoal.EnemyKilled(gameObject);
-         }
-
-         //Disable enemy script as they have 'died'
-         GetComponent<Collider2D>().enabled = false;
-         this.enabled = false;
-         gameObject.SetActive(false);
-         mobHP.SetActive(false); */
+        if (hasDied) return; // Prevent multiple deaths
+        hasDied = true;
 
         Debug.Log("Enemy died with layer: " + LayerMask.LayerToName(gameObject.layer));
 
-        // Notify the quest system that the mob has been killed
         if (questGoal != null)
         {
-            questGoal.EnemyKilled(); // Pass the tag of the GameObject (gameObject)
+            questGoal.EnemyKilled(); // Ensure this is called only once
         }
         else
             Debug.Log("There is no quest goal set.");
 
-        // Disable enemy script and object
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         gameObject.SetActive(false);
         mobHP.SetActive(false);
+
+        /* Debug.Log("Enemy died with layer: " + LayerMask.LayerToName(gameObject.layer));
+
+         // Notify the quest system that the mob has been killed
+         if (questGoal != null)
+         {
+             questGoal.EnemyKilled(); // Pass the tag of the GameObject (gameObject)
+         }
+         else
+             Debug.Log("There is no quest goal set.");
+
+         // Disable enemy script and object
+         GetComponent<Collider2D>().enabled = false;
+         this.enabled = false;
+         gameObject.SetActive(false);
+         mobHP.SetActive(false); */
     }
 
 
