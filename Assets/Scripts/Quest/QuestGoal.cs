@@ -14,12 +14,12 @@ public class QuestGoal: MonoBehaviour
     public int currentAmount; // Current progress
     public int candyReward = 13;
 
-    /*
+    
     //progress tracker - trying out something Aurelia
-    public Text requiredAmountText;
+    //public Text requiredAmountText;
     public Text currentAmountText;
     public GameObject progressTracker;
-    */
+    
 
     //public int ID {  get;  set; }
     public GameObject sign;
@@ -55,15 +55,15 @@ public class QuestGoal: MonoBehaviour
         
     }
 
-    /* - trying something out Aurelia
+    // - trying something out Aurelia
     public void Progress()
     {
-        //progressTracker.SetActive(true);
-        requiredAmountText.text = quest.requiredAmount.ToString();
+        progressTracker.SetActive(true);
+        //requiredAmountText.text = quest.requiredAmount.ToString();
         currentAmountText.text = quest.currentAmount.ToString();
 
     }
-    */
+    
 
 
     private void FixedUpdate()

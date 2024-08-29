@@ -57,6 +57,7 @@ public class QuestGiver : MonoBehaviour
 
 
     public void OpenQuestWindow()
+
     {
         questWindow.SetActive(true);
         titleText.text = quest.title;
@@ -76,7 +77,7 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
-        //progressTracker.gameObject.SetActive(true); - trying something out - aurelia
+        progressTracker.gameObject.SetActive(true); //- trying something out - aurelia
         if (Mob != null)
         {
             Mob.gameObject.SetActive(true); //Ensure mob is active
