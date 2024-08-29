@@ -83,6 +83,18 @@ public class PlayerSupport : PlayerParent
                 }
             }
         }
+
+        if (totalDamageDealt >= damageThreshold)
+        {
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                AIChase aiChase = enemy.GetComponent<AIChase>();
+                if (aiChase != null)
+                {
+                    aiChase.ApplyStun();
+                }
+            }
+        }
     }
 
     void OnDrawGizmosSelected()

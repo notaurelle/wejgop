@@ -45,11 +45,15 @@ public class AIChase : MonoBehaviour
     public int ID { get; set; }
     // public Quest quest; //reference to quest 
 
+    // animation 
+    public Animator animator;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         ID = 0;
+        animator = GetComponent<Animator>();
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)
@@ -85,6 +89,7 @@ public class AIChase : MonoBehaviour
                 attackPlayer();
                 Timer = 0;
             }
+            MoveTowardsPlayer();
         }
     }
 
@@ -106,6 +111,11 @@ public class AIChase : MonoBehaviour
         if (!stunned)
         {
             stunned = true;
+            if (animator != null)
+            {
+                animator.SetBool("IsStunned", true); // sets the animation parameter 
+            }
+
             StartCoroutine(StunCoroutine());
         }
     }
@@ -113,9 +123,15 @@ public class AIChase : MonoBehaviour
     private IEnumerator StunCoroutine()
     {
         //Add visual and audio
+        Debug.Log("Stun started");
         yield return new WaitForSeconds(stunDuration);
-
+        Debug.Log("Stun ended.");
         stunned = false;
+
+        if (animator != null)
+        {
+            animator.SetBool("IsStunned", false);
+        }
     }
 
     void Die()
@@ -155,8 +171,10 @@ public class AIChase : MonoBehaviour
     }
 
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
+    {
+        if (!stunned)
         {
             closestPlayer = GetClosestPlayer();
 
@@ -167,36 +185,66 @@ public class AIChase : MonoBehaviour
                 direction.Normalize();
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-
-
                 if (distance < distanceBetween)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
-                    //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
                     mobHP.SetActive(true);
                 }
             }
-
-
         }
 
-        GameObject GetClosestPlayer()
-        {
-            GameObject closest = null;
-            float minDistance = float.MaxValue;
 
-            foreach (GameObject player in players)
-            {
-                //mobHP.SetActive(true);
-                float distance = Vector2.Distance(transform.position, player.transform.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closest = player;
-                }
-            }
-
-            return closest;
-        }
     }
+
+
+
+    GameObject GetClosestPlayer()
+    {
+        GameObject closest = null;
+        float minDistance = float.MaxValue;
+
+        foreach (GameObject player in players)
+        {
+            //mobHP.SetActive(true);
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = player;
+            }
+        }
+
+        return closest;
+    }
+
+    void MoveTowardsPlayer()
+    {
+        closestPlayer = GetClosestPlayer();
+        if (closestPlayer != null)
+        {
+            float distance = Vector2.Distance(transform.position, closestPlayer.transform.position);
+            if (distance < distanceBetween)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
+                mobHP.SetActive(true);
+            }
+        }
+
+    }
+
+    // Methods to stop and resume movement and actions
+    void StopAllMovementAndActions()
+    {
+
+        speed = 0;
+        // Any other actions you need to stop
+    }
+
+    void ResumeMovementAndActions()
+    {
+        // Restore speed or other actions here if needed
+        speed = 1; // Set to your desired movement speed
+    }
+}
+
 
