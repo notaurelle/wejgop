@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class MoveWASD : MonoBehaviour
 {
-    // public float Speed; 
+  
     Rigidbody2D Rb;
     public float speed = 5f; // Default speed value
+    float MovementX = 0;
+    float MovementY = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         Rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float MovementX = 0;
-        float MovementY = 0;
 
         if (Input.GetKey(KeyCode.W))
         {
