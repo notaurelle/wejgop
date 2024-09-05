@@ -108,17 +108,17 @@ public class PlayerHealer : PlayerParent
 
     private void HealAlliesInRange()
     {
-        // Find all GameObjects within the healing radius
+        // finds all GameObjects within the healing radius
         Collider2D[] allies = Physics2D.OverlapCircleAll(transform.position, healingRadius);
 
         foreach (Collider2D ally in allies)
         {
-            if (ally.CompareTag("Ally")) // Check if the ally has the "Ally" tag
+            if (ally.CompareTag("Ally")) // checks for tag
             {
                 HealthBar allyHealthBar = ally.GetComponent<HealthBar>();
                 if (allyHealthBar != null)
                 {
-                    // Increase ally's health, but do not exceed max health
+                    // increases ally's health but won't exceed the max
                     int newHealth = Mathf.Min((int)allyHealthBar.slider.maxValue, (int)allyHealthBar.slider.value + healingAmount);
                     allyHealthBar.SetHealth(newHealth);
                     //Debug.Log("Healed " + ally.name);
