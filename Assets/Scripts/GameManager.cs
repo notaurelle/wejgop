@@ -6,14 +6,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private GameObject gameOverUI;
-    [SerializeField] private Text scoreText; // Attach score text here
+    [SerializeField] private Text scoreText; // attach score text here
 
-    // Public property for score
+    // public property for score
     public int score { get; private set; } = 0;
 
     private void Awake()
     {
-        // Ensure only one instance of GameManager exists
+        // ensure only one instance of GameManager exists
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -48,4 +48,4 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("QuestGoal is null in UpdateCandyScore!");
         }
     }
-}
+}s

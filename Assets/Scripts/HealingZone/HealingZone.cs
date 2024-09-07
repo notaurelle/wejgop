@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    public int healingAmount = 25; // Amount of health to heal per interval
-    public float healingInterval = 1f; // How often to heal (Seconds)
-    public float healingRadius = 3f; // Radius of the healing zone
+    public int healingAmount = 25; // amount of health to heal per interval
+    public float healingInterval = 1f; // how often to heal (secs)
+    public float healingRadius = 3f; // radius of the healing zone
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        // Check if the collider has the tag "Wylla"
+       
         if (col.CompareTag("Wylla"))
         {
-            // Start healing coroutine for the ally that entered
+           
             StartCoroutine(HealingCoroutine(col.gameObject));
         }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        // Check if the collider has the tag "Wylla"
+        
         if (col.CompareTag("Wylla"))
         {
-            // Stop healing coroutine if the ally exits the zone
             StopCoroutine(HealingCoroutine(col.gameObject));
         }
     }
@@ -39,10 +38,10 @@ public class HealingZone : MonoBehaviour
 
     private void HealAlly(GameObject ally)
     {
-        // Check if the ally has the tag "Wylla"
+       
         if (ally.CompareTag("Wylla"))
         {
-            // Get the HealthBar component from the ally
+          
             HealthBar healthBar = ally.GetComponent<HealthBar>();
             if (healthBar != null)
             {
