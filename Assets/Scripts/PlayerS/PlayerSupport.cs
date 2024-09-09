@@ -25,10 +25,14 @@ public class PlayerSupport : PlayerParent
     //quest
     public Quest quest;
 
+    //checkpoints 
+    private PlayerPos playerPosScript;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        playerPosScript= GetComponent<PlayerPos>();
     }
 
     public override void TakeDamage(int damage)
@@ -113,6 +117,13 @@ public class PlayerSupport : PlayerParent
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         this.gameObject.SetActive(false);
+
+        //updated for checkpoints
+        if (playerPosScript != null)
+        {
+            playerPosScript.RespawnPosition();
+        }
+        Invoke("Respawn", 1f);
     }
 
     public override void PerformAbility()

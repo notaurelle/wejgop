@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private Text scoreText; // attach score text here
+    public Vector2 lastCheckPointPos;
 
     // public property for score
     public int score { get; private set; } = 0;
@@ -48,4 +49,4 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("QuestGoal is null in UpdateCandyScore!");
         }
     }
-}s
+}

@@ -39,14 +39,17 @@ public class PlayerDPS : PlayerParent
     //public int candy;
     public AIChase mob;
 
+    //respawn method reference
+    private PlayerPos playerPosScript; 
+    // nadine needs this reference to make checkpoint function
 
-
-
-
+    
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        playerPosScript = GetComponent<PlayerPos>();
+        // references player pos script - nadine
 
     }
 
@@ -166,8 +169,22 @@ public class PlayerDPS : PlayerParent
         this.enabled = false;
         this.gameObject.SetActive(false);
 
+        // nadine - made changes here
+        if (playerPosScript != null)
+        {
+            playerPosScript.RespawnPosition();
+        }
+
+        Invoke("Respawn", 1f);
     }
-    //??? dafuq
+    
+    void Respawn() // nadine added this
+    {
+        this.gameObject.SetActive(true);
+        GetComponent<Collider2D>().enabled=true;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+    }
 
 
 

@@ -28,10 +28,14 @@ public class PlayerHealer : PlayerParent
     //quest
     public Quest quest;
 
+    //Checkpoin pos reference to script same as PlayerDPS- nadine
+    private PlayerPos playerPosScript;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        playerPosScript = GetComponent<PlayerPos>();
 
         // Start healing coroutine
         StartCoroutine(PassiveHealing());
@@ -144,6 +148,22 @@ public class PlayerHealer : PlayerParent
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         this.gameObject.SetActive(false);
+
+        //checkpoints 
+        if (playerPosScript != null)
+        {
+            playerPosScript.RespawnPosition();
+        }
+
+        Invoke("Respawn", 1f);
+    }
+
+    void Respawn()
+    {
+        this.gameObject.SetActive(true);
+        GetComponent<Collider2D>().enabled = true;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
     }
 
     private void OnDrawGizmos()
