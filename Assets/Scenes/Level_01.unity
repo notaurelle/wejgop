@@ -16497,6 +16497,10 @@ MonoBehaviour:
     candyReward: 0
     progressTracker: {fileID: 0}
     Goal: {fileID: 6459201792147126009}
+  cerwynRadius: 5
+  enemyDamageDecrease: 4
+  cooldownDuration: 13
+  decreaseDamageDuration: 4
 --- !u!1 &7515638247522196674
 GameObject:
   m_ObjectHideFlags: 0

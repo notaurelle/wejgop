@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security;
 using UnityEngine;
 
 public class PlayerSupport : PlayerParent
@@ -25,14 +27,23 @@ public class PlayerSupport : PlayerParent
     //quest
     public Quest quest;
 
-    //checkpoints 
+    //checkpoints - nadine
     private PlayerPos playerPosScript;
+
+    //passive ability to decrease enemy damage within radius
+    public float cerwynRadius = 2f;
+    public int enemyDamageDecrease = 50;
+    public float cooldownDuration = 13f;
+    public float decreaseDamageDuration = 4f;
+    private bool cerwynAbilityOnCooldown = false;
+
+
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        playerPosScript= GetComponent<PlayerPos>();
+        playerPosScript = GetComponent<PlayerPos>();
     }
 
     public override void TakeDamage(int damage)
@@ -148,8 +159,50 @@ public class PlayerSupport : PlayerParent
         canUseChargedAbility = false;
     }
 
-    void PassiveAbility()
+    void DecreaseDamageAbility()
     {
-        // Implement passive ability logic here if needed
+        if (cerwynAbilityOnCooldown) 
+        {
+            Debug.Log("cerwyn plz work");
+                
+        }
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
+
+        foreach (Collider2D enemy in enemies)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                AIChase mobAI = enemy.GetComponent<AIChase>();
+
+                StartCoroutine(CerwynDecreaseDamageDuration(mobAI));
+            }
+
+            StartCoroutine(StartAbilityCooldown());
+
+        }
+
+        IEnumerator CerwynDecreaseDamageDuration(AIChase mobAI)
+        {
+            int ogDamage = mobAI.attackDamage;
+            mobAI.attackDamage -= enemyDamageDecrease;
+            yield return new WaitForSeconds(decreaseDamageDuration);
+            mobAI.attackDamage = ogDamage;
+            
+        }
+
+        IEnumerator StartAbilityCooldown()
+        {
+            cerwynAbilityOnCooldown = true;
+            yield return new WaitForSeconds(cooldownDuration);
+            cerwynAbilityOnCooldown = false;
+        }
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, cerwynRadius);
     }
 }
+
