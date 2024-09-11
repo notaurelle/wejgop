@@ -7984,7 +7984,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95927fb7e23c40247b1c6b9cea787846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16497,10 +16497,9 @@ MonoBehaviour:
     candyReward: 0
     progressTracker: {fileID: 0}
     Goal: {fileID: 6459201792147126009}
-  cerwynRadius: 5
-  enemyDamageDecrease: 4
+  cerwynRadius: 3
+  damageDecrease: 0
   cooldownDuration: 13
-  decreaseDamageDuration: 4
 --- !u!1 &7515638247522196674
 GameObject:
   m_ObjectHideFlags: 0

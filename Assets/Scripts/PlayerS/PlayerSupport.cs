@@ -31,11 +31,10 @@ public class PlayerSupport : PlayerParent
     private PlayerPos playerPosScript;
 
     //passive ability to decrease enemy damage within radius
-    public float cerwynRadius = 2f;
-    public int enemyDamageDecrease = 50;
-    public float cooldownDuration = 13f;
-    public float decreaseDamageDuration = 4f;
-    private bool cerwynAbilityOnCooldown = false;
+    public float cerwynRadius = 2f; // radius for cerwyn
+    [SerializeField] int damageDecrease; // value for amount of damage is being decreased when mobs attack
+    public float cooldownDuration = 13f; // how long the cool down is
+  //  private bool cerwynAbilityOnCooldown = false; // variable to turn cooldown on and off
 
 
 
@@ -124,7 +123,7 @@ public class PlayerSupport : PlayerParent
     {
         Debug.Log("Player Support died!");
 
-        // Disable the script and collider
+        // disable the script and collider
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         this.gameObject.SetActive(false);
@@ -141,68 +140,49 @@ public class PlayerSupport : PlayerParent
     {
         Debug.Log("Support used charged ability!");
 
-        // Detect enemies in range of charged attack
+        // detect enemies in range of charged attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
             AIChase aiChase = enemy.GetComponent<AIChase>();
             if (aiChase != null)
             {
-                aiChase.TakeDamage(attackSkill); // Deal charged attack damage
+                aiChase.TakeDamage(attackSkill); // deal charged attack damage
                 aiChase.ApplyStun();
                 skillImage.SetActive(false);
             }
         }
 
-        // Reset damage tracking and charged ability flag
+        // reset damage tracking and charged ability flag
         totalDamageDealt = 0;
         canUseChargedAbility = false;
     }
 
-    void DecreaseDamageAbility()
+    private void DecreaseDamageAbility(AIChase mobAI)
     {
-        if (cerwynAbilityOnCooldown) 
-        {
-            Debug.Log("cerwyn plz work");
-                
-        }
+        int ogDamage = mobAI.attackDamage;
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
 
         foreach (Collider2D enemy in enemies)
         {
             if (enemy.CompareTag("Enemy"))
             {
-                AIChase mobAI = enemy.GetComponent<AIChase>();
+                AIChase aIChase = enemy.GetComponent<AIChase>();
+                if (aiChase != null)
+                {
+                  ogDamage -= aiChase.attackDamage;
+                    Debug.Log("cerwyn decreases enemy attack");
+                }
 
-                StartCoroutine(CerwynDecreaseDamageDuration(mobAI));
             }
-
-            StartCoroutine(StartAbilityCooldown());
-
         }
-
-        IEnumerator CerwynDecreaseDamageDuration(AIChase mobAI)
-        {
-            int ogDamage = mobAI.attackDamage;
-            mobAI.attackDamage -= enemyDamageDecrease;
-            yield return new WaitForSeconds(decreaseDamageDuration);
-            mobAI.attackDamage = ogDamage;
-            
-        }
-
-        IEnumerator StartAbilityCooldown()
-        {
-            cerwynAbilityOnCooldown = true;
-            yield return new WaitForSeconds(cooldownDuration);
-            cerwynAbilityOnCooldown = false;
-        }
-
-    }
-
+    } 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, cerwynRadius);
     }
+
 }
+
 
