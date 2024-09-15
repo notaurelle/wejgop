@@ -675,8 +675,24 @@ PrefabInstance:
       value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1011297057}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].name
+      value: gofdrink
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].sentence
+      value: hhhhghggg
       objectReference: {fileID: 0}
     - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -1095,6 +1111,10 @@ PrefabInstance:
 
         That makes one then. This is the path to the village
         is it not, let us continue.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4916375501697633931, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -1527,12 +1547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44e41bf3355f2f4eb671d66c42b0a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Name
-    sentences:
-    - gekuhgnkeurngkei
-    - skejrhg lieusrg)
-    - ykjtyjryj
+  dialogueManager: {fileID: 0}
+  dialogue: []
 --- !u!114 &788874851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,14 +2300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44e41bf3355f2f4eb671d66c42b0a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - hhhh
-    - rtr
-    - srthsrth
-    - srthsrth
-    - kyukyku
+  dialogueManager: {fileID: 0}
+  dialogue: []
 --- !u!114 &1834586137
 MonoBehaviour:
   m_ObjectHideFlags: 0
