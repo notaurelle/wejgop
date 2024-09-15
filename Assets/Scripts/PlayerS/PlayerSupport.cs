@@ -70,6 +70,8 @@ public class PlayerSupport : PlayerParent
         {
             PerformAbility();
         }
+
+        DecreaseDamageAbility(4);
     }
 
     void Attack()
@@ -158,9 +160,8 @@ public class PlayerSupport : PlayerParent
         canUseChargedAbility = false;
     }
 
-    private void DecreaseDamageAbility(AIChase mobAI)
+    private void DecreaseDamageAbility(int dam)
     {
-        int ogDamage = mobAI.attackDamage;
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
 
         foreach (Collider2D enemy in enemies)
@@ -168,9 +169,9 @@ public class PlayerSupport : PlayerParent
             if (enemy.CompareTag("Enemy"))
             {
                 AIChase aIChase = enemy.GetComponent<AIChase>();
-                if (aiChase != null)
+                if (aIChase != null)
                 {
-                  ogDamage -= aiChase.attackDamage;
+                    aIChase.attackDamage -= dam;
                     Debug.Log("cerwyn decreases enemy attack");
                 }
 
