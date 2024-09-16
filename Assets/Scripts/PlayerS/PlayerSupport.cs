@@ -71,7 +71,6 @@ public class PlayerSupport : PlayerParent
             PerformAbility();
         }
 
-        DecreaseDamageAbility(4);
     }
 
     void Attack()
@@ -160,7 +159,14 @@ public class PlayerSupport : PlayerParent
         canUseChargedAbility = false;
     }
 
-    private void DecreaseDamageAbility(int dam)
+ 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, cerwynRadius);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
 
@@ -171,19 +177,18 @@ public class PlayerSupport : PlayerParent
                 AIChase aIChase = enemy.GetComponent<AIChase>();
                 if (aIChase != null)
                 {
-                    aIChase.attackDamage -= dam;
+                    aIChase.attackDamage -= damageDecrease;
                     Debug.Log("cerwyn decreases enemy attack");
                 }
 
             }
         }
-    } 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, cerwynRadius);
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+     
+    }
 }
 
 
