@@ -34,7 +34,9 @@ public class PlayerSupport : PlayerParent
     public float cerwynRadius = 2f; // radius for cerwyn
     [SerializeField] int damageDecrease; // value for amount of damage is being decreased when mobs attack
     public float cooldownDuration = 13f; // how long the cool down is
-  //  private bool cerwynAbilityOnCooldown = false; // variable to turn cooldown on and off
+                                         //  private bool cerwynAbilityOnCooldown = false; // variable to turn cooldown on and off
+
+    public List<AIChase> globs = new List<AIChase>();
 
 
 
@@ -71,6 +73,7 @@ public class PlayerSupport : PlayerParent
             PerformAbility();
         }
 
+        Debuff();
     }
 
     void Attack()
@@ -109,6 +112,14 @@ public class PlayerSupport : PlayerParent
                     aiChase.ApplyStun();
                 }
             }
+        }
+    }
+
+    void Debuff()
+    {
+        foreach(AIChase glob in globs)
+        {
+            glob.attackDecreased = true;
         }
     }
 
@@ -168,26 +179,64 @@ public class PlayerSupport : PlayerParent
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
 
-        foreach (Collider2D enemy in enemies)
+        Debug.Log($"Collider {collision.name}");
+
+        if (collision.gameObject.tag == "Enemy")
         {
-            if (enemy.CompareTag("Enemy"))
+            if (!globs.Contains(collision.gameObject.GetComponent<AIChase>()))
             {
-                AIChase aIChase = enemy.GetComponent<AIChase>();
-                if (aIChase != null)
-                {
-                    aIChase.attackDamage -= damageDecrease;
-                    Debug.Log("cerwyn decreases enemy attack");
-                }
-
+                globs.Add(collision.GetComponent<AIChase>());
             }
+
         }
+
+        //Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
+
+        //foreach (Collider2D enemy in enemies)
+        //{
+        //    if (enemy.CompareTag("Enemy"))
+        //    {
+        //        AIChase aIChase = enemy.GetComponent<AIChase>();
+        //        if (aIChase != null)
+        //        {
+        //            //aIChase.attackDamage -= damageDecrease;
+        //            aiChase.attackDecreased = true; 
+        //            Debug.Log("cerwyn decreases enemy attack");
+        //        }
+
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-     
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (globs.Contains(collision.gameObject.GetComponent<AIChase>()))
+            {
+                globs.Remove(collision.GetComponent<AIChase>());
+                Debug.Log("Decrease stop");
+                collision.GetComponent<AIChase>().attackDecreased = false;
+            }
+        }
+
+        //Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cerwynRadius);
+
+        //foreach (Collider2D enemy in enemies)
+        //{
+        //    if (enemy.CompareTag("Enemy"))
+        //    {
+        //        AIChase aIChase = enemy.GetComponent<AIChase>();
+        //        if (aIChase != null)
+        //        {
+        //            //aiChase.attackDamage += damageDecrease;
+        //            aiChase.attackDecreased = false;
+        //            Debug.Log("cerwyn reset");
+        //        }
+
+        //    }
+        //}
     }
 }
 

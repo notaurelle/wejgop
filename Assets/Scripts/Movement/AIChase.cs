@@ -29,6 +29,8 @@ public class AIChase : MonoBehaviour
 
 
     public int attackDamage = 5;
+    public int decreaseDamage = 4;
+    public bool attackDecreased = false; 
 
     //timer
     public float Timer;
@@ -101,7 +103,10 @@ public class AIChase : MonoBehaviour
         foreach (Collider2D player in hitPlayers)
         {
             Debug.Log("Mob hit " + player.name);
-            player.GetComponent<PlayerParent>().TakeDamage(attackDamage);
+            //Short hand for if statement
+            player.GetComponent<PlayerParent>().TakeDamage(attackDecreased == true ? attackDamage - decreaseDamage : attackDamage);
+
+
             //value can be set in brackets TD(20) or can add public int
         }
     }

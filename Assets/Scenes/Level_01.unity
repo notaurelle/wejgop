@@ -1572,6 +1572,8 @@ MonoBehaviour:
   mobHP: {fileID: 1757959786}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -2050,6 +2052,8 @@ MonoBehaviour:
   mobHP: {fileID: 2088029891}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -2873,6 +2877,8 @@ MonoBehaviour:
   mobHP: {fileID: 2024782368}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -3250,6 +3256,8 @@ MonoBehaviour:
   mobHP: {fileID: 1364959438}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -3835,6 +3843,8 @@ MonoBehaviour:
   mobHP: {fileID: 572712241}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -5053,6 +5063,8 @@ MonoBehaviour:
   mobHP: {fileID: 974885194}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -5186,6 +5198,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8991043593297643756, guid: 65a0ab3da10af724bb606c9911808a32, type: 3}
   m_PrefabInstance: {fileID: 1277658687}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1277658694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6977274738835537718, guid: 65a0ab3da10af724bb606c9911808a32, type: 3}
+  m_PrefabInstance: {fileID: 1277658687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595e93f9de19abd40a2be74616e815a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1294272750
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,6 +5853,8 @@ MonoBehaviour:
   mobHP: {fileID: 1097559436}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -6653,6 +6678,8 @@ MonoBehaviour:
   mobHP: {fileID: 2107629402}
   maxHealth: 2000
   attackDamage: 40
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -8774,6 +8801,8 @@ MonoBehaviour:
   mobHP: {fileID: 1907732265}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
@@ -10313,7 +10342,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731978403757661816}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -10335,7 +10364,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10349,7 +10378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.4, y: 6.4}
+  m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
 --- !u!114 &1325694145906355466
 MonoBehaviour:
@@ -16476,7 +16505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
-  aiChase: {fileID: 0}
+  aiChase: {fileID: 1277658694}
   candy: 0
   attackPoint: {fileID: 1172686608662614670}
   attackRange: 1
@@ -16498,8 +16527,9 @@ MonoBehaviour:
     progressTracker: {fileID: 0}
     Goal: {fileID: 6459201792147126009}
   cerwynRadius: 3
-  damageDecrease: 0
+  damageDecrease: 4
   cooldownDuration: 13
+  globs: []
 --- !u!1 &7515638247522196674
 GameObject:
   m_ObjectHideFlags: 0
