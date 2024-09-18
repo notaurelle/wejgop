@@ -3609,6 +3609,7 @@ GameObject:
   - component: {fileID: 181394124}
   - component: {fileID: 181394123}
   - component: {fileID: 181394125}
+  - component: {fileID: 181394126}
   m_Layer: 6
   m_Name: TEST2 Player3 (Support)/Cerwyn
   m_TagString: Ally
@@ -3738,6 +3739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
+  aiChase: {fileID: 0}
+  candy: 0
   attackPoint: {fileID: 1638511005}
   attackRange: 1
   enemyLayers:
@@ -3745,8 +3748,22 @@ MonoBehaviour:
     m_Bits: 8
   maxHealth: 1000
   healthBar: {fileID: 1108259061}
+  skillImage: {fileID: 0}
   attackDamage: 20
   attackSkill: 100
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    requiredAmount: 
+    currentAmount: 
+    candyReward: 0
+    progressTracker: {fileID: 0}
+    Goal: {fileID: 0}
+  cerwynRadius: 2
+  damageDecrease: 0
+  cooldownDuration: 13
+  globs: []
 --- !u!61 &181394123
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3871,6 +3888,20 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 1843994365}
+--- !u!114 &181394126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181394116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+  inputManager: {fileID: 1416926668}
 --- !u!1 &194565808
 GameObject:
   m_ObjectHideFlags: 0
@@ -11875,11 +11906,15 @@ MonoBehaviour:
   mobHP: {fileID: 0}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
   stunDuration: 2
   healthBar: {fileID: 1101453342}
+  questGoal: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &821060069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12502,6 +12537,7 @@ GameObject:
   - component: {fileID: 955713438}
   - component: {fileID: 955713437}
   - component: {fileID: 955713439}
+  - component: {fileID: 955713440}
   m_Layer: 6
   m_Name: TEST2 Player2 (DPS)/Harry
   m_TagString: Ally
@@ -12631,6 +12667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
+  aiChase: {fileID: 0}
+  candy: 0
   attackPoint: {fileID: 310806874}
   attackRange: 1
   enemyLayers:
@@ -12639,9 +12677,20 @@ MonoBehaviour:
   maxHealth: 1200
   currentHealth: 0
   skillImage: {fileID: 1806585955}
+  newColor: {r: 1, g: 0, b: 0, a: 1}
   healthBar: {fileID: 3722642359420028273}
   attackDamage: 40
   attackSkill: 100
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    requiredAmount: 
+    currentAmount: 
+    candyReward: 0
+    progressTracker: {fileID: 0}
+    Goal: {fileID: 0}
+  mob: {fileID: 0}
 --- !u!61 &955713437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12766,6 +12815,20 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 5154515671868246053}
+--- !u!114 &955713440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955713431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+  inputManager: {fileID: 1416926668}
 --- !u!1 &965841833
 GameObject:
   m_ObjectHideFlags: 0
@@ -13040,6 +13103,7 @@ GameObject:
   - component: {fileID: 1059258267}
   - component: {fileID: 1059258266}
   - component: {fileID: 1059258268}
+  - component: {fileID: 1059258269}
   m_Layer: 6
   m_Name: TEST Player1 (Healer)/Wylla
   m_TagString: Ally
@@ -13169,6 +13233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
+  aiChase: {fileID: 0}
+  candy: 0
   attackPoint: {fileID: 334245759}
   attackRange: 2
   enemyLayers:
@@ -13177,11 +13243,21 @@ MonoBehaviour:
   healthBar: {fileID: 366760776}
   skillImage: {fileID: 1564358973}
   maxHealth: 2000
+  currentHealth: 0
   attackDamage: 15
   attackSkill: 30
   healingRadius: 2
   healingAmount: 20
   healingInterval: 1
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    requiredAmount: 
+    currentAmount: 
+    candyReward: 0
+    progressTracker: {fileID: 0}
+    Goal: {fileID: 0}
 --- !u!61 &1059258266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13297,6 +13373,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0000009536743}
   serializedVersion: 2
   m_Radius: 10
+--- !u!114 &1059258269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059258259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  inputManager: {fileID: 1416926668}
 --- !u!1 &1096014257
 GameObject:
   m_ObjectHideFlags: 0
@@ -15547,6 +15637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416926667}
+  - component: {fileID: 1416926668}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -15569,6 +15660,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416926668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416926665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969bbd4d382aaa04f9313bf583d8e676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayers: 3
+  players: []
 --- !u!1 &1442243098
 GameObject:
   m_ObjectHideFlags: 0
@@ -17333,11 +17438,15 @@ MonoBehaviour:
   mobHP: {fileID: 0}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
   stunDuration: 2
   healthBar: {fileID: 43067995}
+  questGoal: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &1743491906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20678,11 +20787,15 @@ MonoBehaviour:
   mobHP: {fileID: 489706324}
   maxHealth: 1000
   attackDamage: 20
+  decreaseDamage: 4
+  attackDecreased: 0
   Timer: 0
   attackTimer: 3
   stunned: 0
   stunDuration: 2
   healthBar: {fileID: 489706326}
+  questGoal: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &1979186497
 SpriteRenderer:
   m_ObjectHideFlags: 0

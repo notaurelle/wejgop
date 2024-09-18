@@ -415,6 +415,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         }
     }
     public MasterActionsActions @MasterActions => new MasterActionsActions(this);
+
+    public object MasterControls { get; internal set; }
+
     public interface IMasterActionsActions
     {
         void OnNorthButton(InputAction.CallbackContext context);

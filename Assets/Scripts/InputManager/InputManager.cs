@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; //Used for the unity's new input system
 
+
+
 public class InputManager : MonoBehaviour
 {
     public static InputManager instance;
 
     public static InputControls inputControls; //Controls that we created through the Unity's input system
-    [SerializeField] int maxPlayers = 4; //Amount of players that can be connected
+    [SerializeField] int maxPlayers = 3; //Amount of players that can be connected
     public List<IndividualDevice> players = new List<IndividualDevice>(); //List of all the players and the device that is assigned to them
 
     //This delegate can be used for scripts checking/waiting for a player to join
