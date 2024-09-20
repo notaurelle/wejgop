@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Harry_Idle
+  m_Name: HarryWalk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: e632108f186bb0e4bb2971f5e3755938, type: 3}
+      value: {fileID: 21300000, guid: d5a6598d0cfb5f8498757edac37d3452, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 54b6e5135c4d9324da992ab039e45b79, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 9f6dad3a581c60c4d9d55ddce62da43d, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: c9038f59038702642b2304f02a6abd9a, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: e632108f186bb0e4bb2971f5e3755938, type: 3}
+      value: {fileID: 21300000, guid: ade9e1fe90ba1e049978971a3b763c36, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: d5a6598d0cfb5f8498757edac37d3452, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: e632108f186bb0e4bb2971f5e3755938, type: 3}
-    - {fileID: 21300000, guid: c9038f59038702642b2304f02a6abd9a, type: 3}
-    - {fileID: 21300000, guid: e632108f186bb0e4bb2971f5e3755938, type: 3}
+    - {fileID: 21300000, guid: d5a6598d0cfb5f8498757edac37d3452, type: 3}
+    - {fileID: 21300000, guid: 54b6e5135c4d9324da992ab039e45b79, type: 3}
+    - {fileID: 21300000, guid: 9f6dad3a581c60c4d9d55ddce62da43d, type: 3}
+    - {fileID: 21300000, guid: ade9e1fe90ba1e049978971a3b763c36, type: 3}
+    - {fileID: 21300000, guid: d5a6598d0cfb5f8498757edac37d3452, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0833334
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -1073,7 +1073,7 @@ Transform:
   m_GameObject: {fileID: 360934326}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.584628, y: -3.9241872, z: -22.596174}
+  m_LocalPosition: {x: -2.293061, y: -4.181887, z: -22.596174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2329,7 +2329,7 @@ Transform:
   m_GameObject: {fileID: 659795108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.584628, y: -3.9241872, z: -32.596176}
+  m_LocalPosition: {x: -2.293061, y: -4.181887, z: -32.596176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9212,14 +9212,14 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 6.4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10367,7 +10367,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.013523877, y: 0.014747977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10378,7 +10378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 20}
+  m_Size: {x: 3.364552, y: 2.8311012}
   m_EdgeRadius: 0
 --- !u!114 &1325694145906355466
 MonoBehaviour:
@@ -11163,7 +11163,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5898061534884630373}
-  - {fileID: 7266354063470896191}
   - {fileID: 5785705704305920041}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11196,12 +11195,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.0000009536743}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 1.5
 --- !u!1 &1736487820532920251
 GameObject:
   m_ObjectHideFlags: 0
@@ -11573,7 +11572,7 @@ MonoBehaviour:
   currentHealth: 0
   attackDamage: 15
   attackSkill: 30
-  healingRadius: 2
+  healingRadius: 1.63
   healingAmount: 20
   healingInterval: 1
   quest:
@@ -11802,7 +11801,7 @@ Transform:
   m_GameObject: {fileID: 6622529828633517280}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.584628, y: -3.9241872, z: -32.596176}
+  m_LocalPosition: {x: -2.293061, y: -4.181887, z: -32.596176}
   m_LocalScale: {x: -0.20673326, y: -0.20673326, z: -0.20673326}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12080,7 +12079,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13187,14 +13186,14 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 6.4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13348,8 +13347,8 @@ Transform:
   m_GameObject: {fileID: 1430559890648433016}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: 0, y: -0.00000012154, z: 0}
+  m_LocalScale: {x: 4.2873, y: 4.2873, z: 4.2873}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7266354063470896191}
@@ -14662,8 +14661,8 @@ Transform:
   m_GameObject: {fileID: 6325466915817973203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: 0.00000010277, y: -0.00000011148, z: 0}
+  m_LocalScale: {x: 3.8630998, y: 3.8630998, z: 3.8630998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5898061534884630373}
@@ -14852,12 +14851,13 @@ Transform:
   m_GameObject: {fileID: 5444130851765190736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.084700346, y: -2.0469, z: 0}
-  m_LocalScale: {x: 0.15262824, y: 0.15262824, z: 0.15262824}
+  m_LocalPosition: {x: -2.21, y: -2.82, z: 0}
+  m_LocalScale: {x: 0.5346873, y: 0.5346873, z: 0.5346873}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9186506982302606486}
   - {fileID: 5597314180980424209}
+  - {fileID: 7266354063470896191}
   m_Father: {fileID: 1667945491779257219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5910448397998168365
@@ -15665,6 +15665,7 @@ GameObject:
   - component: {fileID: 3977666684086998846}
   - component: {fileID: 7547586688078839634}
   - component: {fileID: 7547586688078839635}
+  - component: {fileID: 7547586688078839636}
   m_Layer: 6
   m_Name: Player2 (DPS)/Harry
   m_TagString: Ally
@@ -15816,7 +15817,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 208ab1fd8ecd8e9478aac501d8725f01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e632108f186bb0e4bb2971f5e3755938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16154,7 +16155,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5444130851765190736}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7fabc76f6fd720040acbb98996687260, type: 2}
   m_CullingMode: 0
@@ -16296,13 +16297,13 @@ Transform:
   m_GameObject: {fileID: 6653483663135187039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.93, y: -2.01, z: 0}
-  m_LocalScale: {x: 0.15262827, y: 0.15262827, z: 0.15262827}
+  m_LocalPosition: {x: -1.3465816, y: 1.5149041, z: 0}
+  m_LocalScale: {x: 0.91721874, y: 0.91721874, z: 0.91721874}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6223953977083506477}
   - {fileID: 4086568968518310494}
-  m_Father: {fileID: 1667945491779257219}
+  m_Father: {fileID: 5898061534884630373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &7284419136653011514
 Grid:
@@ -16602,6 +16603,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112c11ffc7aa0c743a37a4a630ad2afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7547586688078839636
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653483663135187039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3491fce2cdbee5f44be04c273aa69942, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7550721880807040246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16910,7 +16932,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 85675d0350c4e684d969041187c2ee77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a3e6e1e3fab1794ba4f73a7191872b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18045,12 +18067,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 3.02
 --- !u!114 &8871117308271082584
 MonoBehaviour:
   m_ObjectHideFlags: 0

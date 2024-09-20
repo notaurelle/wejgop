@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wylla_IdleWalk
+  m_Name: Wylla_Movement
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,13 +22,13 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 21300000, guid: 6a3e6e1e3fab1794ba4f73a7191872b9, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: 2f6f39eb6b6d63a4d9673778224f9b4e, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 74358ff39cc1fa8428b1a8f40536e7ad, type: 3}
     - time: 0.25
+      value: {fileID: 21300000, guid: 2f6f39eb6b6d63a4d9673778224f9b4e, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 74358ff39cc1fa8428b1a8f40536e7ad, type: 3}
+    - time: 0.75
       value: {fileID: 21300000, guid: f73064b5f21609042a430faa464f3210, type: 3}
-    - time: 0.33333334
+    - time: 1
       value: {fileID: 21300000, guid: f12c3832cba7da64faee1c2e7f4513fa, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.41666666
+    m_StopTime: 1.0833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

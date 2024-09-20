@@ -21,7 +21,7 @@ public class PlayerHealer : PlayerParent
     private int damageThreshold = 120; // Set Value
     private bool canUseChargedAbility = false;
 
-    public float healingRadius = 3f; // Radius for healing
+    public float healingRadius = 2f; // Radius for healing
     public int healingAmount = 20; // Amount of health to heal per interval
     public float healingInterval = 1f; // How often to heal (in seconds) 
 
