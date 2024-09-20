@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public InputManager inputManager;
     public Vector2 Movement;
     InputControls inputControls;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +18,18 @@ public class PlayerInput : MonoBehaviour
         inputManager.onPlayerJoined += AssignInputs;
     }
 
+    private void Update()
+    {
+        transform.position += (Vector3)Movement * Time.deltaTime * speed;
+    }
+
     private void OnDisable()
     {
         if (inputControls != null)
-        {
+        { 
            inputManager.onPlayerJoined -= AssignInputs;
-           //inputControls.MasterControls.Movement.performed -= MovementPerformed;
-           //inputControls.MasterControls.Movement.canceled -= MovementCanceled;
+            inputControls.MasterActions.Movement.performed -= MovementPerformed;
+            inputControls.MasterActions.Movement.canceled -= MovementCanceled;
         }
         else
         {
@@ -37,8 +43,8 @@ public class PlayerInput : MonoBehaviour
         {
             inputManager.onPlayerJoined = AssignInputs;
             inputControls = inputManager.players[playerID].playerControls;
-            //inputControls.MasterControls.Movement.performed += MovementPerformed;
-            //inputControls.MasterControls.Movement.canceled += MovementCanceled;
+            inputControls.MasterActions.Movement.performed += MovementPerformed;
+            inputControls.MasterActions.Movement.canceled += MovementCanceled;
         }
     }
 
@@ -49,6 +55,6 @@ public class PlayerInput : MonoBehaviour
 
     private void MovementPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        throw new System.NotImplementedException();
+        Movement = obj.ReadValue<Vector2>();
     }
 }
