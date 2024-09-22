@@ -10,7 +10,7 @@ public class PlayerPos : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-        transform.position = gameManager.lastCheckPointPos;
+        //transform.position = gameManager.lastCheckPointPos;
     }
     public void RespawnPosition()
     {
