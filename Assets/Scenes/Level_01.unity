@@ -4243,6 +4243,52 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1070404320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070404322}
+  - component: {fileID: 1070404321}
+  m_Layer: 0
+  m_Name: Input Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1070404321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070404320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969bbd4d382aaa04f9313bf583d8e676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayers: 3
+  players: []
+--- !u!4 &1070404322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070404320}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 413.05902, y: 140.57199, z: -2.5712898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1097559436
 GameObject:
   m_ObjectHideFlags: 0
@@ -13014,7 +13060,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731978403757661816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbdc822c0af424648a40eecd8e1c456e, type: 3}
   m_Name: 
@@ -14578,6 +14624,7 @@ GameObject:
   - component: {fileID: 8426062173129276878}
   - component: {fileID: 7188218173590703006}
   - component: {fileID: 8871117308271082584}
+  - component: {fileID: 8871117308271082585}
   m_Layer: 6
   m_Name: Player1 (Healer)/Wylla
   m_TagString: Wylla
@@ -15024,7 +15071,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5444130851765190736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c11b1970d8a3614a8ba33b2857a1c06, type: 3}
   m_Name: 
@@ -15630,6 +15677,7 @@ GameObject:
   - component: {fileID: 7547586688078839634}
   - component: {fileID: 7547586688078839635}
   - component: {fileID: 7547586688078839636}
+  - component: {fileID: 7547586688078839637}
   m_Layer: 6
   m_Name: Player2 (DPS)/Harry
   m_TagString: Ally
@@ -16588,6 +16636,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7547586688078839637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653483663135187039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+  Movement: {x: 0, y: 0}
+  speed: 3
+  attackButton: 0
+  chargedAttackButton: 0
+  northButton: 0
+  westButton: 0
+  southButton: 0
+  eastButton: 0
 --- !u!114 &7550721880807040246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17787,6 +17856,7 @@ GameObject:
   - component: {fileID: 8203701765534474841}
   - component: {fileID: 7807137108110264462}
   - component: {fileID: 8731978403757661817}
+  - component: {fileID: 8731978403757661818}
   m_Layer: 6
   m_Name: Player3 (Support)/Cerwyn
   m_TagString: Ally
@@ -17806,6 +17876,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112c11ffc7aa0c743a37a4a630ad2afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8731978403757661818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731978403757661816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+  Movement: {x: 0, y: 0}
+  speed: 3
+  attackButton: 0
+  chargedAttackButton: 0
+  northButton: 0
+  westButton: 0
+  southButton: 0
+  eastButton: 0
 --- !u!114 &8737828874128101981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18049,6 +18140,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112c11ffc7aa0c743a37a4a630ad2afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8871117308271082585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5444130851765190736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0627e5b09e0264c941f4fc8f82196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  Movement: {x: 0, y: 0}
+  speed: 3
+  attackButton: 0
+  chargedAttackButton: 0
+  northButton: 0
+  westButton: 0
+  southButton: 0
+  eastButton: 0
 --- !u!1 &8873697550371775888
 GameObject:
   m_ObjectHideFlags: 0
@@ -18246,6 +18358,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1070404322}
   - {fileID: 2062628975}
   - {fileID: 2143964835}
   - {fileID: 1489037207}

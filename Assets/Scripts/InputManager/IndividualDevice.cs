@@ -43,7 +43,7 @@ public class IndividualDevice
         {
             controllerType = ControllerType.Playstation;
         }
-        else if (inputDevice is UnityEngine.InputSystem.XInput.XInputControllerWindows)
+        else if (inputDevice is UnityEngine.InputSystem.Gamepad)
         {
             controllerType = ControllerType.Xbox;
         }

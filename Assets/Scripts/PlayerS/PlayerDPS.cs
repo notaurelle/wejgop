@@ -8,6 +8,7 @@ public class PlayerDPS : PlayerParent
 {
     // NOTE FOR ANYONE WHO SEES THIS YOU BASICALLY CANT SEE ATTACK REGISTER WITHOUT AN ANIMATION SPRITE :0
 
+    PlayerInput playerInput;  // so we can use player input.cs here - nadine
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
@@ -49,6 +50,7 @@ public class PlayerDPS : PlayerParent
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
+        playerInput = GetComponent<PlayerInput>();  
         // references player pos script - nadine
 
     }
@@ -70,14 +72,16 @@ public class PlayerDPS : PlayerParent
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q)) //IS currently space just for testing
+        if (playerInput.attackButton) //changed for all three players are now referencing playerinput.cs
         {
             Attack();
+            playerInput.attackButton = false;
         }
         
-        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.E))
+        if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+            playerInput.chargedAttackButton = false;
         }
 
         //Call function

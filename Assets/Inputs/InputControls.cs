@@ -80,13 +80,31 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AttackButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae47ee8a-7a1d-438f-8983-d3647aa37146"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChargeAttackButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""51bdc886-e367-4dc6-84fa-e113903d2f85"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""d49c5048-d47d-4772-a93a-4b228306e9f1"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -108,7 +126,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""98acb2b7-ed4e-4b71-9676-8a8a1bc1f0be"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -130,7 +148,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9bc9e8ca-cdc0-4bf7-8656-ce2f9affeb0d"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -152,7 +170,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""81cd8dbe-9d4c-4c5d-bbb1-d3f1e7bea964"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -258,6 +276,28 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""babe9262-171d-418e-92b1-264c22b33938"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1d3f616-bd5d-4adb-b7cd-e1bbec56230d"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChargeAttackButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -272,6 +312,8 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         m_MasterActions_EastButton = m_MasterActions.FindAction("EastButton", throwIfNotFound: true);
         m_MasterActions_StartButton = m_MasterActions.FindAction("StartButton", throwIfNotFound: true);
         m_MasterActions_Movement = m_MasterActions.FindAction("Movement", throwIfNotFound: true);
+        m_MasterActions_AttackButton = m_MasterActions.FindAction("AttackButton", throwIfNotFound: true);
+        m_MasterActions_ChargeAttackButton = m_MasterActions.FindAction("ChargeAttackButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +381,8 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_MasterActions_EastButton;
     private readonly InputAction m_MasterActions_StartButton;
     private readonly InputAction m_MasterActions_Movement;
+    private readonly InputAction m_MasterActions_AttackButton;
+    private readonly InputAction m_MasterActions_ChargeAttackButton;
     public struct MasterActionsActions
     {
         private @InputControls m_Wrapper;
@@ -349,6 +393,8 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         public InputAction @EastButton => m_Wrapper.m_MasterActions_EastButton;
         public InputAction @StartButton => m_Wrapper.m_MasterActions_StartButton;
         public InputAction @Movement => m_Wrapper.m_MasterActions_Movement;
+        public InputAction @AttackButton => m_Wrapper.m_MasterActions_AttackButton;
+        public InputAction @ChargeAttackButton => m_Wrapper.m_MasterActions_ChargeAttackButton;
         public InputActionMap Get() { return m_Wrapper.m_MasterActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -376,6 +422,12 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @AttackButton.started += instance.OnAttackButton;
+            @AttackButton.performed += instance.OnAttackButton;
+            @AttackButton.canceled += instance.OnAttackButton;
+            @ChargeAttackButton.started += instance.OnChargeAttackButton;
+            @ChargeAttackButton.performed += instance.OnChargeAttackButton;
+            @ChargeAttackButton.canceled += instance.OnChargeAttackButton;
         }
 
         private void UnregisterCallbacks(IMasterActionsActions instance)
@@ -398,6 +450,12 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @AttackButton.started -= instance.OnAttackButton;
+            @AttackButton.performed -= instance.OnAttackButton;
+            @AttackButton.canceled -= instance.OnAttackButton;
+            @ChargeAttackButton.started -= instance.OnChargeAttackButton;
+            @ChargeAttackButton.performed -= instance.OnChargeAttackButton;
+            @ChargeAttackButton.canceled -= instance.OnChargeAttackButton;
         }
 
         public void RemoveCallbacks(IMasterActionsActions instance)
@@ -423,5 +481,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         void OnEastButton(InputAction.CallbackContext context);
         void OnStartButton(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
+        void OnAttackButton(InputAction.CallbackContext context);
+        void OnChargeAttackButton(InputAction.CallbackContext context);
     }
 }

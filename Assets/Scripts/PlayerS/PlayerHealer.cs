@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerHealer : PlayerParent
 {
+    PlayerInput playerInput;
+
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers; // LayerMask for enemies (not used in healing)
@@ -36,6 +38,7 @@ public class PlayerHealer : PlayerParent
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
+        playerInput = GetComponent<PlayerInput>();
 
         // Start healing coroutine
         StartCoroutine(PassiveHealing());
@@ -55,14 +58,16 @@ public class PlayerHealer : PlayerParent
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Quote)) // Change KeyCode as needed
+        if (playerInput.attackButton) // Change KeyCode as needed
         {
             Attack();
+            playerInput.attackButton = false;
         }
 
-        if (canUseChargedAbility && Input.GetKeyUp(KeyCode.Return))
+        if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+            playerInput.chargedAttackButton = false;
         }
     }
 

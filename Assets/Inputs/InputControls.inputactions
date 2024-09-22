@@ -58,13 +58,31 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "AttackButton",
+                    "type": "Button",
+                    "id": "ae47ee8a-7a1d-438f-8983-d3647aa37146",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChargeAttackButton",
+                    "type": "Button",
+                    "id": "51bdc886-e367-4dc6-84fa-e113903d2f85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "d49c5048-d47d-4772-a93a-4b228306e9f1",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -86,7 +104,7 @@
                 {
                     "name": "",
                     "id": "98acb2b7-ed4e-4b71-9676-8a8a1bc1f0be",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -108,7 +126,7 @@
                 {
                     "name": "",
                     "id": "9bc9e8ca-cdc0-4bf7-8656-ce2f9affeb0d",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -130,7 +148,7 @@
                 {
                     "name": "",
                     "id": "81cd8dbe-9d4c-4c5d-bbb1-d3f1e7bea964",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -234,6 +252,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "babe9262-171d-418e-92b1-264c22b33938",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1d3f616-bd5d-4adb-b7cd-e1bbec56230d",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChargeAttackButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

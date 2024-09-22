@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerSupport : PlayerParent
 {
+    PlayerInput playerInput; 
+
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
@@ -45,6 +47,7 @@ public class PlayerSupport : PlayerParent
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     public override void TakeDamage(int damage)
@@ -62,15 +65,17 @@ public class PlayerSupport : PlayerParent
     private void Update()
     {
         // Check if the Fire1 button is pressed for attack
-        if (Input.GetButtonDown("Fire1"))
+        if (playerInput.attackButton)
         {
             Attack();
+            playerInput.attackButton = false;
         }
 
         // Check if the Fire3 button is pressed for the charged ability
-        if (canUseChargedAbility && Input.GetButtonDown("Fire3"))
+        if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+            playerInput.chargedAttackButton = false;
         }
 
         Debuff();

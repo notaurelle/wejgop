@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class MoveWASD : MonoBehaviour
 {
+    PlayerInput playerInput; 
     Rigidbody2D Rb;
-    public float speed = 5f; // Default speed value
+    // public float speed = 5f; // Default speed value
     private Animator anim;
     bool isWalking = false; // bool for walking
     float horizontal; // moving left right
@@ -19,6 +20,7 @@ public class MoveWASD : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -27,34 +29,38 @@ public class MoveWASD : MonoBehaviour
         float MovementY = 0;
         anim.SetBool("IsWalking", false);
 
-        if (Input.GetKey(KeyCode.W))
+        if (playerInput.northButton)
         {
             MovementY = 1;
             anim.SetBool("IsWalking", true);
+            // playerInput.northButton = false;
 
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (playerInput.southButton)
         {
             MovementY = -1;
             anim.SetBool("IsWalking", true);
+           //  playerInput.southButton = false;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (playerInput.westButton)
         {
             MovementX = -1;
             anim.SetBool("IsWalking", true);
             spriteRenderer.flipX = true;
+            // playerInput.westButton = false;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (playerInput.eastButton)
         {
             MovementX = 1;
             anim.SetBool("IsWalking", true);
             spriteRenderer.flipX = false;
+           // playerInput.eastButton = false;
 
         }
 
         Vector2 movement = new Vector2(MovementX, MovementY).normalized;
-        Rb.velocity = movement * speed;
+        //Rb.velocity = movement * speed;
 
    
     }
