@@ -18,15 +18,37 @@ public class PlayerInput : MonoBehaviour
     public bool southButton; 
     public bool eastButton;
 
+    private Animator anim;
+    bool isWalking = false; // bool for walking
+
+    SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         InputManager.instance.onPlayerJoined += AssignInputs;
+        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         transform.position += (Vector3)Movement * Time.deltaTime * speed;
+        if (Movement != Vector2.zero)
+        {
+            anim.SetBool("IsWalking", true);
+            if(Movement.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true; 
+            }
+        } else
+        {
+            anim.SetBool("IsWalking", false);
+        }
     }
 
     private void OnDisable()
