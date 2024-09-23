@@ -12,6 +12,8 @@ public class QuestGiver : MonoBehaviour
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
+    public Text candyText;
+    public Text requiredAmountText;
     public GameObject questButton;
 
     private bool isPlayerInRange = false;
@@ -62,6 +64,9 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
+        candyText.text = quest.candyAmount;
+        requiredAmountText.text = quest.requiredAmount;
+
         Mob.gameObject.SetActive(false);
         //Mob.enabled = false;
     }

@@ -12,6 +12,7 @@ public class Quest
     public string description;
     public string requiredAmount;
     public string currentAmount;
+    public string candyAmount;
     public int candyReward;
 
     public GameObject progressTracker;

@@ -20,7 +20,7 @@ public class PlayerHealer : PlayerParent
     public int attackSkill = 30; // DMG for charged ATK 
 
     private int totalDamageDealt = 0;
-    private int damageThreshold = 120; // Set Value
+    private int damageThreshold = 85; // Set Value
     private bool canUseChargedAbility = false;
 
     public float healingRadius = 2f; // Radius for healing

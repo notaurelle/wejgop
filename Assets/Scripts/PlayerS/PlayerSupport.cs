@@ -19,11 +19,11 @@ public class PlayerSupport : PlayerParent
 
     public GameObject skillImage;
 
-    public int attackDamage = 40;
-    public int attackSkill = 100;
+    public int attackDamage = 25;
+    public int attackSkill = 75;
 
     private int totalDamageDealt = 0; // Tracks total damage dealt
-    private int damageThreshold = 120;  // Damage needed to activate charged ability
+    private int damageThreshold = 100;  // Damage needed to activate charged ability
     private bool canUseChargedAbility = false;
 
     //quest
