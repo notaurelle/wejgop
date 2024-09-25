@@ -973,6 +973,7 @@ MonoBehaviour:
     description: 
     requiredAmount: 
     currentAmount: 
+    candyAmount: 
     candyReward: 13
     progressTracker: {fileID: 0}
     Goal: {fileID: 0}
@@ -1343,6 +1344,7 @@ MonoBehaviour:
     description: 
     requiredAmount: 
     currentAmount: 
+    candyAmount: 
     candyReward: 0
     progressTracker: {fileID: 0}
     Goal: {fileID: 0}
@@ -5917,6 +5919,7 @@ MonoBehaviour:
     description: 
     requiredAmount: 
     currentAmount: 
+    candyAmount: 
     candyReward: 0
     progressTracker: {fileID: 0}
     Goal: {fileID: 0}

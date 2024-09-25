@@ -29,6 +29,7 @@ public class PlayerInput : MonoBehaviour
         InputManager.instance.onPlayerJoined += AssignInputs;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+      
     }
 
     private void Update()

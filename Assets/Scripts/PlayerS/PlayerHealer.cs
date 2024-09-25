@@ -33,12 +33,18 @@ public class PlayerHealer : PlayerParent
     //Checkpoin pos reference to script same as PlayerDPS- nadine
     private PlayerPos playerPosScript;
 
+    //attack animations
+    private Animator anim;
+    bool isAttacking = false;
+    bool isChargedAttacking = false; 
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
         playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
 
         // Start healing coroutine
         StartCoroutine(PassiveHealing());
@@ -58,10 +64,12 @@ public class PlayerHealer : PlayerParent
 
     private void Update()
     {
+
         if (playerInput.attackButton) // Change KeyCode as needed
         {
             Attack();
             playerInput.attackButton = false;
+            
         }
 
         if (canUseChargedAbility && playerInput.chargedAttackButton)
@@ -69,26 +77,26 @@ public class PlayerHealer : PlayerParent
             PerformAbility();
             playerInput.chargedAttackButton = false;
         }
-    }
 
-    void Attack()
-    {
-        // Detect enemies in range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        // Damage them
-        foreach (Collider2D enemy in hitEnemies)
+        void Attack()
         {
-            //Debug.Log("Healer hit " + enemy.name);
-            enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
+            // Detect enemies in range of attack
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-            totalDamageDealt += attackDamage;
-
-            if (totalDamageDealt >= damageThreshold)
+            // Damage them
+            foreach (Collider2D enemy in hitEnemies)
             {
-                canUseChargedAbility = true;
-                skillImage.SetActive(true);
-                // Debug.Log("Healer Charged ability is now available!");
+                //Debug.Log("Healer hit " + enemy.name);
+                enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
+
+                totalDamageDealt += attackDamage;
+
+                if (totalDamageDealt >= damageThreshold)
+                {
+                    canUseChargedAbility = true;
+                    skillImage.SetActive(true);
+                    // Debug.Log("Healer Charged ability is now available!");
+                }
             }
         }
     }
