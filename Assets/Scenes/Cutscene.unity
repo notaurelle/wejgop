@@ -325,17 +325,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &347135048 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2218093818110266354, guid: cf4d380ea9678354fbace80494173325, type: 3}
-  m_PrefabInstance: {fileID: 488147583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &465999961
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1200115899822395939, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1349695811875265362, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -685,6 +678,10 @@ PrefabInstance:
     - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: dialogue.Array.data[0].name
       value: gofdrink
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[1].name
+      value: harry
       objectReference: {fileID: 0}
     - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: dialogue.sentences.Array.size
@@ -1114,7 +1111,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.size
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
+      value: hewwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[1]
+      value: i am godrick teehee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[2]
+      value: how are you doing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003739288718292697, guid: cf4d380ea9678354fbace80494173325, type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
+      value: uwuw
       objectReference: {fileID: 0}
     - target: {fileID: 4916375501697633931, guid: cf4d380ea9678354fbace80494173325, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -1932,11 +1949,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847810329}
   m_CullTransparentMesh: 1
---- !u!95 &913008944 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1200115899822395939, guid: cf4d380ea9678354fbace80494173325, type: 3}
-  m_PrefabInstance: {fileID: 488147583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1011297056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,9 +1978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198a3465b205a47978d2601f6cc121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 347135048}
-  dialogueText: {fileID: 1222347085}
-  animator: {fileID: 913008944}
+  nameText: {fileID: 2218093817790939533}
+  dialogueText: {fileID: 7441286272093622089}
+  animator: {fileID: 1200115900040009820}
   typingSpeed: 0.02
 --- !u!4 &1011297058
 Transform:
@@ -1985,17 +1997,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222347085 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7441286271776392502, guid: cf4d380ea9678354fbace80494173325, type: 3}
-  m_PrefabInstance: {fileID: 488147583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1434207079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +2964,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089345385}
   m_CullTransparentMesh: 1
+--- !u!95 &1200115900040009820 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1200115899822395939, guid: cf4d380ea9678354fbace80494173325, type: 3}
+  m_PrefabInstance: {fileID: 488147583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2218093817790939533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2218093818110266354, guid: cf4d380ea9678354fbace80494173325, type: 3}
+  m_PrefabInstance: {fileID: 488147583}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7441286272093622089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7441286271776392502, guid: cf4d380ea9678354fbace80494173325, type: 3}
+  m_PrefabInstance: {fileID: 488147583}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
