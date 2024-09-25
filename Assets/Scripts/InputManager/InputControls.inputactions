@@ -257,12 +257,34 @@
                 },
                 {
                     "name": "",
+                    "id": "093ff375-41c7-4399-a3b6-e55f101596a4",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "babe9262-171d-418e-92b1-264c22b33938",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "AttackButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b120f36a-adcc-4112-8441-a321e257d59e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChargeAttackButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
