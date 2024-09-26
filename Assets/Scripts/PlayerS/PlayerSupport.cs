@@ -40,6 +40,11 @@ public class PlayerSupport : PlayerParent
 
     public List<AIChase> globs = new List<AIChase>();
 
+    //animation - nadine
+    private Animator anim;
+    bool isAttacking = false;
+    bool isChargedAttacking = false;
+
 
 
     void Start()
@@ -69,6 +74,11 @@ public class PlayerSupport : PlayerParent
         {
             Attack();
             playerInput.attackButton = false;
+            anim.SetBool("IsAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("IsAttacking", false);
         }
 
         // Check if the Fire3 button is pressed for the charged ability
@@ -76,6 +86,11 @@ public class PlayerSupport : PlayerParent
         {
             PerformAbility();
             playerInput.chargedAttackButton = false;
+            anim.SetBool("IsChargedAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("IsChargedAttacking", false);
         }
 
         Debuff();

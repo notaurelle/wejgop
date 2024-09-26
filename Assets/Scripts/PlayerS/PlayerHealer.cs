@@ -69,13 +69,25 @@ public class PlayerHealer : PlayerParent
         {
             Attack();
             playerInput.attackButton = false;
-            
+            anim.SetBool("IsAttacking", true);
+
+        }
+        else
+        {
+            anim.SetBool("IsAttacking", false); 
         }
 
         if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
+
             PerformAbility();
             playerInput.chargedAttackButton = false;
+            anim.SetBool("IsChargedAttacking", true);
+
+        }
+        else
+        {
+            anim.SetBool("IsChargedAttacking", false); 
         }
 
         void Attack()

@@ -41,8 +41,13 @@ public class PlayerDPS : PlayerParent
     public AIChase mob;
 
     //respawn method reference
-    private PlayerPos playerPosScript; 
+    private PlayerPos playerPosScript;
     // nadine needs this reference to make checkpoint function
+
+    //attack animations
+    private Animator anim;
+    bool isAttacking = false;
+    bool isChargedAttacking = false;
 
     
     void Start()
@@ -51,6 +56,7 @@ public class PlayerDPS : PlayerParent
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
         playerInput = GetComponent<PlayerInput>();  
+        anim = GetComponent<Animator>();
         // references player pos script - nadine
 
     }
@@ -76,12 +82,22 @@ public class PlayerDPS : PlayerParent
         {
             Attack();
             playerInput.attackButton = false;
+            anim.SetBool("IsAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("IsAttacking", false);
         }
         
         if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
             playerInput.chargedAttackButton = false;
+            anim.SetBool("IsChargedAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("IsChargedAttacking", false);
         }
 
         //Call function
