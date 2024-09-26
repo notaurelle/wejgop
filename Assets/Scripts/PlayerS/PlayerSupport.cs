@@ -53,6 +53,7 @@ public class PlayerSupport : PlayerParent
         healthBar.SetMaxHealth(maxHealth);
         playerPosScript = GetComponent<PlayerPos>();
         playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
     }
 
     public override void TakeDamage(int damage)
