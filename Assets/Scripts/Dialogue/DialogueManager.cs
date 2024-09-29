@@ -7,45 +7,38 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public Image dialogueImage;
 
     public Animator animator;
 
-    private Queue<string> sentences;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        sentences = new Queue<string>();
-    }
+    Dialogue[] currentDialogue;
+    int currentDialogueIndex;
 
-   public void StartDialogue (Dialogue dialogue)
+   public void StartDialogue (Dialogue[] dialogue)
     {
+        currentDialogueIndex = 0;
+        currentDialogue = dialogue;
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
-
-        sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-
-        DisplayNextSentence();
-
+        nameText.text = dialogue[0].characterName;
+        dialogueImage.sprite = dialogue[0].characterSprite;
+        StartCoroutine(TypeSentence(dialogue[0].dialogue));
     }
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        currentDialogueIndex++;
+        if (currentDialogueIndex >= currentDialogue.Length)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        nameText.text = currentDialogue[currentDialogueIndex].characterName;
+        dialogueImage.sprite = currentDialogue[currentDialogueIndex].characterSprite;
+        StartCoroutine(TypeSentence(currentDialogue[currentDialogueIndex].dialogue));
     }
 
     public float typingSpeed = 0.02f; //can adjust speed
