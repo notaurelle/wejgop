@@ -9,6 +9,8 @@ public class QuestGiver : MonoBehaviour
     public Quest quest;
     public QuestGoal goal;
     public AIChase Mob;
+    public BattleSystem battleSystem;
+
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
@@ -17,6 +19,8 @@ public class QuestGiver : MonoBehaviour
     public GameObject questButton;
 
     private bool isPlayerInRange = false;
+
+    public List<AIChase> Enemy = new List<AIChase>();
 
 
     //trying something out - aurelia
@@ -83,11 +87,21 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(false);
         quest.isActive = true;
         progressTracker.gameObject.SetActive(true); //- trying something out - aurelia
+
+
+
+
+        //30/09 StartBattle script
+        //battleSystem.StartBattle();
+        /*
         if (Mob != null)
         {
+
+
             Mob.gameObject.SetActive(true); //Ensure mob is active
             
         }
+        */
     }
 
     /*

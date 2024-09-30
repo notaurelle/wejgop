@@ -44,6 +44,7 @@ public class AIChase : MonoBehaviour
 
     // quest tingz
     public QuestGoal questGoal;
+    public QuestGiver questGiver;
     public int ID { get; set; }
     // public Quest quest; //reference to quest 
 
@@ -76,6 +77,7 @@ public class AIChase : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            //questGiver.Enemy.Remove(GetComponent<AIChase>());
             //questGoal.currentAmount += 1;
         }
 
@@ -158,6 +160,26 @@ public class AIChase : MonoBehaviour
         gameObject.SetActive(false);
         mobHP.SetActive(false);
 
+        /*
+        if (gameObject.tag == "Enemy")
+        {
+            if (questGiver.Enemy.Contains(gameObject.GetComponent<AIChase>()))
+            {
+                questGiver.Enemy.Remove(GetComponent<AIChase>());
+                Debug.Log("Removed from list");
+
+            }
+        }
+        */
+
+        //if (questGiver != null && questGiver.Enemy.Contains(GetComponent<AIChase>()))
+        //{
+        //    if (questGiver.Enemy.Remove(GetComponent<AIChase>()))
+        //    {
+        //        Debug.Log($"{gameObject.name} removed from the quest giver's enemy list.");
+        //    }
+
+
         /* Debug.Log("Enemy died with layer: " + LayerMask.LayerToName(gameObject.layer));
 
          // Notify the quest system that the mob has been killed
@@ -175,6 +197,8 @@ public class AIChase : MonoBehaviour
          mobHP.SetActive(false); */
     }
 
+        
+    
 
     // Update is called once per frame
     void Update()
