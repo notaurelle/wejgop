@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Checkpoint : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Checkpoint : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerInput playerInput = GetComponent<PlayerInput>();  
         if (other.CompareTag("Ally") || other.CompareTag("Wylla"))
         {
             gameManager.lastCheckPointPos = transform.position;

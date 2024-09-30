@@ -52,21 +52,23 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    /* private void OnDisable()
     {
         if (inputControls != null)
         {
             InputManager.instance.onPlayerJoined -= AssignInputs;
             inputControls.MasterActions.Movement.performed -= MovementPerformed;
             inputControls.MasterActions.Movement.canceled -= MovementCanceled;
+
+            
         }
         else
         {
             InputManager.instance.onPlayerJoined -= AssignInputs;
         }
            
-    }
-    void AssignInputs(int ID)
+    } */
+    public void AssignInputs(int ID)
     {
         if(playerID == ID)
         {
@@ -97,7 +99,58 @@ public class PlayerInput : MonoBehaviour
             inputControls.MasterActions.EastButton.canceled += ctx => eastButton = false;
 
         }
+    } 
+
+    private void OnDisable()
+    {
+        if (inputControls != null)
+        {
+            // Unsubscribe from the player joined event
+            InputManager.instance.onPlayerJoined -= AssignInputs;
+
+            // Unsubscribe from movement events
+            inputControls.MasterActions.Movement.performed -= MovementPerformed;
+            inputControls.MasterActions.Movement.canceled -= MovementCanceled;
+
+            // Unsubscribe from attack button events
+            inputControls.MasterActions.AttackButton.performed -= ctx => attackButton = true;
+            inputControls.MasterActions.AttackButton.canceled -= ctx => attackButton = false;
+
+            // Unsubscribe from charged attack button events
+            inputControls.MasterActions.ChargeAttackButton.performed -= ctx => chargedAttackButton = true;
+            inputControls.MasterActions.ChargeAttackButton.canceled -= ctx => chargedAttackButton = false;
+
+            // Unsubscribe from additional buttons
+            inputControls.MasterActions.NorthButton.performed -= ctx => northButton = true;
+            inputControls.MasterActions.NorthButton.canceled -= ctx => northButton = false;
+
+            inputControls.MasterActions.WestButton.performed -= ctx => westButton = true;
+            inputControls.MasterActions.WestButton.canceled -= ctx => westButton = false;
+
+            inputControls.MasterActions.SouthButton.performed -= ctx => southButton = true;
+            inputControls.MasterActions.SouthButton.canceled -= ctx => southButton = false;
+
+            inputControls.MasterActions.EastButton.performed -= ctx => eastButton = true;
+            inputControls.MasterActions.EastButton.canceled -= ctx => eastButton = false;
+        }
+        else
+        {
+            InputManager.instance.onPlayerJoined -= AssignInputs;
+        }
     }
+
+    public void UpdateAttackBindings()
+    {
+        if (inputControls != null)
+        {
+            inputControls.MasterActions.AttackButton.performed += ctx => attackButton = true;
+            inputControls.MasterActions.AttackButton.canceled += ctx => attackButton = false;
+
+            inputControls.MasterActions.ChargeAttackButton.performed += ctx => chargedAttackButton = true;
+            inputControls.MasterActions.ChargeAttackButton.canceled += ctx => chargedAttackButton = false;
+        }
+    }
+
 
     private void MovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

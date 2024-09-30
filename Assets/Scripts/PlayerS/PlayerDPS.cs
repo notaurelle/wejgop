@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerDPS : PlayerParent
 {
@@ -204,6 +205,9 @@ public class PlayerDPS : PlayerParent
         GetComponent<Collider2D>().enabled=true;
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+
+
+        
     }
 
 
