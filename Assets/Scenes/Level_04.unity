@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20558636}
   - component: {fileID: 20558637}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BossRightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191006368}
   - component: {fileID: 191006369}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BossLeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427551567}
   - component: {fileID: 1427551568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BossBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,11 +1288,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799290488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa6ccbedb082514ab74378e1852684d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc54a9107ffdc94fb7aca36e12a714b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  isFlipped: 0
+  startBossBattle: 1
+  currentBossStage: 0
+  bossHealth: 900
+  bossHealthStageTwo: 600
+  bossHealthStageThree: 300
+  BossHealthBar: {fileID: 0}
+  players: []
+  speed: 0
+  distanceBetween: 0
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  maxHealth: 100
+  animator: {fileID: 0}
+  attackDamage: 5
+  decreaseDamage: 4
+  attackDecreased: 0
+  stunned: 0
+  stunDuration: 2
 --- !u!1 &1853394657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076301834}
   - component: {fileID: 2076301835}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BossHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,6 +1571,7 @@ GameObject:
   - component: {fileID: 5617473428243882164}
   - component: {fileID: 8510141931383790229}
   - component: {fileID: 6543875237026609334}
+  - component: {fileID: 8510141931383790230}
   m_Layer: 6
   m_Name: Player1 (Healer)/Wylla
   m_TagString: Wylla
@@ -1588,14 +1608,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
-  aiChase: {fileID: 0}
   candy: 0
   attackPoint: {fileID: 4788292798333015566}
   attackRange: 2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 5617473428243882164}
   skillImage: {fileID: 0}
   maxHealth: 2000
   currentHealth: 0
@@ -1638,7 +1657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2451073484134529433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,7 +1672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
-  aiChase: {fileID: 0}
   candy: 0
   attackPoint: {fileID: 1299671529717710044}
   attackRange: 1
@@ -1925,7 +1943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4910628007223623523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,7 +2400,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   frames: []
-  aiChase: {fileID: 0}
   candy: 0
   attackPoint: {fileID: 5114575609114860457}
   attackRange: 1
@@ -2592,6 +2609,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8510141931383790230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688497742583868969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112c11ffc7aa0c743a37a4a630ad2afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8986184560055921420
 GameObject:
   m_ObjectHideFlags: 0

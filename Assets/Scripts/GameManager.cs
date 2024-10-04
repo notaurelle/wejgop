@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
     public void SetScore(int score)
     {
         this.score = score;
-        scoreText.text = score.ToString().PadLeft(4, '0');
+
+        if(scoreText != null)
+            scoreText.text = score.ToString().PadLeft(4, '0');
     }
 
     // updates score with "Candy Reward" in the wuest goal script

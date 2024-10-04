@@ -38,7 +38,7 @@ public class PlayerHealer : PlayerParent
     bool isAttacking = false;
     bool isChargedAttacking = false; 
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);

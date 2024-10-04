@@ -8,7 +8,6 @@ public class PlayerParent : MonoBehaviour
     public bool move; // this doesnt make layer move it only sets this active
     public Sprite[] frames;
     private Vector2 moveInputValue;
-    public AIChase aiChase;
     public int candy;
 
     //Quests

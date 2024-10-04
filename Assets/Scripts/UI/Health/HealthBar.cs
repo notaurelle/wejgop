@@ -19,9 +19,12 @@ public class HealthBar : MonoBehaviour
     // Set the maximum health and initialize the health bar
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health;
-        slider.value = health;
-        fill.color = gradient.Evaluate(1f);
+        if(slider != null)
+        {
+            slider.maxValue = health;
+            slider.value = health;
+            fill.color = gradient.Evaluate(1f);
+        }
     }
 
     // Update the health bar's value and color
