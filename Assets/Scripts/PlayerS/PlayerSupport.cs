@@ -168,6 +168,13 @@ public class PlayerSupport : PlayerParent
         }
         Invoke("Respawn", 1f);
     }
+    void Respawn()
+    {
+        this.gameObject.SetActive(true);
+        GetComponent<Collider2D>().enabled = true;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+    }
 
     public override void PerformAbility()
     {

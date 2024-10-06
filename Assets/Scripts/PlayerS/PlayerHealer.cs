@@ -171,7 +171,6 @@ public class PlayerHealer : PlayerParent
 
         // Disable the script and collider
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
         this.gameObject.SetActive(false);
 
         //checkpoints 

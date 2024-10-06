@@ -18,13 +18,13 @@ public class PlayerPos : MonoBehaviour
         {
             transform.position = gameManager.lastCheckPointPos;
 
-            PlayerInput playerInput = GetComponent<PlayerInput>();
-            if (playerInput != null)
-            {
-                playerInput.AssignInputs(playerInput.playerID);
-                playerInput.UpdateAttackBindings(); // reassign attacks 
+            //PlayerInput playerInput = GetComponent<PlayerInput>();
+            //if (playerInput != null)
+            //{
+            //    playerInput.AssignInputs(playerInput.playerID);
+            //    playerInput.UpdateAttackBindings(); // reassign attacks 
                 
-            }
+            //}
         }
     }
 }
