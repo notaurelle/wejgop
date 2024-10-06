@@ -21,6 +21,8 @@ public class PlayerInput : MonoBehaviour
     private Animator anim;
     bool isWalking = false; // bool for walking
 
+    public bool canMove = true;
+
     SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -29,27 +31,34 @@ public class PlayerInput : MonoBehaviour
         InputManager.instance.onPlayerJoined += AssignInputs;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        canMove = true;
       
     }
 
     private void Update()
     {
-        transform.position += (Vector3)Movement * Time.deltaTime * speed;
-        if (Movement != Vector2.zero)
+        if (canMove)
         {
-            anim.SetBool("IsWalking", true);
-            if(Movement.x > 0)
+            transform.position += (Vector3)Movement * Time.deltaTime * speed;
+            if (Movement != Vector2.zero)
             {
-                spriteRenderer.flipX = false;
+                anim.SetBool("IsWalking", true);
+                if (Movement.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
             else
             {
-                spriteRenderer.flipX = true; 
+                anim.SetBool("IsWalking", false);
             }
-        } else
-        {
-            anim.SetBool("IsWalking", false);
         }
+        
     }
 
     /* private void OnDisable()

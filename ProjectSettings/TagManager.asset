@@ -9,6 +9,7 @@ TagManager:
   - HealingZone
   - Wylla
   - GM
+  - DM
   layers:
   - Default
   - TransparentFX

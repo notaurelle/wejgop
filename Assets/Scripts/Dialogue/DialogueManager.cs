@@ -11,9 +11,11 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-
     Dialogue[] currentDialogue;
     int currentDialogueIndex;
+
+    public bool isRunning;
+    public PlayerInput[] players;
 
    public void StartDialogue (Dialogue[] dialogue)
     {
@@ -24,6 +26,13 @@ public class DialogueManager : MonoBehaviour
         nameText.text = dialogue[0].characterName;
         dialogueImage.sprite = dialogue[0].characterSprite;
         StartCoroutine(TypeSentence(dialogue[0].dialogue));
+
+        isRunning = true;
+
+        foreach (PlayerInput p in players)
+        {
+            p.canMove = false;
+        }
     }
 
     public void DisplayNextSentence()
@@ -55,5 +64,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        isRunning = false;
+
+
+        foreach (PlayerInput p in players)
+        {
+            p.canMove = true;
+        }
     }
 }
