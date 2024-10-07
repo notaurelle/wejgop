@@ -11,7 +11,7 @@ public class Boss_Smack : MonoBehaviour
 
     Transform player;
     Rigidbody rb;
-    Boss boss;
+    // Boss boss; - brianna this needs to b fixed << was noted because it gave game errors
 
     //Attack for phases
     public int smackDamage = 30;
