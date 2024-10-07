@@ -28,7 +28,7 @@ public class BossBattle : MonoBehaviour
     public LayerMask playerLayers;
 
 
-    public int maxHealth = 900;
+    [SerializeField] private int maxHealth = 900;
     private bool hasDied = false;
 
     // animation 
@@ -108,7 +108,7 @@ public class BossBattle : MonoBehaviour
         //Damage them
         foreach (Collider2D player in hitPlayers)
         {
-            Debug.Log("Mob hit " + player.name);
+            Debug.Log("Boss hit " + player.name);
             //Short hand for if statement
             player.GetComponent<PlayerParent>().TakeDamage(attackDecreased == true ? attackDamage - decreaseDamage : attackDamage);
 
@@ -130,9 +130,6 @@ public class BossBattle : MonoBehaviour
     public void DetectAndAttackPlayers()
     { 
         //Logic from AI Chase.
-
-        
-
         if (!stunned)
         {
             closestPlayer = GetClosestPlayer();

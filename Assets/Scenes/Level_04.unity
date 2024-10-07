@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20558636}
   - component: {fileID: 20558637}
+  - component: {fileID: 20558638}
   m_Layer: 3
   m_Name: BossRightHand
   m_TagString: Untagged
@@ -149,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 20558635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.09429398, w: 0.9955444}
-  m_LocalPosition: {x: -359.49, y: -257.87, z: 0}
+  m_LocalPosition: {x: -359.33, y: -258.24, z: 0}
   m_LocalScale: {x: 2.2816, y: 2.2816, z: 2.2816}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,6 +208,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &20558638
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20558635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d803d04d5459ca04984c1682ab9c7b65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &191006367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1318,7 @@ MonoBehaviour:
   bossHealth: 900
   bossHealthStageTwo: 600
   bossHealthStageThree: 300
-  BossHealthBar: {fileID: 0}
+  BossHealthBar: {fileID: 5617473428243882164}
   players: []
   speed: 0
   distanceBetween: 0
@@ -1305,8 +1327,8 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 0
-  maxHealth: 100
-  animator: {fileID: 0}
+  maxHealth: 900
+  animator: {fileID: 1799290491}
   attackDamage: 5
   decreaseDamage: 4
   attackDecreased: 0
