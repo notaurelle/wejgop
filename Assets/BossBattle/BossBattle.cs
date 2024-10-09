@@ -119,7 +119,7 @@ public class BossBattle : MonoBehaviour
 
     public void Die()
     {
-        if (hasDied) return; // Prevent multiple deaths
+        if (hasDied) return; // Prevents multiple deaths
         hasDied = true;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
@@ -145,6 +145,8 @@ public class BossBattle : MonoBehaviour
                 {
                     transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
                     //BossHealth.SetActive(true);
+
+                    MoveTowardsPlayer();
 
                     if (distance < attackRange)
                     {

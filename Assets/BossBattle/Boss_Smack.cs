@@ -45,18 +45,5 @@ public class Boss_Smack : MonoBehaviour
     }
     */
 
-    public void PhaseOne() // smack
-    {
 
-    }
-
-    public void PhaseTwo() // Summon mobs 
-    {
-
-    }
-
-    public void PhaseThree()
-    {
-
-    }// holy water does damage 
 }
