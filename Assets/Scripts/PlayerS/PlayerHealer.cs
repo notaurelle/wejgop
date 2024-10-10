@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerHealer : PlayerParent
 {
@@ -12,6 +13,7 @@ public class PlayerHealer : PlayerParent
     public HealthBar healthBar; // Reference to the HealthBar script
 
     public GameObject skillImage;
+    public GameObject healImage;
 
     public int maxHealth = 2000;
     public int currentHealth;
@@ -36,7 +38,9 @@ public class PlayerHealer : PlayerParent
     //attack animations
     private Animator anim;
     bool isAttacking = false;
-    bool isChargedAttacking = false; 
+    bool isChargedAttacking = false;
+    bool isHealing = false; 
+    
 
     void Awake()
     {
@@ -48,6 +52,7 @@ public class PlayerHealer : PlayerParent
 
         // Start healing coroutine
         StartCoroutine(PassiveHealing());
+        
     }
 
     public override void TakeDamage(int damage)
@@ -64,6 +69,8 @@ public class PlayerHealer : PlayerParent
 
     private void Update()
     {
+
+     
 
         if (playerInput.attackButton) // Change KeyCode as needed
         {
@@ -90,6 +97,7 @@ public class PlayerHealer : PlayerParent
             anim.SetBool("IsChargedAttacking", false); 
         }
 
+
         void Attack()
         {
             // Detect enemies in range of attack
@@ -111,6 +119,8 @@ public class PlayerHealer : PlayerParent
                 }
             }
         }
+
+       
     }
 
     public override void PerformAbility()
@@ -137,6 +147,7 @@ public class PlayerHealer : PlayerParent
 
     private void HealAlliesInRange()
     {
+        healImage.SetActive(true);
         // finds all GameObjects within the healing radius
         Collider2D[] allies = Physics2D.OverlapCircleAll(transform.position, healingRadius);
 
@@ -151,9 +162,14 @@ public class PlayerHealer : PlayerParent
                     int newHealth = Mathf.Min((int)allyHealthBar.slider.maxValue, (int)allyHealthBar.slider.value + healingAmount);
                     allyHealthBar.SetHealth(newHealth);
                     //Debug.Log("Healed " + ally.name);
+                    healImage.SetActive(true);
+
+
                 }
             }
         }
+        healImage.SetActive(false);
+
     }
 
     private IEnumerator PassiveHealing()
@@ -162,7 +178,10 @@ public class PlayerHealer : PlayerParent
         {
             HealAlliesInRange();
             yield return new WaitForSeconds(healingInterval);
+            
+            
         }
+        
     }
 
     private void Die()
