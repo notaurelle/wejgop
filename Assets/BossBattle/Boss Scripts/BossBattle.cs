@@ -12,21 +12,11 @@ public class BossBattle : MonoBehaviour
     [Header("Boss Health")]
     public float bossHealth; //TEMPORARY - ADD BOSS HEALTHBAR SCRIPT HERE AND GET THE HEALTH VALUE
 
-
+    public bool PlayerInArea { get; private set; }
     public float bossHealthStageTwo;
     public float bossHealthStageThree;
     public HealthBar BossHealthBar;
     public List<GameObject> players;
-    public float speed;
-    public float distanceBetween;
-
-    private GameObject closestPlayer;
-
-
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask playerLayers;
-
 
     [SerializeField] private int maxHealth = 900;
     private bool hasDied = false;
@@ -35,12 +25,6 @@ public class BossBattle : MonoBehaviour
     public Animator animator;
 
     public int attackDamage = 5;
-    public int decreaseDamage = 4;
-    public bool attackDecreased = false;
-
-    //stun properties 
-    public bool stunned = false;
-    public float stunDuration = 2f;
 
     void Start()
 
@@ -103,18 +87,8 @@ public class BossBattle : MonoBehaviour
 
     void attackPlayer()
     {
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
-
-        //Damage them
-        foreach (Collider2D player in hitPlayers)
-        {
-            Debug.Log("Boss hit " + player.name);
-            //Short hand for if statement
-            player.GetComponent<PlayerParent>().TakeDamage(attackDecreased == true ? attackDamage - decreaseDamage : attackDamage);
-
-
-            //value can be set in brackets TD(20) or can add public int
-        }
+        attackDamage = 5;
+    
     }
 
     public void Die()
@@ -129,32 +103,7 @@ public class BossBattle : MonoBehaviour
 
     public void DetectAndAttackPlayers()
     { 
-        //Logic from AI Chase.
-        if (!stunned)
-        {
-            closestPlayer = GetClosestPlayer();
-
-            if (closestPlayer != null)
-            {
-                float distance = Vector2.Distance(transform.position, closestPlayer.transform.position);
-                Vector2 direction = closestPlayer.transform.position - transform.position;
-                direction.Normalize();
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-                if (distance < distanceBetween)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
-                    //BossHealth.SetActive(true);
-
-                    MoveTowardsPlayer();
-
-                    if (distance < attackRange)
-                    {
-                        attackPlayer();
-                    }
-                }
-            }
-        }
+      
 
     }
 
@@ -176,22 +125,6 @@ public class BossBattle : MonoBehaviour
 
         return closest;
     }
-
-    void MoveTowardsPlayer()
-    {
-        closestPlayer = GetClosestPlayer();
-        if (closestPlayer != null)
-        {
-            float distance = Vector2.Distance(transform.position, closestPlayer.transform.position);
-            if (distance < distanceBetween)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, closestPlayer.transform.position, speed * Time.deltaTime);
-
-            }
-        }
-
-    }
-
 
 
 
