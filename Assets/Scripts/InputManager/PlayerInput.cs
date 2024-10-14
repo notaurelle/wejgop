@@ -33,7 +33,6 @@ public class PlayerInput : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         canMove = true;
-      
     }
 
     private void Update()

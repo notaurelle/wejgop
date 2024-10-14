@@ -82,6 +82,7 @@ public class PlayerDPS : PlayerParent
         if (playerInput.attackButton) //changed for all three players are now referencing playerinput.cs
         {
             Attack();
+
             playerInput.attackButton = false;
             anim.SetBool("IsAttacking", true);
         }
@@ -93,6 +94,7 @@ public class PlayerDPS : PlayerParent
         if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+
             playerInput.chargedAttackButton = false;
             anim.SetBool("IsChargedAttacking", true);
         }
@@ -108,6 +110,9 @@ public class PlayerDPS : PlayerParent
     void Attack()
     {
         //Play Animation
+
+        //Play audio
+        //AudioManager.instance.PlaySound("shfhsf");
 
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -218,6 +223,7 @@ public class PlayerDPS : PlayerParent
         base.PerformAbility();
 
         {
+            //Play sound
             // Play Charged Attack Animation 
 
             //Detect enemies in range of Charged attack 

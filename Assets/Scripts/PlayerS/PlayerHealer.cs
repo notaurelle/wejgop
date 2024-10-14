@@ -9,6 +9,7 @@ public class PlayerHealer : PlayerParent
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers; // LayerMask for enemies (not used in healing)
+    public LayerMask playerLayers; // LayerMask for enemies (not used in healing)
 
     public HealthBar healthBar; // Reference to the HealthBar script
 
@@ -69,9 +70,6 @@ public class PlayerHealer : PlayerParent
 
     private void Update()
     {
-
-     
-
         if (playerInput.attackButton) // Change KeyCode as needed
         {
             Attack();
@@ -147,9 +145,9 @@ public class PlayerHealer : PlayerParent
 
     private void HealAlliesInRange()
     {
-        healImage.SetActive(true);
         // finds all GameObjects within the healing radius
-        Collider2D[] allies = Physics2D.OverlapCircleAll(transform.position, healingRadius);
+        Collider2D[] allies = Physics2D.OverlapCircleAll(transform.position, healingRadius, playerLayers);
+
 
         foreach (Collider2D ally in allies)
         {
@@ -167,10 +165,13 @@ public class PlayerHealer : PlayerParent
 
                 }
             }
+            else
+            {
+                healImage.SetActive(false);
+            }
         }
-        healImage.SetActive(false);
 
-    }
+    }    
 
     private IEnumerator PassiveHealing()
     {
