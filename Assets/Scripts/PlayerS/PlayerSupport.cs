@@ -45,6 +45,9 @@ public class PlayerSupport : PlayerParent
     bool isAttacking = false;
     bool isChargedAttacking = false;
 
+    // for audio 
+    private Sound sound; 
+
 
 
     void Start()

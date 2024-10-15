@@ -40,8 +40,16 @@ public class PlayerHealer : PlayerParent
     private Animator anim;
     bool isAttacking = false;
     bool isChargedAttacking = false;
-    bool isHealing = false; 
+    bool isHealing = false;
+
+    //audio
+    [SerializeField]
+    private AudioClip Wylla_BaseATK_SFX;
+    [SerializeField]
+    private AudioClip Wylla_ChargedATK_SFX;
     
+
+
 
     void Awake()
     {
@@ -98,6 +106,9 @@ public class PlayerHealer : PlayerParent
 
         void Attack()
         {
+            //plays audio
+            AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position);
+
             // Detect enemies in range of attack
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
