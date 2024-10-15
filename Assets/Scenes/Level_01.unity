@@ -7798,55 +7798,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841701185}
   m_CullTransparentMesh: 1
---- !u!1 &1887471147
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1887471149}
-  - component: {fileID: 1887471148}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1887471148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887471147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275412327be6e9042ba23f775798de1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Wylla_BaseATK_SFX
-    clip: {fileID: 8300000, guid: 1bd01ab03cc31c44dadf4a77b6d01394, type: 3}
-    volume: 1
-    pitch: 0
---- !u!4 &1887471149
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887471147}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1907732265
 GameObject:
   m_ObjectHideFlags: 0
@@ -10573,6 +10524,8 @@ MonoBehaviour:
     candyReward: 0
     progressTracker: {fileID: 0}
     Goal: {fileID: 6459201792147126009}
+  Wylla_BaseATK_SFX: {fileID: 8300000, guid: 1bd01ab03cc31c44dadf4a77b6d01394, type: 3}
+  Wylla_ChargedATK_SFX: {fileID: 8300000, guid: a07abbaac6f8ce74096767613968873c, type: 3}
 --- !u!224 &944215201601426083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20933,7 +20886,6 @@ SceneRoots:
   - {fileID: 7694058928369530546}
   - {fileID: 2143964835}
   - {fileID: 1489037207}
-  - {fileID: 1887471149}
   - {fileID: 560104789}
   - {fileID: 1246999814464061997}
   - {fileID: 234135137968075337}
