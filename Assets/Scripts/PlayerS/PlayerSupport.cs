@@ -46,7 +46,10 @@ public class PlayerSupport : PlayerParent
     bool isChargedAttacking = false;
 
     // for audio 
-    private Sound sound; 
+    [SerializeField]
+    private AudioClip Cerwyn_BaseATK_SFX;
+    [SerializeField]
+    private AudioClip Cerywn_ChargedATK_SFX; 
 
 
 
@@ -102,6 +105,7 @@ public class PlayerSupport : PlayerParent
 
     void Attack()
     {
+        AudioSource.PlayClipAtPoint(Cerwyn_BaseATK_SFX, transform.position);
         // Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -182,7 +186,7 @@ public class PlayerSupport : PlayerParent
     public override void PerformAbility()
     {
         Debug.Log("Support used charged ability!");
-
+        AudioSource.PlayClipAtPoint(Cerywn_ChargedATK_SFX, transform.position);
         // detect enemies in range of charged attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)

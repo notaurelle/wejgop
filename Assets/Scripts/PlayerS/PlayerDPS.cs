@@ -50,7 +50,13 @@ public class PlayerDPS : PlayerParent
     bool isAttacking = false;
     bool isChargedAttacking = false;
 
-    
+    //audio
+    [SerializeField]
+    private AudioClip Harry_BaseATK_SFX;
+    [SerializeField]
+    private AudioClip Harry_ChargedATK_SFX;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -109,10 +115,9 @@ public class PlayerDPS : PlayerParent
 
     void Attack()
     {
-        //Play Animation
-
         //Play audio
-        //AudioManager.instance.PlaySound("shfhsf");
+        AudioSource.PlayClipAtPoint(Harry_BaseATK_SFX, transform.position);
+
 
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -223,6 +228,7 @@ public class PlayerDPS : PlayerParent
         base.PerformAbility();
 
         {
+            AudioSource.PlayClipAtPoint(Harry_ChargedATK_SFX, transform.position);
             //Play sound
             // Play Charged Attack Animation 
 

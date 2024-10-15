@@ -136,23 +136,25 @@ public class PlayerHealer : PlayerParent
     public override void PerformAbility()
     {
         base.PerformAbility();
-        // Play charged ATK animation
+        AudioSource.PlayClipAtPoint(Wylla_ChargedATK_SFX, transform.position);
+            // Play charged ATK animation
 
-        // Detect enemies in range of Charged attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            // Detect enemies in range of Charged attack
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        // Damage them
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            //Debug.Log("Healer Charged attack hit " + enemy.name);
-            enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
+            // Damage them
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                //Debug.Log("Healer Charged attack hit " + enemy.name);
+                enemy.GetComponent<AIChase>().TakeDamage(attackSkill);
 
-            // Reset ability
-            canUseChargedAbility = false;
-            skillImage.SetActive(false);
-            totalDamageDealt = 0;
+                // Reset ability
+                canUseChargedAbility = false;
+                skillImage.SetActive(false);
+                totalDamageDealt = 0;
 
-        }
+            }
+                
     }
 
     private void HealAlliesInRange()
