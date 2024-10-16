@@ -4062,7 +4062,7 @@ GameObject:
   - component: {fileID: 930277615}
   - component: {fileID: 930277614}
   m_Layer: 0
-  m_Name: dialoguetrigger (1)
+  m_Name: cutscene2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4077,8 +4077,8 @@ Transform:
   m_GameObject: {fileID: 930277612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.47, y: -29.38, z: 0}
-  m_LocalScale: {x: 6.2624745, y: 6.2624745, z: 6.2624745}
+  m_LocalPosition: {x: -1.47, y: -30.06, z: 0}
+  m_LocalScale: {x: 6.2624745, y: 0.3913796, z: 6.2624745}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3049963545582523457}
@@ -4097,9 +4097,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1489037206}
   dialogue:
-  - characterName: fff
-    characterSprite: {fileID: 0}
-    dialogue: fffff
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Strange, yon old oaks seem familiar. Mayhaps you were right sweet Wylla,
+      luck may be on our side.
+  - characterName: Crumbling Cerywn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: Let's carry on then, not all of us are wholly intact... in the legs
+      at least
   startOnTriggerEnter: 1
 --- !u!61 &930277615
 BoxCollider2D:
@@ -7153,7 +7158,7 @@ GameObject:
   - component: {fileID: 1680174423}
   - component: {fileID: 1680174424}
   m_Layer: 0
-  m_Name: dialoguetrigger
+  m_Name: cutscene1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7168,8 +7173,8 @@ Transform:
   m_GameObject: {fileID: 1680174420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.33, y: -43.84, z: 0}
-  m_LocalScale: {x: 6.2624745, y: 6.2624745, z: 6.2624745}
+  m_LocalPosition: {x: 38.01, y: -44.77, z: 0}
+  m_LocalScale: {x: 6.2624745, y: 0.47594807, z: 6.2624745}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3049963545582523457}
@@ -7233,9 +7238,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1489037206}
   dialogue:
-  - characterName: eee
-    characterSprite: {fileID: 0}
-    dialogue: eeee
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: By the Lord, yon heathens never stood a groats chance against our might!
+      Valorous work, fellows.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: Yes, but do you two perchance recall where you died?
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: I remember a river...
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: And I the fire, mayhaps a stake if the priest spoke true.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: What of you sir, where did you die?
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: I can not remember, noble corpse. 'Twas an age ago to be certain. There
+      woods at a guess, but they art thick and vast.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: We should keep moving then, mayhaps we'll find it by chance.
   startOnTriggerEnter: 1
 --- !u!1 &1693797046
 GameObject:
@@ -7723,6 +7748,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835525638}
   m_CullTransparentMesh: 1
+--- !u!1 &1841004398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841004399}
+  - component: {fileID: 1841004401}
+  - component: {fileID: 1841004400}
+  m_Layer: 0
+  m_Name: cutscene3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841004399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841004398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.62, y: -17.33, z: 0}
+  m_LocalScale: {x: 6.2624745, y: 0.3913796, z: 6.2624745}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3049963545582523457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841004400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841004398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44e41bf3355f2f4eb671d66c42b0a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1489037206}
+  dialogue:
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Wait!
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: What is it?
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: It be if the winds have shifted. This be it I think for certain friends,
+      where I met my end on the sword of Argamore the Arrogant!
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: What do we do then?
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: Father Godrick said something about returning beyond to fetch something
+      for him.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: This is the path to the village I remember, let us continue.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: But before we do, let us rest up a bit. I'm feeling a bit weary...
+      I sense there is a place nearby where I can regain my energy...
+  startOnTriggerEnter: 1
+--- !u!61 &1841004401
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841004398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1841701185
 GameObject:
   m_ObjectHideFlags: 0
@@ -11205,7 +11347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13449,6 +13591,7 @@ Transform:
   - {fileID: 1932655293777404963}
   - {fileID: 1680174421}
   - {fileID: 930277613}
+  - {fileID: 1841004399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &3054414901587014001
@@ -18615,7 +18758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

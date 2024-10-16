@@ -512,6 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   dialogue: []
+  startOnTriggerEnter: 0
 --- !u!114 &788874851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +827,8 @@ MonoBehaviour:
   dialogueText: {fileID: 819065979481751019}
   dialogueImage: {fileID: 827734761617395399}
   animator: {fileID: 5548615263531684704}
+  isRunning: 0
+  players: []
   typingSpeed: 0.02
 --- !u!4 &1011297058
 Transform:
@@ -1148,6 +1151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   dialogue: []
+  startOnTriggerEnter: 0
 --- !u!114 &1834586137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,6 +1858,16 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1011297057}
+    - target: {fileID: 1301055377480231436, guid: bbc34e7460045a74caf9caf73c34e67e, type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue
+      value: A moment friends, all will be explained in due haste.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301055377480231436, guid: bbc34e7460045a74caf9caf73c34e67e, type: 3}
+      propertyPath: dialogue.Array.data[34].dialogue
+      value: Hallows eve grows near and the protective barrier between worlds grow
+        thin. I intend to seal it forever so the world of mortals may live in peace,
+        but I need the help of the dead to accomplish it.
+      objectReference: {fileID: 0}
     - target: {fileID: 1970461834801517960, guid: bbc34e7460045a74caf9caf73c34e67e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
