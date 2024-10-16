@@ -5140,7 +5140,7 @@ MonoBehaviour:
   stunDuration: 5
   healthBar: {fileID: 974885196}
   questGoal: {fileID: 6459201792147126009}
-  questGiver: {fileID: 0}
+  questGiver: {fileID: 5606322657771596564}
   animator: {fileID: 0}
 --- !u!212 &1227997985
 SpriteRenderer:
@@ -5822,7 +5822,7 @@ MonoBehaviour:
   stunDuration: 5
   healthBar: {fileID: 1323365201}
   questGoal: {fileID: 6459201792147126009}
-  questGiver: {fileID: 0}
+  questGiver: {fileID: 5606322657771596564}
   animator: {fileID: 0}
 --- !u!212 &1377149917
 SpriteRenderer:
@@ -6286,7 +6286,7 @@ MonoBehaviour:
   stunDuration: 5
   healthBar: {fileID: 1097559438}
   questGoal: {fileID: 6459201792147126009}
-  questGiver: {fileID: 0}
+  questGiver: {fileID: 5606322657771596564}
   animator: {fileID: 0}
 --- !u!212 &1418665452
 SpriteRenderer:
@@ -9328,7 +9328,7 @@ MonoBehaviour:
   stunDuration: 5
   healthBar: {fileID: 1907732267}
   questGoal: {fileID: 6459201792147126009}
-  questGiver: {fileID: 0}
+  questGiver: {fileID: 5606322657771596564}
   animator: {fileID: 0}
 --- !u!212 &2115981415
 SpriteRenderer:
@@ -11183,7 +11183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &1304588214176096718
 CanvasRenderer:
   m_ObjectHideFlags: 0

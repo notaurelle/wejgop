@@ -104,7 +104,6 @@ public class PlayerHealer : PlayerParent
             anim.SetBool("IsChargedAttacking", false); 
         }
 
-
         void Attack()
         {
             //plays audio
@@ -136,7 +135,6 @@ public class PlayerHealer : PlayerParent
     public override void PerformAbility()
     {
         base.PerformAbility();
-        AudioSource.PlayClipAtPoint(Wylla_ChargedATK_SFX, transform.position);
             // Play charged ATK animation
 
             // Detect enemies in range of Charged attack
@@ -228,5 +226,17 @@ public class PlayerHealer : PlayerParent
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, healingRadius);
+    }
+
+    public void WyllaAttackSFX()
+    {
+        //plays audio
+        AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position);
+    }
+
+    public void WyllaChargedAttackSFX()
+    {
+        //plays audio
+        AudioSource.PlayClipAtPoint(Wylla_ChargedATK_SFX, transform.position);
     }
 }
