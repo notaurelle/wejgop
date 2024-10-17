@@ -46,10 +46,8 @@ public class PlayerSupport : PlayerParent
     bool isChargedAttacking = false;
 
     // for audio 
-    [SerializeField]
     private AudioClip Cerwyn_BaseATK_SFX;
-    [SerializeField]
-    private AudioClip Cerywn_ChargedATK_SFX; 
+    private AudioClip Cerwyn_ChargedATK_SFX; 
 
 
 
@@ -80,6 +78,7 @@ public class PlayerSupport : PlayerParent
         if (playerInput.attackButton)
         {
             Attack();
+            CerwynBaseSFX();
             playerInput.attackButton = false;
             anim.SetBool("IsAttacking", true);
         }
@@ -92,6 +91,7 @@ public class PlayerSupport : PlayerParent
         if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+            CerwynChargedSFX();
             playerInput.chargedAttackButton = false;
             anim.SetBool("IsChargedAttacking", true);
         }
@@ -272,6 +272,16 @@ public class PlayerSupport : PlayerParent
 
         //    }
         //}
+    }
+
+    public void CerwynBaseSFX()
+    {
+        AudioManager.instance.PlaySFX(Cerwyn_BaseATK_SFX, 1.0f);
+    }
+
+    public void CerwynChargedSFX()
+    {
+        AudioManager.instance.PlaySFX(Cerwyn_ChargedATK_SFX, 1.0f);
     }
 }
 

@@ -43,19 +43,13 @@ public class PlayerHealer : PlayerParent
     bool isHealing = false;
 
     //audio
-    [SerializeField]
-    private AudioClip Wylla_BaseATK_SFX;
-    [SerializeField]
-    private AudioClip Wylla_ChargedATK_SFX;
+    public AudioClip Wylla_BaseATK_SFX;
+    public AudioClip Wylla_ChargedATK_SFX;
 
-    [Range(0f, 1f)]
-    public float volume = 1f;
+   
 
 
-
-
-
-    void Awake()
+   void Awake()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -85,6 +79,7 @@ public class PlayerHealer : PlayerParent
         if (playerInput.attackButton) // Change KeyCode as needed
         {
             Attack();
+            WyllaBaseSFX();
             playerInput.attackButton = false;
             anim.SetBool("IsAttacking", true);
 
@@ -98,6 +93,7 @@ public class PlayerHealer : PlayerParent
         {
 
             PerformAbility();
+            WyllaChargedSFX();
             playerInput.chargedAttackButton = false;
             anim.SetBool("IsChargedAttacking", true);
 
@@ -109,8 +105,7 @@ public class PlayerHealer : PlayerParent
 
         void Attack()
         {
-            //plays audio
-            AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position);
+            
 
             // Detect enemies in range of attack
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -231,15 +226,13 @@ public class PlayerHealer : PlayerParent
         Gizmos.DrawWireSphere(transform.position, healingRadius);
     }
 
-    public void WyllaAttackSFX()
+    public void WyllaBaseSFX()
     {
-        //plays audio
-        AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position, volume * 10f);
+        AudioManager.instance.PlaySFX(Wylla_BaseATK_SFX, 1.0f);
     }
 
-    public void WyllaChargedAttackSFX()
+    public void WyllaChargedSFX()
     {
-        //plays audio
-        AudioSource.PlayClipAtPoint(Wylla_ChargedATK_SFX, transform.position);
+        AudioManager.instance.PlaySFX(Wylla_ChargedATK_SFX, 1.0f);
     }
 }

@@ -51,9 +51,7 @@ public class PlayerDPS : PlayerParent
     bool isChargedAttacking = false;
 
     //audio
-    [SerializeField]
     private AudioClip Harry_BaseATK_SFX;
-    [SerializeField]
     private AudioClip Harry_ChargedATK_SFX;
 
 
@@ -88,6 +86,7 @@ public class PlayerDPS : PlayerParent
         if (playerInput.attackButton) //changed for all three players are now referencing playerinput.cs
         {
             Attack();
+            HarryBaseSFX();
 
             playerInput.attackButton = false;
             anim.SetBool("IsAttacking", true);
@@ -100,6 +99,7 @@ public class PlayerDPS : PlayerParent
         if (canUseChargedAbility && playerInput.chargedAttackButton)
         {
             PerformAbility();
+            HarryChargedSFX();
 
             playerInput.chargedAttackButton = false;
             anim.SetBool("IsChargedAttacking", true);
@@ -249,6 +249,16 @@ public class PlayerDPS : PlayerParent
 
         }
 
+    }
+
+    public void HarryBaseSFX()
+    {
+        AudioManager.instance.PlaySFX(Harry_BaseATK_SFX, 1.0f);
+    }
+
+    public void HarryChargedSFX()
+    {
+        AudioManager.instance.PlaySFX(Harry_ChargedATK_SFX, 1.0f);
     }
 
 }
