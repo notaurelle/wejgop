@@ -47,7 +47,10 @@ public class PlayerHealer : PlayerParent
     private AudioClip Wylla_BaseATK_SFX;
     [SerializeField]
     private AudioClip Wylla_ChargedATK_SFX;
-   
+
+    [Range(0f, 1f)]
+    public float volume = 1f;
+
 
 
 
@@ -231,7 +234,7 @@ public class PlayerHealer : PlayerParent
     public void WyllaAttackSFX()
     {
         //plays audio
-        AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position);
+        AudioSource.PlayClipAtPoint(Wylla_BaseATK_SFX, transform.position, volume * 10f);
     }
 
     public void WyllaChargedAttackSFX()
