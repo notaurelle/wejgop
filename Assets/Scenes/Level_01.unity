@@ -14124,6 +14124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3474cb8a65e279c4cb2524d4eb0f2d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
 --- !u!50 &5349593315423364803
 Rigidbody2D:
   serializedVersion: 4
@@ -14856,6 +14857,8 @@ MonoBehaviour:
   - {fileID: 1377149916}
   - {fileID: 1418665451}
   - {fileID: 1418665451}
+  Cerwyn_BaseATK_SFX: {fileID: 8300000, guid: 5a872091d174ce3469199ad4b0d96fa7, type: 3}
+  Cerwyn_ChargedATK_SFX: {fileID: 8300000, guid: 9dd55f567ab280a459cd8e26a08a2c85, type: 3}
 --- !u!224 &6079215840064393372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15103,6 +15106,8 @@ MonoBehaviour:
     progressTracker: {fileID: 0}
     Goal: {fileID: 6459201792147126009}
   mob: {fileID: 0}
+  Harry_BaseATK_SFX: {fileID: 8300000, guid: 1b12493817fd9be45ab8ec6a4c691c46, type: 3}
+  Harry_ChargedATK_SFX: {fileID: 8300000, guid: 409214064ea2b0f4cb4a9fa56e3b4649, type: 3}
 --- !u!222 &6196076192121964799
 CanvasRenderer:
   m_ObjectHideFlags: 0

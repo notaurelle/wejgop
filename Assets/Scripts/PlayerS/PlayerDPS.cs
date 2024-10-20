@@ -51,8 +51,8 @@ public class PlayerDPS : PlayerParent
     bool isChargedAttacking = false;
 
     //audio
-    private AudioClip Harry_BaseATK_SFX;
-    private AudioClip Harry_ChargedATK_SFX;
+    public AudioClip Harry_BaseATK_SFX;
+    public AudioClip Harry_ChargedATK_SFX;
 
 
     void Start()
@@ -224,7 +224,6 @@ public class PlayerDPS : PlayerParent
         base.PerformAbility();
 
         {
-       
             //Detect enemies in range of Charged attack 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
