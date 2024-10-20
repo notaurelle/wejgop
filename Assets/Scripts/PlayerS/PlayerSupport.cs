@@ -186,7 +186,7 @@ public class PlayerSupport : PlayerParent
     public override void PerformAbility()
     {
         Debug.Log("Support used charged ability!");
-        AudioSource.PlayClipAtPoint(Cerywn_ChargedATK_SFX, transform.position);
+        AudioSource.PlayClipAtPoint(Cerwyn_ChargedATK_SFX, transform.position);
         // detect enemies in range of charged attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
