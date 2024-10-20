@@ -1920,6 +1920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---DIALOGUE---
       objectReference: {fileID: 0}
+    - target: {fileID: 8134937988515306357, guid: bbc34e7460045a74caf9caf73c34e67e, type: 3}
+      propertyPath: m_Text
+      value: Start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

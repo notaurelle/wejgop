@@ -115,10 +115,6 @@ public class PlayerDPS : PlayerParent
 
     void Attack()
     {
-        //Play audio
-        AudioSource.PlayClipAtPoint(Harry_BaseATK_SFX, transform.position);
-
-
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -228,10 +224,7 @@ public class PlayerDPS : PlayerParent
         base.PerformAbility();
 
         {
-            AudioSource.PlayClipAtPoint(Harry_ChargedATK_SFX, transform.position);
-            //Play sound
-            // Play Charged Attack Animation 
-
+       
             //Detect enemies in range of Charged attack 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

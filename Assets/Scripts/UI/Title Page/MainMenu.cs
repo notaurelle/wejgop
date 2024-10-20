@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    public PlayerInput[] players; 
+
   public void PlayCutscene()
     {
         // loads scenes in order within the build settings
@@ -19,6 +21,12 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level_01");
+
+        foreach(PlayerInput p in players)
+        {
+            p.canMove = true; 
+        }
+
     }
 
 

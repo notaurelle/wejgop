@@ -105,7 +105,6 @@ public class PlayerSupport : PlayerParent
 
     void Attack()
     {
-        AudioSource.PlayClipAtPoint(Cerwyn_BaseATK_SFX, transform.position);
         // Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
