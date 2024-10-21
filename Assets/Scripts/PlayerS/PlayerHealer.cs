@@ -103,6 +103,7 @@ public class PlayerHealer : PlayerParent
             anim.SetBool("IsChargedAttacking", false); 
         }
 
+        [ContextMenu("Attack")]
         void Attack()
         {
             
@@ -114,7 +115,7 @@ public class PlayerHealer : PlayerParent
             foreach (Collider2D enemy in hitEnemies)
             {
                 //Debug.Log("Healer hit " + enemy.name);
-                enemy.GetComponent<AIChase>().TakeDamage(attackDamage);
+                enemy.GetComponent<IEnemyDamage>().TakeDamage(attackDamage);
 
                 totalDamageDealt += attackDamage;
 

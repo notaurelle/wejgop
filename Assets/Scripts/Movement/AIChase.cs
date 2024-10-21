@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AIChase : MonoBehaviour
+public class AIChase : MonoBehaviour, IEnemyDamage
 {
     public List<GameObject> players;
     public float speed;

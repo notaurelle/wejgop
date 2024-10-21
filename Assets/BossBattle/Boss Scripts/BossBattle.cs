@@ -1,150 +1,114 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public enum BossStages { One, Two, Three, Dead }
-public class BossBattle : MonoBehaviour
+public class BossBattle : MonoBehaviour, IEnemyDamage
 {
-    public bool startBossBattle; //Set this true once you've finished dialogue etc. 
 
-    public BossStages currentBossStage;
+    public int bossHP;
+    public int currentHP;
 
-    [Header("Boss Health")]
-    public float bossHealth; //TEMPORARY - ADD BOSS HEALTHBAR SCRIPT HERE AND GET THE HEALTH VALUE
+    public Animator anim;
+    public BossPhase bossPhase;
+    public float startFightDistance;
+    public float speed;
+    public Transform currentTargetPlayer;
+    public List<Transform> players = new List<Transform>();
+    bool attackCooldown;
 
-    public bool PlayerInArea { get; private set; }
-    public float bossHealthStageTwo;
-    public float bossHealthStageThree;
-    public HealthBar BossHealthBar;
-    public List<GameObject> players;
 
-    [SerializeField] private int maxHealth = 900;
-    private bool hasDied = false;
-
-    // animation 
-    public Animator animator;
-
-    public int attackDamage = 5;
-
-    void Start()
-
+    public enum BossPhase
     {
-        bossHealth = maxHealth;
-        BossHealthBar.SetMaxHealth(maxHealth);
-        animator = GetComponent<Animator>();
+        Idle,
+        PhaseOne,
+        PhaseTwo
     }
-
 
     private void Update()
     {
-        if (startBossBattle)
+
+        switch (bossPhase)
         {
-            HandleBossStage();
-        }
-    }
-
-
-    public void HandleBossStage()
-    {
-        if (bossHealth < bossHealthStageTwo && currentBossStage == BossStages.One)
-            currentBossStage = BossStages.Two;
-
-        if (bossHealth < bossHealthStageThree && currentBossStage == BossStages.Two)
-            currentBossStage = BossStages.Three;
-
-        if (bossHealth <= 0)
-            currentBossStage = BossStages.Dead;
-
-        switch (currentBossStage)
-        {
-            case BossStages.One:
-
-                DetectAndAttackPlayers();
-
+            case BossPhase.Idle:
+                IdleLogic();
                 break;
-            case BossStages.Two:
-
-                DetectAndAttackPlayers();
-                SpawnEnemies();
-
+            case BossPhase.PhaseOne:
+                PhaseOneLogic();
                 break;
-            case BossStages.Three:
-
-                AcidRain();
-
+            case BossPhase.PhaseTwo:
+                PhaseTwoLogic();
                 break;
-
-            case BossStages.Dead:
-
-                //handle dead stuff
-                Die();
-
-
-                    break;
         }
 
     }
 
-    void attackPlayer()
+    public void IdleLogic()
     {
-        attackDamage = 5;
-    
-    }
-
-    public void Die()
-    {
-        if (hasDied) return; // Prevents multiple deaths
-        hasDied = true;
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        gameObject.SetActive(false);
-        BossHealthBar.gameObject.SetActive(false);
-    }
-
-    public void DetectAndAttackPlayers()
-    { 
-      
-
-    }
-
-    GameObject GetClosestPlayer()
-    {
-        GameObject closest = null;
-        float minDistance = float.MaxValue;
-
-        foreach (GameObject player in players)
+        currentTargetPlayer = DetectClosestPlayer();
+        float distance = Vector2.Distance(transform.position, currentTargetPlayer.position);
+        if(distance <= startFightDistance)
         {
-            //mobHP.SetActive(true);
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < minDistance)
+            bossPhase = BossPhase.PhaseOne;
+        }
+    }
+
+    public void PhaseOneLogic()
+    {
+        currentTargetPlayer = DetectClosestPlayer();
+        MoveToPlayer();
+
+        if(attackCooldown == false)
+        {
+            attackCooldown = true;
+            Invoke("AttackCooldown", Random.Range(1, 3));
+            anim.SetTrigger("Attack");
+        }
+    }
+
+    void PhaseTwoLogic()
+    {
+        currentTargetPlayer = DetectClosestPlayer();
+        MoveToPlayer();
+
+        if (attackCooldown == false)
+        {
+            attackCooldown = true;
+            Invoke("AttackCooldown", Random.Range(1, 3));
+        }
+    }
+
+    void AttackCooldown()
+    {
+        attackCooldown = false;
+    }
+
+    void MoveToPlayer()
+    {
+        Vector3 playerPos = currentTargetPlayer.position;
+        playerPos.y += 4;
+        Vector2 moveDirection = (playerPos - transform.position).normalized;
+        transform.position += (Vector3)moveDirection * Time.deltaTime * speed;
+    }
+
+    Transform DetectClosestPlayer()
+    {
+        int closestPlayer = 0;
+        float closestDistance = Vector2.Distance(transform.position, players[0].position);
+        for(int p = 1; p < players.Count; p++)
+        {
+            float newDistance = Vector2.Distance(transform.position, players[p].position);
+            if (newDistance < closestDistance)
             {
-                minDistance = distance;
-                closest = player;
+                closestDistance = newDistance;
+                closestPlayer = p;
             }
         }
 
-        return closest;
+        return players[closestPlayer];
     }
 
-
-
-    public void SpawnEnemies()
+    public void TakeDamage(int damage)
     {
-        //Spawn a wave of enemies in random spots on the map.
-        //Limit the amount of enemies
-        //If all enemies are dead, spawn another wave
-
-        Debug.Log("Spawning enemies");
-    }
-
-    public void AcidRain()
-    {
-        //Area of effect / damage over time
-        //Reuse the spawning of enemies (random spot)
-        //Instead of enemies, spawn acid rain prefabs.
-        //They would have the damage over time script.
-        //Destroy them after a certain amount of time.
-
-        Debug.Log("Spawning acid rain");
+        currentHP -= damage;
     }
 }
