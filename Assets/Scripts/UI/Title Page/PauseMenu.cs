@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        InputManager.instance.players.Clear();
+        //InputManager.instance.players.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

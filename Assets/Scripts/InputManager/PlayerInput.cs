@@ -28,7 +28,14 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputManager.instance.onPlayerJoined += AssignInputs;
+        if (InputManager.instance.players.Count >= playerID + 1)
+        {
+            AssignInputs(playerID);
+        }
+        else
+        {
+            InputManager.instance.onPlayerJoined += AssignInputs;
+        }
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 

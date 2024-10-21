@@ -22,10 +22,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_01");
 
-        foreach(PlayerInput p in players)
-        {
-            p.canMove = true; 
-        }
+        //foreach(PlayerInput p in players)
+        //{
+        //    p.canMove = true; 
+        //}
 
     }
 
