@@ -28,7 +28,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 dialogueManager.StartDialogue(dialogue);
 
-                boxCollider = other.GetComponent<BoxCollider2D>();
+                boxCollider = this.GetComponent<BoxCollider2D>();
                 if (boxCollider != null)
                 {
                     boxCollider.enabled = false;

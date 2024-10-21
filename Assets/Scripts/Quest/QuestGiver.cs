@@ -20,7 +20,7 @@ public class QuestGiver : MonoBehaviour
 
     private bool isPlayerInRange = false;
 
-    public List<AIChase> Enemy = new List<AIChase>();
+    //public List<AIChase> Enemy = new List<AIChase>();
 
 
     //trying something out - aurelia
@@ -71,7 +71,7 @@ public class QuestGiver : MonoBehaviour
         candyText.text = quest.candyAmount;
         requiredAmountText.text = quest.requiredAmount;
 
-        Mob.gameObject.SetActive(false);
+        //Mob.gameObject.SetActive(false);
         //Mob.enabled = false;
     }
 
@@ -79,7 +79,7 @@ public class QuestGiver : MonoBehaviour
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
-        Mob.gameObject.SetActive(true);
+        //Mob.gameObject.SetActive(true);
     }
 
     public void AcceptQuest()
@@ -87,7 +87,7 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(false);
         quest.isActive = true;
         progressTracker.gameObject.SetActive(true); //- trying something out - aurelia
-
+        //Mob.gameObject.SetActive(true);
 
 
 
