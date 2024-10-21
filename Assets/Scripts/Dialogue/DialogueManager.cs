@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject startButton;
+
     Dialogue[] currentDialogue;
     int currentDialogueIndex;
 
@@ -40,7 +42,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogueIndex++;
         if (currentDialogueIndex >= currentDialogue.Length)
         {
-            EndDialogue();
+            EndDialogue(); 
             return;
         }
 
@@ -65,6 +67,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         isRunning = false;
+        startButton.SetActive(true);
 
 
         foreach (PlayerInput p in players)

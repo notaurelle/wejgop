@@ -9,7 +9,6 @@ public class QuestGiver : MonoBehaviour
     public Quest quest;
     public QuestGoal goal;
     public AIChase Mob;
-    public BattleSystem battleSystem;
 
     public GameObject questWindow;
     public Text titleText;
@@ -24,7 +23,7 @@ public class QuestGiver : MonoBehaviour
 
 
     //trying something out - aurelia
-    public GameObject progressTracker;
+    public GameObject mobHoard;
 
     private void Update()
     {
@@ -86,7 +85,7 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
-        progressTracker.gameObject.SetActive(true); //- trying something out - aurelia
+        mobHoard.gameObject.SetActive(true); //- trying something out - aurelia
         //Mob.gameObject.SetActive(true);
 
 

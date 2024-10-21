@@ -8,8 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue[] dialogue;
 
     public BoxCollider2D boxCollider;
-    //public GameObject pause;
-    public GameObject next;
+
+    public GameObject startButton;
 
     public bool startOnTriggerEnter;
 
@@ -33,13 +33,6 @@ public class DialogueTrigger : MonoBehaviour
                 {
                     boxCollider.enabled = false;
 
-                    next.SetActive(true);
-
-                    //if (!dialogueManager.isRunning)
-                    //{
-                    //    next.SetActive(false);
-                    //}
-                    ////pause.SetActive(false);
                 }
             }
         }

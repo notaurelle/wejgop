@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2043089098}
+      objectReference: {fileID: 561962556647875411}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -468,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4006,14 +4006,13 @@ MonoBehaviour:
     Goal: {fileID: 5646025124642258481}
   goal: {fileID: 5646025124642258481}
   Mob: {fileID: 1079824379}
-  battleSystem: {fileID: 0}
   questWindow: {fileID: 201359107}
   titleText: {fileID: 201359106}
   descriptionText: {fileID: 201359105}
   candyText: {fileID: 201359104}
   requiredAmountText: {fileID: 201359103}
   questButton: {fileID: 1458284563970353938}
-  progressTracker: {fileID: 0}
+  mobHoard: {fileID: 2043089098}
 --- !u!1 &2077711424554770655
 GameObject:
   m_ObjectHideFlags: 0
