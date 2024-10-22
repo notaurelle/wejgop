@@ -85,7 +85,7 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
-        mobHoard.gameObject.SetActive(true); //- trying something out - aurelia
+        mobHoard.gameObject.SetActive(true); 
         //Mob.gameObject.SetActive(true);
 
 

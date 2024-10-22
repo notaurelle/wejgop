@@ -32,6 +32,9 @@ public class QuestGoal: MonoBehaviour
 
     private GameManager manager; // also this - nadine 
 
+    public AIChase mob;
+    public QuestGiver questGiver;
+
 
 
     public void EnemyKilled()
@@ -46,6 +49,7 @@ public class QuestGoal: MonoBehaviour
             Debug.Log("Goal Reached!");
             // Handle quest completion
             teleport.gameObject.SetActive(true);
+            //questGiver.mobHoard.gameObject.SetActive(true);
             Debug.Log("Teleport is now active!");
             quest.Complete();
 
@@ -56,13 +60,13 @@ public class QuestGoal: MonoBehaviour
     }
 
     // - trying something out Aurelia
-    public void Progress()
-    {
-        progressTracker.SetActive(true);
-        //requiredAmountText.text = quest.requiredAmount.ToString();
-        currentAmountText.text = quest.currentAmount.ToString();
+    //public void Progress()
+    //{
+    //    progressTracker.SetActive(true);
+    //    requiredAmountText.text = quest.requiredAmount.ToString();
+    //    currentAmountText.text = quest.currentAmount.ToString();
 
-    }
+    //}
     
 
 
@@ -71,6 +75,7 @@ public class QuestGoal: MonoBehaviour
         if (IsReached())
         {
             sign.gameObject.SetActive(true);
+            //mob.SetActive(false);
             Timer += Time.deltaTime;
             if (Timer >= MaxTimer)
             {
