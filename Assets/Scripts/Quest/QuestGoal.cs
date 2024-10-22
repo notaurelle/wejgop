@@ -32,8 +32,8 @@ public class QuestGoal: MonoBehaviour
 
     private GameManager manager; // also this - nadine 
 
-    public AIChase mob;
-    public QuestGiver questGiver;
+    //public AIChase mob;
+    //public QuestGiver questGiver;
 
 
 

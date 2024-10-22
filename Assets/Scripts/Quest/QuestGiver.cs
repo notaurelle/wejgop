@@ -23,7 +23,7 @@ public class QuestGiver : MonoBehaviour
 
 
     //trying something out - aurelia
-    public GameObject mobHoard;
+    //public GameObject mobHoard;
 
     private void Update()
     {
@@ -85,7 +85,7 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
         quest.isActive = true;
-        mobHoard.gameObject.SetActive(true); 
+        //mobHoard.gameObject.SetActive(true); 
         //Mob.gameObject.SetActive(true);
 
 
