@@ -775,6 +775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fredrika Name
       objectReference: {fileID: 0}
+    - target: {fileID: 2857475086689823406, guid: ddeae4471acbf674bbad6ef23e4e13c2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 962
+      objectReference: {fileID: 0}
     - target: {fileID: 3032613557532821060, guid: ddeae4471acbf674bbad6ef23e4e13c2, type: 3}
       propertyPath: m_Name
       value: ---NPC---
