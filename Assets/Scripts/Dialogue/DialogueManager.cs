@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         isRunning = false;
-        startButton.SetActive(true);
+        // startButton.SetActive(true);
 
 
         foreach (PlayerInput p in players)
