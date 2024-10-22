@@ -2000,6 +2000,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25455341300633863, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 25455341300633863, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5193
+      objectReference: {fileID: 0}
+    - target: {fileID: 25455341300633863, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.407
+      objectReference: {fileID: 0}
     - target: {fileID: 1967452581205249814, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -2012,6 +2024,14 @@ PrefabInstance:
       propertyPath: dialogue.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3753445164901716369, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753445164901716369, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d8c2d843528dd0541ad0d2a9dd33e394, type: 3}
     - target: {fileID: 3896157273994111567, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_Name
       value: ---DIALOGUE---
