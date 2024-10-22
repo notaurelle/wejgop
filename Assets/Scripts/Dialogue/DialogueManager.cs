@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Security;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -19,7 +21,18 @@ public class DialogueManager : MonoBehaviour
     public bool isRunning;
     public PlayerInput[] players;
 
-   public void StartDialogue (Dialogue[] dialogue)
+    public Dialogue[] sceneDialogue;
+    public string sceneNameToTriggerDialogue = "FinalScene";
+
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name == sceneNameToTriggerDialogue && sceneDialogue.Length > 0)
+        {
+            StartDialogue(sceneDialogue);
+        }
+    }
+
+    public void StartDialogue (Dialogue[] dialogue)
     {
         currentDialogueIndex = 0;
         currentDialogue = dialogue;

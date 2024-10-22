@@ -833,6 +833,8 @@ MonoBehaviour:
   startButton: {fileID: 0}
   isRunning: 0
   players: []
+  sceneDialogue: []
+  sceneNameToTriggerDialogue: 
   typingSpeed: 0.02
 --- !u!4 &1011297058
 Transform:

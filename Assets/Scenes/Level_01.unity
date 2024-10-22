@@ -5857,6 +5857,8 @@ MonoBehaviour:
   - {fileID: 7923855746851636010}
   - {fileID: 3612533729461022336}
   - {fileID: 215171453354549670}
+  sceneDialogue: []
+  sceneNameToTriggerDialogue: 
   typingSpeed: 0.02
 --- !u!4 &1489037207
 Transform:
