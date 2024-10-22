@@ -871,18 +871,18 @@ MonoBehaviour:
     dialogue: Where is that fiend! I'll have his head I will... wait, MY HEAD!
   - characterName: 
     characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
-    dialogue: Harry starts runnng around in a panic whie Godrick tries unsuccessfully
+    dialogue: Harry starts running around in a panic while Godrick tries unsuccessfully
       to calm him down. Cerywn and Wylla start panicking as well when they notice
       their own decomposed forms.
   - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
-    dialogue: Quiet down please. Qiuet down!
+    dialogue: Quiet down please. Quiet down!
   - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
     dialogue: SINE ACTIO!
   - characterName: 
     characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
-    dialogue: All three spirits are forzen in place immediately as Father Godrick
+    dialogue: All three spirits are frozen in place immediately as Father Godrick
       huffs impatiently.
   - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
@@ -941,7 +941,7 @@ MonoBehaviour:
     dialogue: Then you be a servant of God, o' father?
   - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
-    dialogue: Why of course. And just as I am God's servant, you are mine.
+    dialogue: Why, of course. And just as I am God's servant, you are mine.
   - characterName: Crumbling Cerwyn
     characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
     dialogue: I spent my life in service to others, why should I spend my death doing
