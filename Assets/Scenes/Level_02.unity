@@ -3373,10 +3373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198a3465b205a47978d2601f6cc121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogueImage: {fileID: 0}
-  animator: {fileID: 0}
+  nameText: {fileID: 2004573985}
+  dialogueText: {fileID: 564685859}
+  dialogueImage: {fileID: 924648783}
+  animator: {fileID: 2050142967}
   startButton: {fileID: 0}
   isRunning: 0
   players:
