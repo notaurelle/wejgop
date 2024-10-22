@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public GameObject startButton;
+   // public GameObject startConvo;
 
     Dialogue[] currentDialogue;
     int currentDialogueIndex;
@@ -22,13 +23,22 @@ public class DialogueManager : MonoBehaviour
     public PlayerInput[] players;
 
     public Dialogue[] sceneDialogue;
-    public string sceneNameToTriggerDialogue = "FinalScene";
+    public Dialogue[] anotherSceneDialogue;
+
+    public string sceneNameToTriggerDialogue1 = "FinalScene"; //make sure to set in the inspector as well
+    public string sceneNameToTriggerDialogue2 = "Cutscene";
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == sceneNameToTriggerDialogue && sceneDialogue.Length > 0)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == sceneNameToTriggerDialogue1 && sceneDialogue.Length > 0)
         {
             StartDialogue(sceneDialogue);
+        }
+        else if (currentSceneName == sceneNameToTriggerDialogue2 && anotherSceneDialogue.Length > 0)
+        {
+            StartDialogue(anotherSceneDialogue);
         }
     }
 
@@ -80,7 +90,9 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         isRunning = false;
-        // startButton.SetActive(true);
+        
+        startButton.SetActive(true);
+        //startConvo.SetActive(false);
 
 
         foreach (PlayerInput p in players)

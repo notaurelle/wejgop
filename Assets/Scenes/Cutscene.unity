@@ -202,6 +202,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39725217}
   m_CullTransparentMesh: 1
+--- !u!1 &61996071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4266702581931505278, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+  m_PrefabInstance: {fileID: 8199142267574630276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132995276
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,11 +835,150 @@ MonoBehaviour:
   dialogueText: {fileID: 8885768005409313371}
   dialogueImage: {fileID: 7150149156484389878}
   animator: {fileID: 2251853851194172141}
-  startButton: {fileID: 0}
+  startButton: {fileID: 61996071}
   isRunning: 0
   players: []
   sceneDialogue: []
-  sceneNameToTriggerDialogue: 
+  anotherSceneDialogue:
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Tres spiritus, unite ut unus. Sancti et excelsi voco potentiam tuam
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Ut supra, sic infra, coniunge; Nos duce noctem aeternam! All rise for
+      the honourable Father Godrick!
+  - characterName: 
+    characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
+    dialogue: As the priest utters the final word, the ground shakes and three spirits
+      appear.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Greetings unhallowed ones!
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Have at thee! Wait, where be I?
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: This feels strange...
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: Why am I so... old?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: A moment friends, all will be explained in due haste.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Where is that fiend! I'll have his head I will... wait, MY HEAD!
+  - characterName: 
+    characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
+    dialogue: Harry starts runnng around in a panic whie Godrick tries unsuccessfully
+      to calm him down. Cerywn and Wylla start panicking as well when they notice
+      their own decomposed forms.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Quiet down please. Qiuet down!
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: SINE ACTIO!
+  - characterName: 
+    characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
+    dialogue: All three spirits are forzen in place immediately as Father Godrick
+      huffs impatiently.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: I am Father Godrick, the priest of this local town, Ryvenbruk.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Ryvenbruk. Be ye meaning yon shire of Raefndre?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Just so, good sir. But much has changed these last years, for you chief
+      among the others. My fellows this is the year 1751 of our lord, and you are
+      all dead. Well, undead as of now.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: How? I remember burning.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Yes, sweet ghost. Burned at the stake for witchcraft, such a crime.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: I was a herbalist, not a witch!
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: Is there a difference?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: 'My friends, what you were no longer matters, for I have recalled you
+      for a greater purpose. '
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Each year the boundaries betwen worlds stretch at the threads and the
+      ghouls of the otherworld spill through to terrorise the living.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: And that is how we came to be?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Just so, and you three exist in limbo, for the lack of virtue and sin
+      committed within your life. You belong to neither one realm nor the other,
+      but that means you are far easier to recall from beyond.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: You want us to do something for you, is that the way of it?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Indeed master bargeman. Do my bidding and your souls shall be hallowed-
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: I already appear to be hollow, there art holes where mine flesh should
+      be.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: Hallowed you dolt, not hollow. He means consecreated, holy.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Then you be a servant of God, o' father?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Why of course. And just as I am God's servant, you are mine.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: I spent my life in service to others, why should I spend my death doing
+      the same?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: How does eternal torment sound instead?
+  - characterName: 
+    characterSprite: {fileID: 21300000, guid: f5edb348026213e4cb6882fb8b7109e1, type: 3}
+    dialogue: All three spirits grumble but begrudgingly accept.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: What services would you have of us, Father?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Hallows eve grows near and the protective barrier between worlds grow
+      thin. I intend to seal it forever so the world of mortals may live in peace,
+      but I need the help of the dead to accomplish it.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: All three of you perished within the leagues surrounding this town,
+      your souls are bound to its soil, air, and water. Retrace your deaths, reclaim
+      your souls, and journey beyond to claim three artefacts of great power.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: With these I shall mend the rift and grant you a blissful afterlife.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: And that is all?
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: That is all. First follow the road to the village of Ryvenbruk.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: 8d5d37cac05ee8944bd4da6d6b37689d, type: 3}
+    dialogue: Luck be with you, sweet ghouls. Do not fail me!
+  sceneNameToTriggerDialogue1: 
+  sceneNameToTriggerDialogue2: Cutscene
   typingSpeed: 0.02
 --- !u!4 &1011297058
 Transform:
@@ -1856,10 +2000,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1967452581205249814, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3381377750864423093, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1011297057}
+    - target: {fileID: 3381377750864423093, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3896157273994111567, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_Name
       value: ---DIALOGUE---
@@ -1868,6 +2020,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011297057}
+    - target: {fileID: 4266702581931505278, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975204136234187699, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505781147162129797, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 283.6165
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505781147162129797, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816387170919906014, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Text
+      value: START GAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395802480384775944, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395802480384775944, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8384ebcf55db8e641ad58e451b861716, type: 3}
     - target: {fileID: 6425493997069987081, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1907,6 +2087,38 @@ PrefabInstance:
     - target: {fileID: 6425493997069987081, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103599234855531362, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 257.2978
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6869661
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.621386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6869661
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225834902459371359, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109409995972693039, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_Text
+      value: START
       objectReference: {fileID: 0}
     - target: {fileID: 8429658110102191573, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

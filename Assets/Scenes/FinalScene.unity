@@ -417,13 +417,47 @@ MonoBehaviour:
   isRunning: 0
   players: []
   sceneDialogue:
-  - characterName: 'TRESTUBG '
+  - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: a3e36f3cec4042448a6aec6a0baa1ea8, type: 3}
-    dialogue: testing testing 123
-  - characterName: rahhhh
+    dialogue: My loyal servants! You have done well in retrieving my, erm I mean,
+      the chalice!
+  - characterName: Godrick
     characterSprite: {fileID: 21300000, guid: a3e36f3cec4042448a6aec6a0baa1ea8, type: 3}
-    dialogue: hoipethignthis workls
-  sceneNameToTriggerDialogue: FinalScene
+    dialogue: Now, hand it over.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: No. Many and more have spoken ill of you Father, I do not trust you.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: Nor I.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Nor I.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: a3e36f3cec4042448a6aec6a0baa1ea8, type: 3}
+    dialogue: Hah! You tell a funny story, Wylla. But enough jokes. The Chalice.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: a3e36f3cec4042448a6aec6a0baa1ea8, type: 3}
+    dialogue: Now.
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Nay.
+  - characterName: Godrick
+    characterSprite: {fileID: 21300000, guid: a3e36f3cec4042448a6aec6a0baa1ea8, type: 3}
+    dialogue: Do not test me, ghouls. You shall spend an eternity in punishment if
+      you do.
+  - characterName: Wandering Wylla
+    characterSprite: {fileID: 21300000, guid: 82cfa9445d5bb9843a7ba502b8aea597, type: 3}
+    dialogue: We do not fear that.
+  - characterName: Crumbling Cerwyn
+    characterSprite: {fileID: 21300000, guid: 48d7bb795382c5e4a8c2d1e70d168999, type: 3}
+    dialogue: Ummm...
+  - characterName: Headless Harry
+    characterSprite: {fileID: 21300000, guid: 074db9d9ddb6ba242bc53428307f5996, type: 3}
+    dialogue: Hast at thee, demon! I know a blackguard when I see one!
+  anotherSceneDialogue: []
+  sceneNameToTriggerDialogue1: FinalScene
+  sceneNameToTriggerDialogue2: Cutscene
   typingSpeed: 0.02
 --- !u!4 &1960851218
 Transform:
@@ -746,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1846,7 +1880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
