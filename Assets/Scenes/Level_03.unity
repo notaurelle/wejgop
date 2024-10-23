@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944921695}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1
@@ -2454,8 +2454,8 @@ Transform:
   m_GameObject: {fileID: 879843307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.61, y: 48.3, z: -0.4773188}
-  m_LocalScale: {x: 0.5486932, y: 29.812653, z: 6.26248}
+  m_LocalPosition: {x: -73.54, y: 53.49, z: -0.4773188}
+  m_LocalScale: {x: 8.008562, y: 5.540377, z: 67.70762}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

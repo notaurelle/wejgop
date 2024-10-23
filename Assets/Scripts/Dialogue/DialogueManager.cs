@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public GameObject startButton;
+    public GameObject battleButton;
    // public GameObject startConvo;
 
     Dialogue[] currentDialogue;
@@ -92,6 +93,7 @@ public class DialogueManager : MonoBehaviour
         isRunning = false;
         
         startButton.SetActive(true);
+        battleButton.SetActive(true);
         //startConvo.SetActive(false);
 
 
