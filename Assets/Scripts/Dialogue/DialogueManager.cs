@@ -93,6 +93,7 @@ public class DialogueManager : MonoBehaviour
         isRunning = false;
         
         startButton.SetActive(true);
+        
         battleButton.SetActive(true);
         //startConvo.SetActive(false);
 

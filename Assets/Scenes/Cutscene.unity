@@ -836,6 +836,7 @@ MonoBehaviour:
   dialogueImage: {fileID: 7150149156484389878}
   animator: {fileID: 2251853851194172141}
   startButton: {fileID: 61996071}
+  battleButton: {fileID: 0}
   isRunning: 0
   players: []
   sceneDialogue: []
@@ -2144,6 +2145,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 179428013}
+    - target: {fileID: 8944738368565415275, guid: 8d106e3f7a12c434bb75fca6222a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
