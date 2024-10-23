@@ -164,7 +164,7 @@ public class PlayerSupport : PlayerParent
 
         // disable the script and collider
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        // this.enabled = false;
         this.gameObject.SetActive(false);
 
         //updated for checkpoints
