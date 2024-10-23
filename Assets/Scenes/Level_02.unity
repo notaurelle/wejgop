@@ -1937,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 561962556647875411}
+      objectReference: {fileID: 2043089098}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1948,7 +1948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1956,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7296540183159782571, guid: b7c9f6daff36fb9468131d57e261ce31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -10789,8 +10789,6 @@ MonoBehaviour:
   dialogueText: {fileID: 564685859}
   dialogueImage: {fileID: 924648783}
   animator: {fileID: 2050142967}
-  startButton: {fileID: 0}
-  battleButton: {fileID: 0}
   isRunning: 0
   players:
   - {fileID: 0}
@@ -14268,7 +14266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2043089099
 Transform:
   m_ObjectHideFlags: 0
@@ -28430,7 +28428,7 @@ Transform:
   m_GameObject: {fileID: 1001945922113098174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.060001, y: 10.185699, z: -22.596174}
+  m_LocalPosition: {x: -2.1500092, y: -4.6143003, z: -22.596174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32592,7 +32590,7 @@ Transform:
   m_GameObject: {fileID: 8341962626910619881}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.060001, y: 10.185699, z: -32.596176}
+  m_LocalPosition: {x: -2.1500092, y: -4.6143003, z: -32.596176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33432,7 +33430,7 @@ Transform:
   m_GameObject: {fileID: 207654045273447151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.060001, y: 10.185699, z: -32.596176}
+  m_LocalPosition: {x: -2.1500092, y: -4.6143003, z: -32.596176}
   m_LocalScale: {x: -0.20673326, y: -0.20673326, z: -0.20673326}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33471,7 +33469,7 @@ Transform:
   m_GameObject: {fileID: 4060519643011738645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.98, y: 17.98, z: 0}
+  m_LocalPosition: {x: -72.19, y: 3.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -5794,7 +5794,6 @@ MonoBehaviour:
   dialogueText: {fileID: 2768434210330893793}
   dialogueImage: {fileID: 6687648416234347059}
   animator: {fileID: 2070235204288398986}
-  startButton: {fileID: 0}
   isRunning: 0
   players:
   - {fileID: 7923855746851636010}
@@ -10137,11 +10136,11 @@ PrefabInstance:
       objectReference: {fileID: 8634270040255644619}
     - target: {fileID: 7823533767871887828, guid: f996e4d38ef3fb34f80e63de146c6b63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.16
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 7823533767871887828, guid: f996e4d38ef3fb34f80e63de146c6b63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.49
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7823533767871887828, guid: f996e4d38ef3fb34f80e63de146c6b63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11891,7 +11890,7 @@ Transform:
   m_GameObject: {fileID: 2076424555883891057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.97996, y: 23.122414, z: -22.596174}
+  m_LocalPosition: {x: -0.58996093, y: -5.307587, z: -22.596174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12974,7 +12973,7 @@ Transform:
   m_GameObject: {fileID: 7130266316576903206}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.97996, y: 23.122414, z: -32.596176}
+  m_LocalPosition: {x: -0.58996093, y: -5.307587, z: -32.596176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13372,7 +13371,7 @@ Transform:
   m_GameObject: {fileID: 1429591483154563616}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.97996, y: 23.122414, z: -32.596176}
+  m_LocalPosition: {x: -0.58996093, y: -5.307587, z: -32.596176}
   m_LocalScale: {x: -0.20673326, y: -0.20673326, z: -0.20673326}
   m_ConstrainProportionsScale: 0
   m_Children:

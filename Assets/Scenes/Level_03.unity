@@ -3386,7 +3386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 18686768830412012, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.023296
+      value: 30.916706
       objectReference: {fileID: 0}
     - target: {fileID: 18686768830412012, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3394,7 +3394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321700632902712213, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.023296
+      value: 30.916706
       objectReference: {fileID: 0}
     - target: {fileID: 2321700632902712213, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3402,7 +3402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3019900379719525309, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.023296
+      value: 30.916706
       objectReference: {fileID: 0}
     - target: {fileID: 3019900379719525309, guid: aab24b9f71d5a164ea4b24ddb01f7919, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3611,7 +3611,7 @@ PrefabInstance:
       objectReference: {fileID: 206761179}
     - target: {fileID: 7823533767871887828, guid: f996e4d38ef3fb34f80e63de146c6b63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.3
+      value: 31.64
       objectReference: {fileID: 0}
     - target: {fileID: 7823533767871887828, guid: f996e4d38ef3fb34f80e63de146c6b63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5151,8 +5151,6 @@ MonoBehaviour:
   dialogueText: {fileID: 464655568}
   dialogueImage: {fileID: 1807280925}
   animator: {fileID: 1829656252}
-  startButton: {fileID: 0}
-  battleButton: {fileID: 0}
   isRunning: 0
   players:
   - {fileID: 0}
