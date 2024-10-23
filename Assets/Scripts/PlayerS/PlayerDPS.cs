@@ -193,7 +193,7 @@ public class PlayerDPS : PlayerParent
 
         //Disable enemy script as they have 'died'
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        // this.enabled = false;
         this.gameObject.SetActive(false);
 
         // nadine - made changes here
@@ -211,6 +211,7 @@ public class PlayerDPS : PlayerParent
         GetComponent<Collider2D>().enabled=true;
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+        
 
 
         
