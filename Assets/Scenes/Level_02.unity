@@ -10790,6 +10790,7 @@ MonoBehaviour:
   dialogueImage: {fileID: 924648783}
   animator: {fileID: 2050142967}
   startButton: {fileID: 0}
+  battleButton: {fileID: 0}
   isRunning: 0
   players:
   - {fileID: 0}
@@ -18654,9 +18655,38 @@ MonoBehaviour:
   cooldownDuration: 13
   globs:
   - {fileID: 2715290338286998536}
-  - {fileID: 2715290338286998536}
-  - {fileID: 2715290338286998536}
-  - {fileID: 2715290338286998536}
+  - {fileID: 2715290339597241955}
+  - {fileID: 2715290339124127730}
+  - {fileID: 2715290339420977884}
+  - {fileID: 2715290337898118355}
+  - {fileID: 2715290338937291880}
+  - {fileID: 2715290337647021345}
+  - {fileID: 2715290338659476653}
+  - {fileID: 2715290338239131746}
+  - {fileID: 2715290338851143024}
+  - {fileID: 428336891329547202}
+  - {fileID: 657996424}
+  - {fileID: 428336892633368107}
+  - {fileID: 1928097248}
+  - {fileID: 2715290339408814289}
+  - {fileID: 1722274149}
+  - {fileID: 1856258728}
+  - {fileID: 502152761}
+  - {fileID: 2084686420}
+  - {fileID: 265233082}
+  - {fileID: 230729089}
+  - {fileID: 192996778}
+  - {fileID: 1698388117}
+  - {fileID: 851780009}
+  - {fileID: 1459255989}
+  - {fileID: 448297948}
+  - {fileID: 428336892460776665}
+  - {fileID: 760681690}
+  - {fileID: 428336891019464789}
+  - {fileID: 428336890887573195}
+  - {fileID: 428336891389130149}
+  - {fileID: 428336891174592267}
+  - {fileID: 428336892132326955}
   Cerwyn_BaseATK_SFX: {fileID: 8300000, guid: 5a872091d174ce3469199ad4b0d96fa7, type: 3}
   Cerwyn_ChargedATK_SFX: {fileID: 8300000, guid: 9dd55f567ab280a459cd8e26a08a2c85, type: 3}
 --- !u!1 &984725139217582171
@@ -30528,9 +30558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalType: 0
-  requiredAmount: 19
+  requiredAmount: 33
   currentAmount: 0
-  candyReward: 13
+  candyReward: 666
   currentAmountText: {fileID: 0}
   progressTracker: {fileID: 0}
   sign: {fileID: 1097724713}
